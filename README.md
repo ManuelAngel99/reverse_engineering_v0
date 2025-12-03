@@ -71,42 +71,42 @@ v0's architecture emulates a complete Next.js development environment through th
 │  │  │  • Tailwind CSS v3/v4                       │   │   │
 │  │  │  • 50+ shadcn/ui Components                 │   │   │
 │  │  └─────────────────────────────────────────────┘   │   │
-│  │                                                       │   │
+│  │                                                    │   │
 │  │  ┌─────────────────────────────────────────────┐   │   │
 │  │  │  TypeScript 5.7.3 Compiler (In-Browser)     │   │   │
 │  │  │  • Full type checking                       │   │   │
 │  │  │  • Source map generation                    │   │   │
 │  │  │  • React Fast Refresh transformation        │   │   │
 │  │  └─────────────────────────────────────────────┘   │   │
-│  │                                                       │   │
+│  │                                                    │   │
 │  │  ┌─────────────────────────────────────────────┐   │   │
-│  │  │  Custom JSX Runtime                          │   │   │
+│  │  │  Custom JSX Runtime                         │   │   │
 │  │  │  • Injects tracking props (__v0_i, __v0_s)  │   │   │
 │  │  │  • Enables click-to-code mapping            │   │   │
 │  │  │  • Transforms asset URLs                    │   │   │
 │  │  └─────────────────────────────────────────────┘   │   │
-│  │                                                       │   │
+│  │                                                    │   │
 │  │  ┌─────────────────────────────────────────────┐   │   │
-│  │  │  Visual Editing System                       │   │   │
+│  │  │  Visual Editing System                      │   │   │
 │  │  │  • React Fiber traversal                    │   │   │
 │  │  │  • Element selection overlay                │   │   │
 │  │  │  • Inline content editing                   │   │   │
 │  │  │  • Optimistic visual changes                │   │   │
 │  │  └─────────────────────────────────────────────┘   │   │
-│  │                                                       │   │
-│  └───────────────────┬─────────────────────────────────┘   │
-│                      │                                       │
-│                      │ Fetch API                             │
-│                      ▼                                       │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │      Service Worker (__v0_sw.js)                     │   │
-│  │  • Virtual file system in IndexedDB                  │   │
-│  │  • Intercepts all fetch requests                     │   │
-│  │  • Serves compiled blob URLs                         │   │
-│  │  • Proxies external API calls                        │   │
-│  └─────────────────────────────────────────────────────┘   │
-│                                                               │
-└─────────────────────────────────────────────────────────────┘
+│  │                                                    │   │
+│  └───────────────────┬────────────────────────────────┘   │
+│                      │                                    │
+│                      │ Fetch API                          │
+│                      ▼                                    │
+│  ┌────────────────────────────────────────────────────┐   │
+│  │      Service Worker (__v0_sw.js)                   │   │
+│  │  • Virtual file system in IndexedDB                │   │
+│  │  • Intercepts all fetch requests                   │   │
+│  │  • Serves compiled blob URLs                       │   │
+│  │  • Proxies external API calls                      │   │
+│  └────────────────────────────────────────────────────┘   │
+│                                                           │
+└───────────────────────────────────────────────────────────┘
 ```
 
 ---
