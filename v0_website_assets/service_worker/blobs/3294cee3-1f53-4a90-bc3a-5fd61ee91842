@@ -1,0 +1,209 @@
+var prevRefreshReg = self.__v0_$RefreshReg$
+var prevRefreshSig = self.__v0_$RefreshSig$
+self.__v0_$RefreshReg$ = (type, id) => {
+  id = "@v0/components/your-work-in-sync" + ' ' + id
+  self.__v0_rscRefreshRegister(type, id)
+  self.__v0_refreshRuntime.register(type, id)
+}
+self.__v0_$RefreshSig$ = typeof __v0_refreshRuntime !== 'undefined' ? __v0_refreshRuntime.createSignatureFunctionForTransform : () => {}
+
+var _react_refresh_temp_1;
+import { jsxDEV as _jsxDEV } from /*"__v0__/jsx-dev-runtime"*/'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/2cb0ba76-9c5e-4553-9d94-814ead52c4d1';
+const _jsxFileName = "/@v0/components/your-work-in-sync.tsx";
+/**
+ * Your work, in sync – Chat conversation UI
+ * Generated from Figma via MCP with exact measurements (482×300px)
+ * Single-file component following the v0-ready pattern used in this repo.
+ */
+const YourWorkInSync = ({ width = 482, height = 300, className = "", theme = "dark", }) => {
+    // Design tokens (derived from Figma local variables)
+    const themeVars = theme === "light"
+        ? {
+            "--yws-surface": "#ffffff",
+            "--yws-text-primary": "#37322f",
+            "--yws-text-secondary": "#6b7280",
+            "--yws-bubble-light": "#e8e5e3",
+            "--yws-bubble-dark": "#37322f",
+            "--yws-bubble-white": "#ffffff",
+            "--yws-border": "rgba(0,0,0,0.08)",
+            "--yws-shadow": "rgba(0,0,0,0.08)",
+        }
+        : {
+            "--yws-surface": "#1f2937",
+            "--yws-text-primary": "#f9fafb",
+            "--yws-text-secondary": "#d1d5db",
+            "--yws-bubble-light": "#374151",
+            "--yws-bubble-dark": "#111827",
+            "--yws-bubble-white": "#ffffff",
+            "--yws-border": "rgba(255,255,255,0.12)",
+            "--yws-shadow": "rgba(0,0,0,0.24)",
+        };
+    // Figma-exported assets
+    const imgFrame2147223205 = "/professional-woman-avatar-with-short-brown-hair-an.jpg";
+    const imgFrame2147223206 = "/professional-man-avatar-with-beard-and-glasses-loo.jpg";
+    const imgFrame2147223207 = "/professional-person-avatar-with-curly-hair-and-war.jpg";
+    const imgArrowUp = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='3' strokeLinecap='round' strokeLinejoin='round'%3E%3Cpath d='m5 12 7-7 7 7'/%3E%3Cpath d='M12 19V5'/%3E%3C/svg%3E";
+    return (_jsxDEV("div", { __v0_e: { "start": 2100, "end": 10086, "name": "div", "jsxRoot": true }, className: className, __v0_r: [1, 2121, 2132], style: {
+            width,
+            height,
+            position: "relative",
+            background: "transparent",
+            ...themeVars,
+        }, role: "img", "aria-label": "Chat conversation showing team collaboration sync", children: _jsxDEV("div", { __v0_e: { "start": 2481, "end": 10075, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[72, 11, ""]], style: {
+                position: "absolute",
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "356px",
+                height: "216px",
+            }, children: _jsxDEV("div", { __v0_e: { "start": 2784, "end": 10062, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[83, 13, ""]], style: { width: "356px", height: "216px", position: "relative", transform: "scale(1.1)" }, children: [_jsxDEV("div", { __v0_e: { "start": 2942, "end": 4603, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[85, 15, ""]], style: {
+                            position: "absolute",
+                            left: "0px",
+                            top: "0px",
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "flex-start",
+                            width: "356px",
+                            height: "36px",
+                        }, children: [_jsxDEV("div", { __v0_e: { "start": 3281, "end": 3679, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[98, 17, ""]], style: {
+                                    width: "36px",
+                                    height: "36px",
+                                    borderRadius: "44px",
+                                    backgroundImage: `url('${imgFrame2147223205}')`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                    border: "1px solid var(--yws-border)",
+                                    flexShrink: 0,
+                                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 98, columnNumber: 13 }, this), _jsxDEV("div", { __v0_e: { "start": 3727, "end": 4586, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[111, 17, ""]], style: {
+                                    background: theme === "light" ? "#e8e5e3" : "var(--yws-bubble-light)",
+                                    borderRadius: "999px",
+                                    padding: "0px 12px",
+                                    height: "36px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }, children: _jsxDEV("span", { __v0_e: { "start": 4108, "end": 4567, "name": "span", "jsxRoot": false }, __v0_m: "1", __v0_c: [[122, 20, ""]], style: {
+                                        fontFamily: "Inter, sans-serif",
+                                        fontWeight: 500,
+                                        fontSize: "13px",
+                                        lineHeight: "16px",
+                                        letterSpacing: "-0.4px",
+                                        color: theme === "light" ? "#37322f" : "var(--yws-text-primary)",
+                                        whiteSpace: "nowrap",
+                                    }, __v0_i: "0:133:17:Team updates flow seamlessly", children: "Team updates flow seamlessly" }, void 0, false, { fileName: _jsxFileName, lineNumber: 122, columnNumber: 15 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 111, columnNumber: 13 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 85, columnNumber: 11 }, this), _jsxDEV("div", { __v0_e: { "start": 4667, "end": 6246, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[139, 15, ""]], style: {
+                            position: "absolute",
+                            right: "0px",
+                            top: "60px",
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "flex-start",
+                            justifyContent: "flex-end",
+                        }, children: [_jsxDEV("div", { __v0_e: { "start": 4998, "end": 5791, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[151, 17, ""]], style: {
+                                    background: theme === "light" ? "#37322f" : "var(--yws-bubble-dark)",
+                                    borderRadius: "999px",
+                                    padding: "0px 12px",
+                                    height: "36px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }, children: _jsxDEV("span", { __v0_e: { "start": 5378, "end": 5772, "name": "span", "jsxRoot": false }, __v0_m: "1", __v0_c: [[162, 20, ""]], style: {
+                                        fontFamily: "Inter, sans-serif",
+                                        fontWeight: 500,
+                                        fontSize: "13px",
+                                        lineHeight: "16px",
+                                        letterSpacing: "-0.4px",
+                                        color: "#ffffff",
+                                        whiteSpace: "nowrap",
+                                    }, __v0_i: "0:173:17:Hi everyone", children: "Hi everyone" }, void 0, false, { fileName: _jsxFileName, lineNumber: 162, columnNumber: 15 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 151, columnNumber: 13 }, this), _jsxDEV("div", { __v0_e: { "start": 5831, "end": 6229, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[177, 17, ""]], style: {
+                                    width: "36px",
+                                    height: "36px",
+                                    borderRadius: "44px",
+                                    backgroundImage: `url('${imgFrame2147223206}')`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                    border: "1px solid var(--yws-border)",
+                                    flexShrink: 0,
+                                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 177, columnNumber: 13 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 139, columnNumber: 11 }, this), _jsxDEV("div", { __v0_e: { "start": 6309, "end": 7967, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[192, 15, ""]], style: {
+                            position: "absolute",
+                            left: "0px",
+                            top: "120px",
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "flex-start",
+                            width: "210px",
+                            height: "36px",
+                        }, children: [_jsxDEV("div", { __v0_e: { "start": 6650, "end": 7048, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[205, 17, ""]], style: {
+                                    width: "36px",
+                                    height: "36px",
+                                    borderRadius: "44px",
+                                    backgroundImage: `url('${imgFrame2147223207}')`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                    border: "1px solid var(--yws-border)",
+                                    flexShrink: 0,
+                                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 205, columnNumber: 13 }, this), _jsxDEV("div", { __v0_e: { "start": 7096, "end": 7950, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[218, 17, ""]], style: {
+                                    background: theme === "light" ? "#e8e5e3" : "var(--yws-bubble-light)",
+                                    borderRadius: "999px",
+                                    padding: "0px 12px",
+                                    height: "36px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                }, children: _jsxDEV("span", { __v0_e: { "start": 7477, "end": 7931, "name": "span", "jsxRoot": false }, __v0_m: "1", __v0_c: [[229, 20, ""]], style: {
+                                        fontFamily: "Inter, sans-serif",
+                                        fontWeight: 500,
+                                        fontSize: "13px",
+                                        lineHeight: "16px",
+                                        letterSpacing: "-0.4px",
+                                        color: theme === "light" ? "#37322f" : "var(--yws-text-primary)",
+                                        whiteSpace: "nowrap",
+                                    }, __v0_i: "0:240:17:How about this instead?", children: "How about this instead?" }, void 0, false, { fileName: _jsxFileName, lineNumber: 229, columnNumber: 15 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 218, columnNumber: 13 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 192, columnNumber: 11 }, this), _jsxDEV("div", { __v0_e: { "start": 8032, "end": 10047, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[246, 15, ""]], style: {
+                            position: "absolute",
+                            left: "146px",
+                            top: "180px",
+                            display: "flex",
+                            gap: "10px",
+                            alignItems: "center",
+                            height: "36px",
+                        }, children: [_jsxDEV("div", { __v0_e: { "start": 8349, "end": 9197, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[258, 17, ""]], style: {
+                                    background: "#ffffff",
+                                    borderRadius: "16px",
+                                    padding: "0px 12px",
+                                    height: "36px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    boxShadow: "0px 0px 0px 1px rgba(0,0,0,0.08), 0px 1px 2px -0.4px rgba(0,0,0,0.08)",
+                                    overflow: "hidden",
+                                }, children: _jsxDEV("span", { __v0_e: { "start": 8817, "end": 9178, "name": "span", "jsxRoot": false }, __v0_m: "1", __v0_c: [[271, 20, ""]], style: {
+                                        fontFamily: "Inter, sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: "14px",
+                                        lineHeight: "20px",
+                                        color: "#030712",
+                                        whiteSpace: "nowrap",
+                                    }, __v0_i: "0:281:17:Great work, everyone!", children: "Great work, everyone!" }, void 0, false, { fileName: _jsxFileName, lineNumber: 271, columnNumber: 15 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 258, columnNumber: 13 }, this), _jsxDEV("div", { __v0_e: { "start": 9242, "end": 10030, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[285, 17, ""]], style: {
+                                    width: "36px",
+                                    height: "36px",
+                                    borderRadius: "44px",
+                                    background: theme === "light" ? "#37322f" : "var(--yws-bubble-dark)",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    boxShadow: "0px 1px 2px 0px rgba(0,0,0,0.08)",
+                                    cursor: "pointer",
+                                    flexShrink: 0,
+                                }, children: _jsxDEV("img", { __v0_e: { "start": 9744, "end": 10011, "name": "img", "jsxRoot": false }, __v0_m: "1", __v0_c: [[299, 19, ""]], src: imgArrowUp || "/placeholder.svg", alt: "Send", style: {
+                                        width: "20px",
+                                        height: "20px",
+                                        filter: "brightness(0) invert(1)",
+                                    } }, void 0, false, { fileName: _jsxFileName, lineNumber: 299, columnNumber: 15 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 285, columnNumber: 13 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 246, columnNumber: 11 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 83, columnNumber: 9 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 72, columnNumber: 7 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 56, columnNumber: 11 }, this));
+};
+_react_refresh_temp_1 = YourWorkInSync;
+__v0_$RefreshReg$(_react_refresh_temp_1, "YourWorkInSync");
+export default YourWorkInSync;
+
+
+self.__v0_$RefreshReg$ = prevRefreshReg
+self.__v0_$RefreshSig$ = prevRefreshSig
+//# sourceURL=blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/3294cee3-1f53-4a90-bc3a-5fd61ee91842

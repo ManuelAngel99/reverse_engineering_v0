@@ -1,0 +1,8 @@
+const mod = window.__v0_modules__["__v0__/internal"];
+export { mod as default };
+const __v0_0 = mod["createServerRef"]; export { __v0_0 as "createServerRef" };
+const __v0_1 = mod["createClientRef"]; export { __v0_1 as "createClientRef" };
+
+//# sourceFileName=__v0__/internal
+
+//# sourceURL=blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/51e26c0d-b481-4c2a-9aeb-8d921dd2239b

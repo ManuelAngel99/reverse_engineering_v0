@@ -1,0 +1,1 @@
+self._d=u=>import(u)

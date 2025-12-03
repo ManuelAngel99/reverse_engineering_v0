@@ -1,0 +1,87 @@
+var prevRefreshReg = self.__v0_$RefreshReg$
+var prevRefreshSig = self.__v0_$RefreshSig$
+self.__v0_$RefreshReg$ = (type, id) => {
+  id = "@v0/components/testimonials-section" + ' ' + id
+  self.__v0_rscRefreshRegister(type, id)
+  self.__v0_refreshRuntime.register(type, id)
+}
+self.__v0_$RefreshSig$ = typeof __v0_refreshRuntime !== 'undefined' ? __v0_refreshRuntime.createSignatureFunctionForTransform : () => {}
+
+"use client";
+var _react_refresh_temp_1, _react_refresh_temp_2;
+var _react_refresh_temp_3;
+_react_refresh_temp_3 = __v0_$RefreshSig$();
+import { jsxDEV as _jsxDEV } from /*"__v0__/jsx-dev-runtime"*/'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/2cb0ba76-9c5e-4553-9d94-814ead52c4d1';
+const _jsxFileName = "/@v0/components/testimonials-section.tsx";
+import { useState, useEffect } from /*"react"*/'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/f6f18b43-2e7c-42b9-957f-a4b47ec4d56c';
+// Badge component for consistency
+function Badge({ icon, text }) {
+    return (_jsxDEV("div", { __v0_e: { "start": 214, "end": 692, "name": "div", "jsxRoot": true }, className: "px-[14px] py-[6px] bg-white shadow-[0px_0px_0px_4px_rgba(55,50,47,0.05)] overflow-hidden rounded-[90px] flex justify-start items-center gap-[8px] border border-[rgba(2,6,23,0.08)] shadow-xs", __v0_r: [0, 229, 420], __v0_c: [[9, 20, "px-[14px] py-[6px] bg-white shadow-[0px_0px_0px_4px_rgba(55,50,47,0.05)] overflow-hidden rounded-[90px] flex justify-start items-center gap-[8px] border border-[rgba(2,6,23,0.08)] shadow-xs"]], children: [_jsxDEV("div", { __v0_e: { "start": 428, "end": 533, "name": "div", "jsxRoot": false }, className: "w-[14px] h-[14px] relative overflow-hidden flex items-center justify-center", __v0_r: [0, 443, 520], __v0_c: [[10, 22, "w-[14px] h-[14px] relative overflow-hidden flex items-center justify-center"]], children: icon }, void 0, false, { fileName: _jsxFileName, lineNumber: 10, columnNumber: 7 }, this), _jsxDEV("div", { __v0_e: { "start": 540, "end": 681, "name": "div", "jsxRoot": false }, className: "text-center flex justify-center flex-col text-[#37322F] text-xs font-medium leading-3 font-sans", __v0_r: [0, 555, 652], __v0_c: [[11, 22, "text-center flex justify-center flex-col text-[#37322F] text-xs font-medium leading-3 font-sans"]], children: text }, void 0, false, { fileName: _jsxFileName, lineNumber: 11, columnNumber: 7 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 8, columnNumber: 11 }, this));
+}
+_react_refresh_temp_1 = Badge;
+__v0_$RefreshReg$(_react_refresh_temp_1, "Badge");
+export default function TestimonialsSection() {
+    _react_refresh_temp_3();
+    const [activeTestimonial, setActiveTestimonial] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const testimonials = [
+        {
+            quote: "In just a few minutes, we transformed our data into actionable insights. The process was seamless and incredibly efficient!",
+            name: "Jamie Marshall",
+            company: "Co-founder, Exponent",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Sep%2011%2C%202025%2C%2011_35_19%20AM-z4zSRLsbOQDp7MJS1t8EXmGNB6Al9Z.png",
+        },
+        {
+            quote: "Brillance has revolutionized how we handle custom contracts. The automation saves us hours every week and eliminates errors completely.",
+            name: "Sarah Chen",
+            company: "VP Operations, TechFlow",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Sep%2011%2C%202025%2C%2010_54_18%20AM-nbiecp92QNdTudmCrHr97uekrIPzCP.png",
+        },
+        {
+            quote: "The billing automation is a game-changer. What used to take our team days now happens automatically with perfect accuracy.",
+            name: "Marcus Rodriguez",
+            company: "Finance Director, InnovateCorp",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Sep%2011%2C%202025%2C%2011_01_05%20AM-TBOe92trRxKn4G5So1m9D2h7LRH4PG.png",
+        },
+    ];
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsTransitioning(true);
+            setTimeout(() => {
+                setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+                setTimeout(() => {
+                    setIsTransitioning(false);
+                }, 100);
+            }, 300);
+        }, 12000); // increased from 6000ms to 12000ms for longer testimonial display
+        return () => clearInterval(interval);
+    }, [testimonials.length]);
+    const handleNavigationClick = (index) => {
+        setIsTransitioning(true);
+        setTimeout(() => {
+            setActiveTestimonial(index);
+            setTimeout(() => {
+                setIsTransitioning(false);
+            }, 100);
+        }, 300);
+    };
+    return (_jsxDEV("div", { __v0_e: { "start": 2811, "end": 7311, "name": "div", "jsxRoot": true }, className: "w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center", __v0_r: [0, 2826, 2914], __v0_c: [[74, 20, "w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center"]], children: _jsxDEV("div", { __v0_e: { "start": 2986, "end": 7300, "name": "div", "jsxRoot": false }, className: "self-stretch px-2 overflow-hidden flex justify-start items-center bg-background border border-b border-l-0 border-r-0 border-t-0", __v0_r: [0, 3001, 3131], __v0_c: [[78, 22, "self-stretch px-2 overflow-hidden flex justify-start items-center bg-background border border-b border-l-0 border-r-0 border-t-0"]], children: _jsxDEV("div", { __v0_e: { "start": 3141, "end": 7287, "name": "div", "jsxRoot": false }, className: "flex-1 py-16 md:py-17 flex flex-col md:flex-row justify-center items-end gap-6", __v0_r: [0, 3156, 3236], __v0_c: [[79, 24, "flex-1 py-16 md:py-17 flex flex-col md:flex-row justify-center items-end gap-6"]], children: [_jsxDEV("div", { __v0_e: { "start": 3248, "end": 5466, "name": "div", "jsxRoot": false }, className: "self-stretch px-3 md:px-12 justify-center items-start gap-4 flex flex-col md:flex-row", __v0_r: [0, 3263, 3350], __v0_c: [[80, 26, "self-stretch px-3 md:px-12 justify-center items-start gap-4 flex flex-col md:flex-row"]], children: [_jsxDEV("img", { __v0_e: { "start": 3364, "end": 3885, "name": "img", "jsxRoot": false }, className: "w-48 h-50 md:w-48 md:h-50 rounded-lg object-cover transition-all duration-700 ease-in-out", __v0_r: [0, 3393, 3484], __v0_c: [[82, 25, "w-48 h-50 md:w-48 md:h-50 rounded-lg object-cover transition-all duration-700 ease-in-out"]], style: {
+                                    opacity: isTransitioning ? 0.6 : 1,
+                                    transform: isTransitioning ? "scale(0.95)" : "scale(1)",
+                                    transition: "opacity 0.7s ease-in-out, transform 0.7s ease-in-out",
+                                }, src: testimonials[activeTestimonial].image || "/placeholder.svg", alt: testimonials[activeTestimonial].name }, void 0, false, { fileName: _jsxFileName, lineNumber: 81, columnNumber: 13 }, this), _jsxDEV("div", { __v0_e: { "start": 3898, "end": 5449, "name": "div", "jsxRoot": false }, className: "flex-1 px-6 py-6 shadow-[0px_0px_0px_0.75px_rgba(50,45,43,0.12)] overflow-hidden flex flex-col justify-start items-start gap-6 shadow-none pb-0 pt-0", __v0_r: [0, 3913, 4063], __v0_c: [[91, 28, "flex-1 px-6 py-6 shadow-[0px_0px_0px_0.75px_rgba(50,45,43,0.12)] overflow-hidden flex flex-col justify-start items-start gap-6 shadow-none pb-0 pt-0"]], children: [_jsxDEV("div", { __v0_e: { "start": 4079, "end": 4616, "name": "div", "jsxRoot": false }, className: "self-stretch justify-start flex flex-col text-[#49423D] text-2xl md:text-[32px] font-medium leading-10 md:leading-[42px] font-sans h-[200px] md:h-[210px] overflow-hidden line-clamp-5 transition-all duration-700 ease-in-out tracking-tight", __v0_r: [0, 4110, 4349], __v0_c: [[93, 27, "self-stretch justify-start flex flex-col text-[#49423D] text-2xl md:text-[32px] font-medium leading-10 md:leading-[42px] font-sans h-[200px] md:h-[210px] overflow-hidden line-clamp-5 transition-all duration-700 ease-in-out tracking-tight"]], style: {
+                                            filter: isTransitioning ? "blur(4px)" : "blur(0px)",
+                                            transition: "filter 0.7s ease-in-out",
+                                        }, children: ["\"", testimonials[activeTestimonial].quote, "\""] }, void 0, true, { fileName: _jsxFileName, lineNumber: 92, columnNumber: 15 }, this), _jsxDEV("div", { __v0_e: { "start": 4631, "end": 5430, "name": "div", "jsxRoot": false }, className: "self-stretch flex flex-col justify-start items-start gap-1 transition-all duration-700 ease-in-out", __v0_r: [0, 4662, 4762], __v0_c: [[102, 27, "self-stretch flex flex-col justify-start items-start gap-1 transition-all duration-700 ease-in-out"]], style: {
+                                            filter: isTransitioning ? "blur(4px)" : "blur(0px)",
+                                            transition: "filter 0.7s ease-in-out",
+                                        }, children: [_jsxDEV("div", { __v0_e: { "start": 4967, "end": 5178, "name": "div", "jsxRoot": false }, className: "self-stretch justify-center flex flex-col text-[rgba(73,66,61,0.90)] text-lg font-medium leading-[26px] font-sans", __v0_r: [0, 4982, 5097], __v0_c: [[108, 32, "self-stretch justify-center flex flex-col text-[rgba(73,66,61,0.90)] text-lg font-medium leading-[26px] font-sans"]], children: testimonials[activeTestimonial].name }, void 0, false, { fileName: _jsxFileName, lineNumber: 108, columnNumber: 17 }, this), _jsxDEV("div", { __v0_e: { "start": 5195, "end": 5409, "name": "div", "jsxRoot": false }, className: "self-stretch justify-center flex flex-col text-[rgba(73,66,61,0.70)] text-lg font-medium leading-[26px] font-sans", __v0_r: [0, 5210, 5325], __v0_c: [[111, 32, "self-stretch justify-center flex flex-col text-[rgba(73,66,61,0.70)] text-lg font-medium leading-[26px] font-sans"]], children: testimonials[activeTestimonial].company }, void 0, false, { fileName: _jsxFileName, lineNumber: 111, columnNumber: 17 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 101, columnNumber: 15 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 91, columnNumber: 13 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 80, columnNumber: 11 }, this), _jsxDEV("div", { __v0_e: { "start": 5514, "end": 7272, "name": "div", "jsxRoot": false }, className: "pr-6 justify-start items-start gap-[14px] flex", __v0_r: [0, 5529, 5577], __v0_c: [[119, 26, "pr-6 justify-start items-start gap-[14px] flex"]], children: [_jsxDEV("button", { __v0_e: { "start": 5591, "end": 6428, "name": "button", "jsxRoot": false }, onClick: () => handleNavigationClick((activeTestimonial - 1 + testimonials.length) % testimonials.length), className: "w-9 h-9 shadow-[0px_1px_2px_rgba(0,0,0,0.08)] overflow-hidden rounded-full border border-[rgba(0,0,0,0.15)] justify-center items-center gap-2 flex hover:bg-gray-50 transition-colors", __v0_r: [0, 5744, 5927], __v0_c: [[122, 25, "w-9 h-9 shadow-[0px_1px_2px_rgba(0,0,0,0.08)] overflow-hidden rounded-full border border-[rgba(0,0,0,0.15)] justify-center items-center gap-2 flex hover:bg-gray-50 transition-colors"]], children: _jsxDEV("div", { __v0_e: { "start": 5956, "end": 6406, "name": "div", "jsxRoot": false }, className: "w-6 h-6 relative overflow-hidden", __v0_r: [0, 5971, 6005], __v0_c: [[124, 30, "w-6 h-6 relative overflow-hidden"]], children: _jsxDEV("svg", { __v0_e: { "start": 6023, "end": 6385, "name": "svg", "jsxRoot": false }, __v0_m: "1", __v0_c: [[125, 21, ""]], width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: _jsxDEV("path", { __v0_e: { "start": 6137, "end": 6362, "name": "path", "jsxRoot": false }, __v0_m: "1", __v0_c: [[126, 24, ""]], d: "M15 18L9 12L15 6", stroke: "#46413E", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, { fileName: _jsxFileName, lineNumber: 126, columnNumber: 19 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 125, columnNumber: 17 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 124, columnNumber: 15 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 120, columnNumber: 13 }, this), _jsxDEV("button", { __v0_e: { "start": 6441, "end": 7255, "name": "button", "jsxRoot": false }, onClick: () => handleNavigationClick((activeTestimonial + 1) % testimonials.length), className: "w-9 h-9 shadow-[0px_1px_2px_rgba(0,0,0,0.08)] overflow-hidden rounded-full border border-[rgba(0,0,0,0.15)] justify-center items-center gap-2 flex hover:bg-gray-50 transition-colors", __v0_r: [0, 6572, 6755], __v0_c: [[138, 25, "w-9 h-9 shadow-[0px_1px_2px_rgba(0,0,0,0.08)] overflow-hidden rounded-full border border-[rgba(0,0,0,0.15)] justify-center items-center gap-2 flex hover:bg-gray-50 transition-colors"]], children: _jsxDEV("div", { __v0_e: { "start": 6784, "end": 7233, "name": "div", "jsxRoot": false }, className: "w-6 h-6 relative overflow-hidden", __v0_r: [0, 6799, 6833], __v0_c: [[140, 30, "w-6 h-6 relative overflow-hidden"]], children: _jsxDEV("svg", { __v0_e: { "start": 6851, "end": 7212, "name": "svg", "jsxRoot": false }, __v0_m: "1", __v0_c: [[141, 21, ""]], width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: _jsxDEV("path", { __v0_e: { "start": 6965, "end": 7189, "name": "path", "jsxRoot": false }, __v0_m: "1", __v0_c: [[142, 24, ""]], d: "M9 18L15 12L9 6", stroke: "#46413E", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, { fileName: _jsxFileName, lineNumber: 142, columnNumber: 19 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 141, columnNumber: 17 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 140, columnNumber: 15 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 136, columnNumber: 13 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 119, columnNumber: 11 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 79, columnNumber: 9 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 78, columnNumber: 7 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 73, columnNumber: 11 }, this));
+}
+_react_refresh_temp_2 = TestimonialsSection;
+__v0_$RefreshReg$(_react_refresh_temp_2, "TestimonialsSection");
+_react_refresh_temp_3(TestimonialsSection, "2s66sS3PqOmAaabz3TsEIqByQyY=");
+
+
+self.__v0_$RefreshReg$ = prevRefreshReg
+self.__v0_$RefreshSig$ = prevRefreshSig
+//# sourceURL=blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/6e32a4fb-ef0d-49fc-98b8-df818fe8f1db

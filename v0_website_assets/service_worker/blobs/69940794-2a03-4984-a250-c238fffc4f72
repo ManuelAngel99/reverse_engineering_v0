@@ -1,0 +1,222 @@
+var prevRefreshReg = self.__v0_$RefreshReg$
+var prevRefreshSig = self.__v0_$RefreshSig$
+self.__v0_$RefreshReg$ = (type, id) => {
+  id = "@v0/components/effortless-integration-updated" + ' ' + id
+  self.__v0_rscRefreshRegister(type, id)
+  self.__v0_refreshRuntime.register(type, id)
+}
+self.__v0_$RefreshSig$ = typeof __v0_refreshRuntime !== 'undefined' ? __v0_refreshRuntime.createSignatureFunctionForTransform : () => {}
+
+var _react_refresh_temp_1;
+import { jsxDEV as _jsxDEV } from /*"__v0__/jsx-dev-runtime"*/'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/2cb0ba76-9c5e-4553-9d94-814ead52c4d1';
+const _jsxFileName = "/@v0/components/effortless-integration-updated.tsx";
+/**
+ * Effortless Integration – Service integration constellation
+ * Three concentric rings with logos positioned on ring axes
+ */
+const EffortlessIntegration = ({ width = 482, height = 300, className = "" }) => {
+    const centerX = 250;
+    const centerY = 179;
+    const rings = [
+        { radius: 80, logos: 2 }, // Inner ring - 2 logos
+        { radius: 120, logos: 3 }, // Middle ring - 3 logos
+        { radius: 160, logos: 2 }, // Outer ring - 2 logos
+    ];
+    const getPositionOnRing = (ringRadius, angle) => ({
+        x: centerX + ringRadius * Math.cos(angle),
+        y: centerY + ringRadius * Math.sin(angle),
+    });
+    return (_jsxDEV("div", { __v0_e: { "start": 940, "end": 12118, "name": "div", "jsxRoot": true }, className: className, __v0_r: [1, 961, 972], style: {
+            width,
+            height,
+            position: "relative",
+            overflow: "hidden",
+            maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+        }, children: [_jsxDEV("div", { __v0_e: { "start": 1314, "end": 1672, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[42, 11, ""]], style: {
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: "linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, transparent 20%, transparent 80%, rgba(255,255,255,0.1) 100%)",
+                    pointerEvents: "none",
+                    zIndex: 10,
+                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 42, columnNumber: 7 }, this), _jsxDEV("div", { __v0_e: { "start": 1705, "end": 2030, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[57, 11, ""]], style: {
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: "320px",
+                    height: "320px",
+                    borderRadius: "50%",
+                    border: "1px solid rgba(55, 50, 47, 0.2)",
+                    opacity: 0.8,
+                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 57, columnNumber: 7 }, this), _jsxDEV("div", { __v0_e: { "start": 2063, "end": 2389, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[71, 11, ""]], style: {
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: "240px",
+                    height: "240px",
+                    borderRadius: "50%",
+                    border: "1px solid rgba(55, 50, 47, 0.25)",
+                    opacity: 0.7,
+                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 71, columnNumber: 7 }, this), _jsxDEV("div", { __v0_e: { "start": 2421, "end": 2746, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[85, 11, ""]], style: {
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: "160px",
+                    height: "160px",
+                    borderRadius: "50%",
+                    border: "1px solid rgba(55, 50, 47, 0.3)",
+                    opacity: 0.6,
+                } }, void 0, false, { fileName: _jsxFileName, lineNumber: 85, columnNumber: 7 }, this), _jsxDEV("div", { __v0_e: { "start": 2821, "end": 12107, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[100, 11, ""]], style: {
+                    width: "500px",
+                    height: "358px",
+                    left: "50%",
+                    top: "50%",
+                    transform: "translate(-50%, -50%)",
+                    position: "absolute",
+                }, children: [_jsxDEV("div", { __v0_e: { "start": 3074, "end": 3678, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[111, 13, ""]], style: {
+                            width: "72px",
+                            height: "72px",
+                            left: `${centerX - 36}px`,
+                            top: `${centerY - 36}px`,
+                            position: "absolute",
+                            background: "#37322f",
+                            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+                            borderRadius: "99px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            fontFamily: "'Inter', sans-serif",
+                            fontWeight: 700,
+                            fontSize: "32px",
+                            color: "#ffffff",
+                        }, __v0_i: "0:130:11:b", children: "b" }, void 0, false, { fileName: _jsxFileName, lineNumber: 111, columnNumber: 9 }, this), _jsxDEV("div", { __v0_e: { "start": 3725, "end": 4507, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[134, 13, ""]], style: {
+                            width: "32px",
+                            height: "32px",
+                            left: `${getPositionOnRing(80, Math.PI).x - 16}px`,
+                            top: `${getPositionOnRing(80, Math.PI).y - 16}px`,
+                            position: "absolute",
+                            background: "#000000",
+                            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }, children: _jsxDEV("img", { __v0_e: { "start": 4226, "end": 4492, "name": "img", "jsxRoot": false }, __v0_m: "1", __v0_c: [[149, 15, ""]], src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg", alt: "GitHub", style: {
+                                width: "18px",
+                                height: "18px",
+                                filter: "brightness(0) invert(1)",
+                            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 149, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 134, columnNumber: 9 }, this), _jsxDEV("div", { __v0_e: { "start": 4552, "end": 5271, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[161, 13, ""]], style: {
+                            width: "32px",
+                            height: "32px",
+                            left: `${getPositionOnRing(80, 0).x - 16}px`,
+                            top: `${getPositionOnRing(80, 0).y - 16}px`,
+                            position: "absolute",
+                            background: "#ffffff",
+                            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }, children: _jsxDEV("img", { __v0_e: { "start": 5041, "end": 5256, "name": "img", "jsxRoot": false }, __v0_m: "1", __v0_c: [[176, 15, ""]], src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/slack.svg", alt: "Slack", style: {
+                                width: "18px",
+                                height: "18px",
+                            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 176, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 161, columnNumber: 9 }, this), _jsxDEV("div", { __v0_e: { "start": 5322, "end": 6065, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[187, 13, ""]], style: {
+                            width: "32px",
+                            height: "32px",
+                            left: `${getPositionOnRing(120, -Math.PI / 4).x - 16}px`,
+                            top: `${getPositionOnRing(120, -Math.PI / 4).y - 16}px`,
+                            position: "absolute",
+                            background: "#EEEFE8",
+                            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }, children: _jsxDEV("img", { __v0_e: { "start": 5835, "end": 6050, "name": "img", "jsxRoot": false }, __v0_m: "1", __v0_c: [[202, 15, ""]], src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/figma.svg", alt: "Figma", style: {
+                                width: "16px",
+                                height: "16px",
+                            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 202, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 187, columnNumber: 9 }, this), _jsxDEV("div", { __v0_e: { "start": 6120, "end": 6926, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[213, 13, ""]], style: {
+                            width: "32px",
+                            height: "32px",
+                            left: `${getPositionOnRing(120, (3 * Math.PI) / 4).x - 16}px`,
+                            top: `${getPositionOnRing(120, (3 * Math.PI) / 4).y - 16}px`,
+                            position: "absolute",
+                            background: "#5865F2",
+                            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }, children: _jsxDEV("img", { __v0_e: { "start": 6643, "end": 6911, "name": "img", "jsxRoot": false }, __v0_m: "1", __v0_c: [[228, 15, ""]], src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg", alt: "Discord", style: {
+                                width: "18px",
+                                height: "18px",
+                                filter: "brightness(0) invert(1)",
+                            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 228, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 213, columnNumber: 9 }, this), _jsxDEV("div", { __v0_e: { "start": 6989, "end": 7744, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[240, 13, ""]], style: {
+                            width: "32px",
+                            height: "32px",
+                            left: `${getPositionOnRing(120, (5 * Math.PI) / 4).x - 16}px`,
+                            top: `${getPositionOnRing(120, (5 * Math.PI) / 4).y - 16}px`,
+                            position: "absolute",
+                            background: "#ffffff",
+                            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }, children: _jsxDEV("img", { __v0_e: { "start": 7512, "end": 7729, "name": "img", "jsxRoot": false }, __v0_m: "1", __v0_c: [[255, 15, ""]], src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/notion.svg", alt: "Notion", style: {
+                                width: "18px",
+                                height: "18px",
+                            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 255, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 240, columnNumber: 9 }, this), _jsxDEV("div", { __v0_e: { "start": 7791, "end": 8575, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[266, 13, ""]], style: {
+                            width: "32px",
+                            height: "32px",
+                            left: `${getPositionOnRing(160, Math.PI).x - 16}px`,
+                            top: `${getPositionOnRing(160, Math.PI).y - 16}px`,
+                            position: "absolute",
+                            background: "#635BFF",
+                            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }, children: _jsxDEV("img", { __v0_e: { "start": 8294, "end": 8560, "name": "img", "jsxRoot": false }, __v0_m: "1", __v0_c: [[281, 15, ""]], src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/stripe.svg", alt: "Stripe", style: {
+                                width: "18px",
+                                height: "18px",
+                                filter: "brightness(0) invert(1)",
+                            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 281, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 266, columnNumber: 9 }, this), _jsxDEV("div", { __v0_e: { "start": 8621, "end": 9393, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[293, 13, ""]], style: {
+                            width: "32px",
+                            height: "32px",
+                            left: `${getPositionOnRing(160, 0).x - 16}px`,
+                            top: `${getPositionOnRing(160, 0).y - 16}px`,
+                            position: "absolute",
+                            background: "#000000",
+                            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }, children: _jsxDEV("img", { __v0_e: { "start": 9112, "end": 9378, "name": "img", "jsxRoot": false }, __v0_m: "1", __v0_c: [[308, 15, ""]], src: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/framer.svg", alt: "Framer", style: {
+                                width: "16px",
+                                height: "16px",
+                                filter: "brightness(0) invert(1)",
+                            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 308, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 293, columnNumber: 9 }, this), _jsxDEV("svg", { __v0_e: { "start": 9403, "end": 12094, "name": "svg", "jsxRoot": false }, __v0_m: "1", __v0_c: [[319, 13, ""]], style: {
+                            position: "absolute",
+                            inset: 0,
+                            width: "100%",
+                            height: "100%",
+                            pointerEvents: "none",
+                        }, children: [_jsxDEV("defs", { __v0_e: { "start": 9606, "end": 9960, "name": "defs", "jsxRoot": false }, __v0_m: "1", __v0_c: [[328, 16, ""]], children: _jsxDEV("linearGradient", { __v0_e: { "start": 9625, "end": 9942, "name": "linearGradient", "jsxRoot": false }, __v0_m: "1", __v0_c: [[329, 28, ""]], id: "connectionGradient", x1: "0%", y1: "0%", x2: "100%", y2: "100%", children: [_jsxDEV("stop", { __v0_e: { "start": 9716, "end": 9770, "name": "stop", "jsxRoot": false }, __v0_m: "1", __v0_c: [[330, 20, ""]], offset: "0%", stopColor: "rgba(55, 50, 47, 0.1)" }, void 0, false, { fileName: _jsxFileName, lineNumber: 330, columnNumber: 15 }, this), _jsxDEV("stop", { __v0_e: { "start": 9785, "end": 9841, "name": "stop", "jsxRoot": false }, __v0_m: "1", __v0_c: [[331, 20, ""]], offset: "50%", stopColor: "rgba(55, 50, 47, 0.05)" }, void 0, false, { fileName: _jsxFileName, lineNumber: 331, columnNumber: 15 }, this), _jsxDEV("stop", { __v0_e: { "start": 9856, "end": 9912, "name": "stop", "jsxRoot": false }, __v0_m: "1", __v0_c: [[332, 20, ""]], offset: "100%", stopColor: "rgba(55, 50, 47, 0.1)" }, void 0, false, { fileName: _jsxFileName, lineNumber: 332, columnNumber: 15 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 329, columnNumber: 13 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 328, columnNumber: 11 }, this), _jsxDEV("line", { __v0_e: { "start": 10013, "end": 10269, "name": "line", "jsxRoot": false }, __v0_m: "1", __v0_c: [[337, 16, ""]], x1: centerX, y1: centerY, x2: getPositionOnRing(80, 0).x, y2: getPositionOnRing(80, 0).y, stroke: "url(#connectionGradient)", strokeWidth: "1", opacity: "0.2" }, void 0, false, { fileName: _jsxFileName, lineNumber: 337, columnNumber: 11 }, this), _jsxDEV("line", { __v0_e: { "start": 10280, "end": 10548, "name": "line", "jsxRoot": false }, __v0_m: "1", __v0_c: [[346, 16, ""]], x1: centerX, y1: centerY, x2: getPositionOnRing(80, Math.PI).x, y2: getPositionOnRing(80, Math.PI).y, stroke: "url(#connectionGradient)", strokeWidth: "1", opacity: "0.2" }, void 0, false, { fileName: _jsxFileName, lineNumber: 346, columnNumber: 11 }, this), _jsxDEV("line", { __v0_e: { "start": 10602, "end": 10883, "name": "line", "jsxRoot": false }, __v0_m: "1", __v0_c: [[357, 16, ""]], x1: centerX, y1: centerY, x2: getPositionOnRing(120, -Math.PI / 4).x, y2: getPositionOnRing(120, -Math.PI / 4).y, stroke: "url(#connectionGradient)", strokeWidth: "1", opacity: "0.15" }, void 0, false, { fileName: _jsxFileName, lineNumber: 357, columnNumber: 11 }, this), _jsxDEV("line", { __v0_e: { "start": 10894, "end": 11185, "name": "line", "jsxRoot": false }, __v0_m: "1", __v0_c: [[366, 16, ""]], x1: centerX, y1: centerY, x2: getPositionOnRing(120, (3 * Math.PI) / 4).x, y2: getPositionOnRing(120, (3 * Math.PI) / 4).y, stroke: "url(#connectionGradient)", strokeWidth: "1", opacity: "0.15" }, void 0, false, { fileName: _jsxFileName, lineNumber: 366, columnNumber: 11 }, this), _jsxDEV("line", { __v0_e: { "start": 11196, "end": 11487, "name": "line", "jsxRoot": false }, __v0_m: "1", __v0_c: [[375, 16, ""]], x1: centerX, y1: centerY, x2: getPositionOnRing(120, (5 * Math.PI) / 4).x, y2: getPositionOnRing(120, (5 * Math.PI) / 4).y, stroke: "url(#connectionGradient)", strokeWidth: "1", opacity: "0.15" }, void 0, false, { fileName: _jsxFileName, lineNumber: 375, columnNumber: 11 }, this), _jsxDEV("line", { __v0_e: { "start": 11540, "end": 11798, "name": "line", "jsxRoot": false }, __v0_m: "1", __v0_c: [[386, 16, ""]], x1: centerX, y1: centerY, x2: getPositionOnRing(160, 0).x, y2: getPositionOnRing(160, 0).y, stroke: "url(#connectionGradient)", strokeWidth: "1", opacity: "0.1" }, void 0, false, { fileName: _jsxFileName, lineNumber: 386, columnNumber: 11 }, this), _jsxDEV("line", { __v0_e: { "start": 11809, "end": 12079, "name": "line", "jsxRoot": false }, __v0_m: "1", __v0_c: [[395, 16, ""]], x1: centerX, y1: centerY, x2: getPositionOnRing(160, Math.PI).x, y2: getPositionOnRing(160, Math.PI).y, stroke: "url(#connectionGradient)", strokeWidth: "1", opacity: "0.1" }, void 0, false, { fileName: _jsxFileName, lineNumber: 395, columnNumber: 11 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 319, columnNumber: 9 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 100, columnNumber: 7 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 30, columnNumber: 11 }, this));
+};
+_react_refresh_temp_1 = EffortlessIntegration;
+__v0_$RefreshReg$(_react_refresh_temp_1, "EffortlessIntegration");
+export default EffortlessIntegration;
+
+
+self.__v0_$RefreshReg$ = prevRefreshReg
+self.__v0_$RefreshSig$ = prevRefreshSig
+//# sourceURL=blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/69940794-2a03-4984-a250-c238fffc4f72

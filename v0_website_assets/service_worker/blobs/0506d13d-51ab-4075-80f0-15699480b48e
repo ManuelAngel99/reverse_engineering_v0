@@ -1,0 +1,66 @@
+var prevRefreshReg = self.__v0_$RefreshReg$
+var prevRefreshSig = self.__v0_$RefreshSig$
+self.__v0_$RefreshReg$ = (type, id) => {
+  id = "@v0/components/faq-section" + ' ' + id
+  self.__v0_rscRefreshRegister(type, id)
+  self.__v0_refreshRuntime.register(type, id)
+}
+self.__v0_$RefreshSig$ = typeof __v0_refreshRuntime !== 'undefined' ? __v0_refreshRuntime.createSignatureFunctionForTransform : () => {}
+
+"use client";
+var _react_refresh_temp_1, _react_refresh_temp_2;
+var _react_refresh_temp_3;
+_react_refresh_temp_3 = __v0_$RefreshSig$();
+import { jsxDEV as _jsxDEV } from /*"__v0__/jsx-dev-runtime"*/'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/2cb0ba76-9c5e-4553-9d94-814ead52c4d1';
+const _jsxFileName = "/@v0/components/faq-section.tsx";
+import { useState } from /*"react"*/'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/f6f18b43-2e7c-42b9-957f-a4b47ec4d56c';
+const faqData = [
+    {
+        question: "What is Brillance and who is it for?",
+        answer: "Brillance is a comprehensive billing automation platform designed for businesses that need custom contract management. It's perfect for SaaS companies, service providers, and enterprises looking to streamline their billing processes.",
+    },
+    {
+        question: "How does the custom contract billing work?",
+        answer: "Our platform automatically processes your custom contracts, calculates billing amounts based on your specific terms, and generates invoices. You can set up complex pricing structures, usage-based billing, and custom billing cycles.",
+    },
+    {
+        question: "Can I integrate Brillance with my existing tools?",
+        answer: "Yes! Brillance integrates seamlessly with popular CRM systems, accounting software, and payment processors. We support APIs and webhooks for custom integrations with your existing workflow.",
+    },
+    {
+        question: "What kind of support do you provide?",
+        answer: "We offer 24/7 customer support, dedicated account managers for enterprise clients, comprehensive documentation, and onboarding assistance to help you get started quickly.",
+    },
+    {
+        question: "Is my data secure with Brillance?",
+        answer: "Absolutely. We use enterprise-grade security measures including end-to-end encryption, SOC 2 compliance, and regular security audits. Your data is stored in secure, redundant data centers.",
+    },
+    {
+        question: "How do I get started with Brillance?",
+        answer: "Getting started is simple! Sign up for our free trial, connect your existing systems, and our onboarding team will help you set up your first custom billing workflow within 24 hours.",
+    },
+];
+function ChevronDownIcon({ className }) {
+    return (_jsxDEV("svg", { __v0_e: { "start": 1939, "end": 2223, "name": "svg", "jsxRoot": true }, className: className, __v0_r: [1, 1960, 1971], width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: _jsxDEV("path", { __v0_e: { "start": 2104, "end": 2212, "name": "path", "jsxRoot": false }, __v0_m: "1", __v0_c: [[53, 12, ""]], d: "m6 9 6 6 6-6", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, { fileName: _jsxFileName, lineNumber: 53, columnNumber: 7 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 44, columnNumber: 11 }, this));
+}
+_react_refresh_temp_1 = ChevronDownIcon;
+__v0_$RefreshReg$(_react_refresh_temp_1, "ChevronDownIcon");
+export default function FAQSection() {
+    _react_refresh_temp_3();
+    const [openItems, setOpenItems] = useState([]);
+    const toggleItem = (index) => {
+        setOpenItems((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]));
+    };
+    return (_jsxDEV("div", { __v0_e: { "start": 2496, "end": 5115, "name": "div", "jsxRoot": true }, className: "w-full flex justify-center items-start", __v0_r: [0, 2511, 2551], __v0_c: [[66, 20, "w-full flex justify-center items-start"]], children: _jsxDEV("div", { __v0_e: { "start": 2559, "end": 5104, "name": "div", "jsxRoot": false }, className: "flex-1 px-4 md:px-12 py-16 md:py-20 flex flex-col lg:flex-row justify-start items-start gap-6 lg:gap-12", __v0_r: [0, 2574, 2679], __v0_c: [[67, 22, "flex-1 px-4 md:px-12 py-16 md:py-20 flex flex-col lg:flex-row justify-start items-start gap-6 lg:gap-12"]], children: [_jsxDEV("div", { __v0_e: { "start": 2726, "end": 3292, "name": "div", "jsxRoot": false }, className: "w-full lg:flex-1 flex flex-col justify-center items-start gap-4 lg:py-5", __v0_r: [0, 2741, 2814], __v0_c: [[69, 24, "w-full lg:flex-1 flex flex-col justify-center items-start gap-4 lg:py-5"]], children: [_jsxDEV("div", { __v0_e: { "start": 2826, "end": 3030, "name": "div", "jsxRoot": false }, className: "w-full flex flex-col justify-center text-[#49423D] font-semibold leading-tight md:leading-[44px] font-sans text-4xl tracking-tight", __v0_r: [0, 2841, 2973], __v0_c: [[70, 26, "w-full flex flex-col justify-center text-[#49423D] font-semibold leading-tight md:leading-[44px] font-sans text-4xl tracking-tight"]], __v0_i: "0:71:13:Frequently Asked Questions", children: "Frequently Asked Questions" }, void 0, false, { fileName: _jsxFileName, lineNumber: 70, columnNumber: 11 }, this), _jsxDEV("div", { __v0_e: { "start": 3041, "end": 3277, "name": "div", "jsxRoot": false }, className: "w-full text-[#605A57] text-base font-normal leading-7 font-sans", __v0_r: [0, 3056, 3121], __v0_c: [[73, 26, "w-full text-[#605A57] text-base font-normal leading-7 font-sans"]], children: ["Explore your data, build your dashboard,", _jsxDEV("br", { __v0_e: { "start": 3188, "end": 3222, "name": "br", "jsxRoot": false }, className: "hidden md:block", __v0_r: [0, 3202, 3219], __v0_c: [[75, 27, "hidden md:block"]] }, void 0, false, { fileName: _jsxFileName, lineNumber: 75, columnNumber: 13 }, this), "bring your team together."] }, void 0, true, { fileName: _jsxFileName, lineNumber: 73, columnNumber: 11 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 69, columnNumber: 9 }, this), _jsxDEV("div", { __v0_e: { "start": 3343, "end": 5091, "name": "div", "jsxRoot": false }, className: "w-full lg:flex-1 flex flex-col justify-center items-center", __v0_r: [0, 3358, 3418], __v0_c: [[81, 24, "w-full lg:flex-1 flex flex-col justify-center items-center"]], children: _jsxDEV("div", { __v0_e: { "start": 3430, "end": 5076, "name": "div", "jsxRoot": false }, className: "w-full flex flex-col", __v0_r: [0, 3445, 3467], __v0_c: [[82, 26, "w-full flex flex-col"]], children: faqData.map((item, index) => {
+                            const isOpen = openItems.includes(index);
+                            return (_jsxDEV("div", { __v0_e: { "start": 3608, "end": 5027, "name": "div", "jsxRoot": true }, className: "w-full border-b border-[rgba(73,66,61,0.16)] overflow-hidden", __v0_r: [0, 3635, 3697], __v0_c: [[87, 44, "w-full border-b border-[rgba(73,66,61,0.16)] overflow-hidden"]], children: [_jsxDEV("button", { __v0_e: { "start": 3717, "end": 4573, "name": "button", "jsxRoot": false }, onClick: () => toggleItem(index), className: "w-full px-5 py-[18px] flex justify-between items-center gap-5 text-left hover:bg-[rgba(73,66,61,0.02)] transition-colors duration-200", __v0_r: [0, 3809, 3944], __v0_c: [[90, 31, "w-full px-5 py-[18px] flex justify-between items-center gap-5 text-left hover:bg-[rgba(73,66,61,0.02)] transition-colors duration-200"]], "aria-expanded": isOpen, children: [_jsxDEV("div", { __v0_e: { "start": 4028, "end": 4174, "name": "div", "jsxRoot": false }, className: "flex-1 text-[#49423D] text-base font-medium leading-6 font-sans", __v0_r: [0, 4043, 4108], __v0_c: [[93, 36, "flex-1 text-[#49423D] text-base font-medium leading-6 font-sans"]], children: item.question }, void 0, false, { fileName: _jsxFileName, lineNumber: 93, columnNumber: 21 }, this), _jsxDEV("div", { __v0_e: { "start": 4195, "end": 4545, "name": "div", "jsxRoot": false }, className: "flex justify-center items-center", __v0_r: [0, 4210, 4244], __v0_c: [[96, 36, "flex justify-center items-center"]], children: _jsxDEV(ChevronDownIcon, { __v0_e: { "start": 4268, "end": 4518, "name": "ChevronDownIcon", "jsxRoot": false }, className: `w-6 h-6 text-[rgba(73,66,61,0.60)] transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"}`, __v0_r: [1, 4319, 4493], __v0_c: [[98, 36, "w-6 h-6 text-[rgba(73,66,61,0.60)] transition-transform duration-300 ease-in-out "]] }, void 0, false, { fileName: _jsxFileName, lineNumber: 97, columnNumber: 23 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 96, columnNumber: 21 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 88, columnNumber: 19 }, this), _jsxDEV("div", { __v0_e: { "start": 4593, "end": 5004, "name": "div", "jsxRoot": false }, className: `overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`, __v0_r: [1, 4628, 4788], __v0_c: [[106, 32, "overflow-hidden transition-all duration-300 ease-in-out "]], children: _jsxDEV("div", { __v0_e: { "start": 4829, "end": 4979, "name": "div", "jsxRoot": false }, className: "px-5 pb-[18px] text-[#605A57] text-sm font-normal leading-6 font-sans", __v0_r: [0, 4844, 4915], __v0_c: [[110, 36, "px-5 pb-[18px] text-[#605A57] text-sm font-normal leading-6 font-sans"]], children: item.answer }, void 0, false, { fileName: _jsxFileName, lineNumber: 110, columnNumber: 21 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 105, columnNumber: 19 }, this)] }, index, true, { fileName: _jsxFileName, lineNumber: 86, columnNumber: 23 }, this));
+                        }) }, void 0, false, { fileName: _jsxFileName, lineNumber: 82, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 81, columnNumber: 9 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 67, columnNumber: 7 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 65, columnNumber: 11 }, this));
+}
+_react_refresh_temp_2 = FAQSection;
+__v0_$RefreshReg$(_react_refresh_temp_2, "FAQSection");
+_react_refresh_temp_3(FAQSection, "LWtMwAMGvj6zyLBkbSUCwnEauvU=");
+
+
+self.__v0_$RefreshReg$ = prevRefreshReg
+self.__v0_$RefreshSig$ = prevRefreshSig
+//# sourceURL=blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/0506d13d-51ab-4075-80f0-15699480b48e

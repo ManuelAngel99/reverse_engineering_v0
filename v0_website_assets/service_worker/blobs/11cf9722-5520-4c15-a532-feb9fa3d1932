@@ -1,0 +1,82 @@
+var prevRefreshReg = self.__v0_$RefreshReg$
+var prevRefreshSig = self.__v0_$RefreshSig$
+self.__v0_$RefreshReg$ = (type, id) => {
+  id = "@v0/components/documentation-section" + ' ' + id
+  self.__v0_rscRefreshRegister(type, id)
+  self.__v0_refreshRuntime.register(type, id)
+}
+self.__v0_$RefreshSig$ = typeof __v0_refreshRuntime !== 'undefined' ? __v0_refreshRuntime.createSignatureFunctionForTransform : () => {}
+
+"use client";
+var _react_refresh_temp_1, _react_refresh_temp_2;
+var _react_refresh_temp_3;
+_react_refresh_temp_3 = __v0_$RefreshSig$();
+import { jsxDEV as _jsxDEV } from /*"__v0__/jsx-dev-runtime"*/'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/2cb0ba76-9c5e-4553-9d94-814ead52c4d1';
+const _jsxFileName = "/@v0/components/documentation-section.tsx";
+import { useState, useEffect } from /*"react"*/'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/f6f18b43-2e7c-42b9-957f-a4b47ec4d56c';
+// Badge component for consistency
+function Badge({ icon, text }) {
+    return (_jsxDEV("div", { __v0_e: { "start": 214, "end": 692, "name": "div", "jsxRoot": true }, className: "px-[14px] py-[6px] bg-white shadow-[0px_0px_0px_4px_rgba(55,50,47,0.05)] overflow-hidden rounded-[90px] flex justify-start items-center gap-[8px] border border-[rgba(2,6,23,0.08)] shadow-xs", __v0_r: [0, 229, 420], __v0_c: [[9, 20, "px-[14px] py-[6px] bg-white shadow-[0px_0px_0px_4px_rgba(55,50,47,0.05)] overflow-hidden rounded-[90px] flex justify-start items-center gap-[8px] border border-[rgba(2,6,23,0.08)] shadow-xs"]], children: [_jsxDEV("div", { __v0_e: { "start": 428, "end": 533, "name": "div", "jsxRoot": false }, className: "w-[14px] h-[14px] relative overflow-hidden flex items-center justify-center", __v0_r: [0, 443, 520], __v0_c: [[10, 22, "w-[14px] h-[14px] relative overflow-hidden flex items-center justify-center"]], children: icon }, void 0, false, { fileName: _jsxFileName, lineNumber: 10, columnNumber: 7 }, this), _jsxDEV("div", { __v0_e: { "start": 540, "end": 681, "name": "div", "jsxRoot": false }, className: "text-center flex justify-center flex-col text-[#37322F] text-xs font-medium leading-3 font-sans", __v0_r: [0, 555, 652], __v0_c: [[11, 22, "text-center flex justify-center flex-col text-[#37322F] text-xs font-medium leading-3 font-sans"]], children: text }, void 0, false, { fileName: _jsxFileName, lineNumber: 11, columnNumber: 7 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 8, columnNumber: 11 }, this));
+}
+_react_refresh_temp_1 = Badge;
+__v0_$RefreshReg$(_react_refresh_temp_1, "Badge");
+export default function DocumentationSection() {
+    _react_refresh_temp_3();
+    const [activeCard, setActiveCard] = useState(0);
+    const [animationKey, setAnimationKey] = useState(0);
+    const cards = [
+        {
+            title: "Plan your schedules",
+            description: "Explore your data, build your dashboard,\nbring your team together.",
+            image: "/modern-dashboard-interface-with-data-visualization.jpg",
+        },
+        {
+            title: "Data to insights in minutes",
+            description: "Transform raw data into actionable insights\nwith powerful analytics tools.",
+            image: "/analytics-dashboard.png",
+        },
+        {
+            title: "Collaborate seamlessly",
+            description: "Work together in real-time with your team\nand share insights instantly.",
+            image: "/team-collaboration-interface-with-shared-workspace.jpg",
+        },
+    ];
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveCard((prev) => (prev + 1) % cards.length);
+            setAnimationKey((prev) => prev + 1);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [cards.length]);
+    const handleCardClick = (index) => {
+        setActiveCard(index);
+        setAnimationKey((prev) => prev + 1);
+    };
+    return (_jsxDEV("div", { __v0_e: { "start": 1872, "end": 6180, "name": "div", "jsxRoot": true }, className: "w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center", __v0_r: [0, 1887, 1975], __v0_c: [[55, 20, "w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center"]], children: [_jsxDEV("div", { __v0_e: { "start": 2012, "end": 3120, "name": "div", "jsxRoot": false }, className: "self-stretch px-6 md:px-24 py-12 md:py-16 border-b border-[rgba(55,50,47,0.12)] flex justify-center items-center gap-6", __v0_r: [0, 2027, 2147], __v0_c: [[57, 22, "self-stretch px-6 md:px-24 py-12 md:py-16 border-b border-[rgba(55,50,47,0.12)] flex justify-center items-center gap-6"]], children: _jsxDEV("div", { __v0_e: { "start": 2157, "end": 3107, "name": "div", "jsxRoot": false }, className: "w-full max-w-[586px] px-6 py-5 shadow-[0px_2px_4px_rgba(50,45,43,0.06)] overflow-hidden rounded-lg flex flex-col justify-start items-center gap-4 shadow-none", __v0_r: [0, 2172, 2331], __v0_c: [[58, 24, "w-full max-w-[586px] px-6 py-5 shadow-[0px_2px_4px_rgba(50,45,43,0.06)] overflow-hidden rounded-lg flex flex-col justify-start items-center gap-4 shadow-none"]], children: [_jsxDEV(Badge, { __v0_e: { "start": 2343, "end": 2575, "name": "Badge", "jsxRoot": false }, icon: _jsxDEV("div", { __v0_e: { "start": 2383, "end": 2511, "name": "div", "jsxRoot": false }, className: "w-[10.50px] h-[10.50px] outline outline-[1.17px] outline-[#37322F] outline-offset-[-0.58px] rounded-full", __v0_r: [0, 2398, 2504], __v0_c: [[61, 30, "w-[10.50px] h-[10.50px] outline outline-[1.17px] outline-[#37322F] outline-offset-[-0.58px] rounded-full"]] }, void 0, false, { fileName: _jsxFileName, lineNumber: 60, columnNumber: 19 }, this), text: "Platform Features" }, void 0, false, { fileName: _jsxFileName, lineNumber: 59, columnNumber: 11 }, this), _jsxDEV("div", { __v0_e: { "start": 2586, "end": 2829, "name": "div", "jsxRoot": false }, className: "self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight", __v0_r: [0, 2601, 2763], __v0_c: [[65, 26, "self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight"]], __v0_i: "0:66:13:Streamline your business operations", children: "Streamline your business operations" }, void 0, false, { fileName: _jsxFileName, lineNumber: 65, columnNumber: 11 }, this), _jsxDEV("div", { __v0_e: { "start": 2840, "end": 3092, "name": "div", "jsxRoot": false }, className: "self-stretch text-center text-[#605A57] text-base font-normal leading-7 font-sans", __v0_r: [0, 2855, 2938], __v0_c: [[68, 26, "self-stretch text-center text-[#605A57] text-base font-normal leading-7 font-sans"]], children: ["Manage schedules, analyze data, and collaborate with your team", _jsxDEV("br", { __v0_e: { "start": 3027, "end": 3033, "name": "br", "jsxRoot": false }, __v0_m: "1", __v0_c: [[70, 16, ""]] }, void 0, false, { fileName: _jsxFileName, lineNumber: 70, columnNumber: 13 }, this), "all in one powerful platform."] }, void 0, true, { fileName: _jsxFileName, lineNumber: 68, columnNumber: 11 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 58, columnNumber: 9 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 57, columnNumber: 7 }, this), _jsxDEV("div", { __v0_e: { "start": 3158, "end": 5951, "name": "div", "jsxRoot": false }, className: "self-stretch px-4 md:px-9 overflow-hidden flex justify-start items-center", __v0_r: [0, 3173, 3248], __v0_c: [[77, 22, "self-stretch px-4 md:px-9 overflow-hidden flex justify-start items-center"]], children: _jsxDEV("div", { __v0_e: { "start": 3258, "end": 5938, "name": "div", "jsxRoot": false }, className: "flex-1 py-8 md:py-11 flex flex-col md:flex-row justify-start items-center gap-6 md:gap-12", __v0_r: [0, 3273, 3364], __v0_c: [[78, 24, "flex-1 py-8 md:py-11 flex flex-col md:flex-row justify-start items-center gap-6 md:gap-12"]], children: [_jsxDEV("div", { __v0_e: { "start": 3422, "end": 5086, "name": "div", "jsxRoot": false }, className: "w-full md:w-auto md:max-w-[400px] flex flex-col justify-center items-center gap-4 order-2 md:order-1", __v0_r: [0, 3437, 3539], __v0_c: [[80, 26, "w-full md:w-auto md:max-w-[400px] flex flex-col justify-center items-center gap-4 order-2 md:order-1"]], children: cards.map((card, index) => {
+                                const isActive = index === activeCard;
+                                return (_jsxDEV("div", { __v0_e: { "start": 3675, "end": 5037, "name": "div", "jsxRoot": true }, onClick: () => handleCardClick(index), className: `w-full overflow-hidden flex flex-col justify-start items-start transition-all duration-300 cursor-pointer ${isActive
+                                        ? "bg-white shadow-[0px_0px_0px_0.75px_#E0DEDB_inset]"
+                                        : "border border-[rgba(2,6,23,0.08)]"}`, __v0_r: [1, 3795, 4093], __v0_c: [[88, 30, "w-full overflow-hidden flex flex-col justify-start items-start transition-all duration-300 cursor-pointer "]], children: [_jsxDEV("div", { __v0_e: { "start": 4130, "end": 4514, "name": "div", "jsxRoot": false }, className: `w-full h-0.5 bg-[rgba(50,45,43,0.08)] overflow-hidden ${isActive ? "opacity-100" : "opacity-0"}`, __v0_r: [1, 4165, 4264], __v0_c: [[95, 32, "w-full h-0.5 bg-[rgba(50,45,43,0.08)] overflow-hidden "]], children: _jsxDEV("div", { __v0_e: { "start": 4305, "end": 4489, "name": "div", "jsxRoot": false }, className: "h-0.5 bg-[#322D2B] animate-[progressBar_5s_linear_forwards] will-change-transform", __v0_r: [0, 4383, 4466], __v0_c: [[99, 33, "h-0.5 bg-[#322D2B] animate-[progressBar_5s_linear_forwards] will-change-transform"]] }, animationKey, false, { fileName: _jsxFileName, lineNumber: 97, columnNumber: 21 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 94, columnNumber: 19 }, this), _jsxDEV("div", { __v0_e: { "start": 4533, "end": 5014, "name": "div", "jsxRoot": false }, className: "px-6 py-5 w-full flex flex-col gap-2", __v0_r: [0, 4548, 4586], __v0_c: [[102, 34, "px-6 py-5 w-full flex flex-col gap-2"]], children: [_jsxDEV("div", { __v0_e: { "start": 4608, "end": 4786, "name": "div", "jsxRoot": false }, className: "self-stretch flex justify-center flex-col text-[#49423D] text-sm font-semibold leading-6 font-sans", __v0_r: [0, 4623, 4723], __v0_c: [[103, 36, "self-stretch flex justify-center flex-col text-[#49423D] text-sm font-semibold leading-6 font-sans"]], children: card.title }, void 0, false, { fileName: _jsxFileName, lineNumber: 103, columnNumber: 21 }, this), _jsxDEV("div", { __v0_e: { "start": 4807, "end": 4989, "name": "div", "jsxRoot": false }, className: "self-stretch text-[#605A57] text-[13px] font-normal leading-[22px] font-sans whitespace-pre-line", __v0_r: [0, 4822, 4920], __v0_c: [[106, 36, "self-stretch text-[#605A57] text-[13px] font-normal leading-[22px] font-sans whitespace-pre-line"]], children: card.description }, void 0, false, { fileName: _jsxFileName, lineNumber: 106, columnNumber: 21 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 102, columnNumber: 19 }, this)] }, index, true, { fileName: _jsxFileName, lineNumber: 84, columnNumber: 23 }, this));
+                            }) }, void 0, false, { fileName: _jsxFileName, lineNumber: 80, columnNumber: 11 }, this), _jsxDEV("div", { __v0_e: { "start": 5137, "end": 5923, "name": "div", "jsxRoot": false }, className: "w-full md:w-auto rounded-lg flex flex-col justify-center items-center gap-2 order-1 md:order-2 md:px-0 px-[00]", __v0_r: [0, 5152, 5264], __v0_c: [[116, 26, "w-full md:w-auto rounded-lg flex flex-col justify-center items-center gap-2 order-1 md:order-2 md:px-0 px-[00]"]], children: _jsxDEV("div", { __v0_e: { "start": 5278, "end": 5906, "name": "div", "jsxRoot": false }, className: "w-full md:w-[580px] h-[250px] md:h-[420px] bg-white shadow-[0px_0px_0px_0.9056603908538818px_rgba(0,0,0,0.08)] overflow-hidden rounded-lg flex flex-col justify-start items-start", __v0_r: [0, 5293, 5472], __v0_c: [[117, 28, "w-full md:w-[580px] h-[250px] md:h-[420px] bg-white shadow-[0px_0px_0px_0.9056603908538818px_rgba(0,0,0,0.08)] overflow-hidden rounded-lg flex flex-col justify-start items-start"]], children: _jsxDEV("div", { __v0_e: { "start": 5488, "end": 5887, "name": "div", "jsxRoot": false }, className: `w-full h-full transition-all duration-300 ${activeCard === 0
+                                        ? "bg-gradient-to-br from-blue-50 to-blue-100"
+                                        : activeCard === 1
+                                            ? "bg-gradient-to-br from-purple-50 to-purple-100"
+                                            : "bg-gradient-to-br from-green-50 to-green-100"}`, __v0_r: [1, 5519, 5870], __v0_c: [[119, 28, "w-full h-full transition-all duration-300 "]] }, void 0, false, { fileName: _jsxFileName, lineNumber: 118, columnNumber: 15 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 117, columnNumber: 13 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 116, columnNumber: 11 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 78, columnNumber: 9 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 77, columnNumber: 7 }, this), _jsxDEV("style", { __v0_e: { "start": 5959, "end": 6169, "name": "style", "jsxRoot": false }, __v0_m: "1", __v0_c: [[132, 13, ""]], jsx: true, __v0_i: "2:132:20:`\n        @keyframes progressBar {\n          0% {\n            transform: translateX(-100%);\n          }\n          100% {\n            transform: translateX(0%);\n          }\n        }\n      `", children: `
+        @keyframes progressBar {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+      ` }, void 0, false, { fileName: _jsxFileName, lineNumber: 132, columnNumber: 7 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 54, columnNumber: 11 }, this));
+}
+_react_refresh_temp_2 = DocumentationSection;
+__v0_$RefreshReg$(_react_refresh_temp_2, "DocumentationSection");
+_react_refresh_temp_3(DocumentationSection, "O+J4OSzdWdriGLTnAb4rHwYo+38=");
+
+
+self.__v0_$RefreshReg$ = prevRefreshReg
+self.__v0_$RefreshSig$ = prevRefreshSig
+//# sourceURL=blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/11cf9722-5520-4c15-a532-feb9fa3d1932

@@ -1,0 +1,328 @@
+var prevRefreshReg = self.__v0_$RefreshReg$
+var prevRefreshSig = self.__v0_$RefreshSig$
+self.__v0_$RefreshReg$ = (type, id) => {
+  id = "@v0/components/numbers-that-speak" + ' ' + id
+  self.__v0_rscRefreshRegister(type, id)
+  self.__v0_refreshRuntime.register(type, id)
+}
+self.__v0_$RefreshSig$ = typeof __v0_refreshRuntime !== 'undefined' ? __v0_refreshRuntime.createSignatureFunctionForTransform : () => {}
+
+var _react_refresh_temp_1;
+import { jsxDEV as _jsxDEV } from /*"__v0__/jsx-dev-runtime"*/'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/2cb0ba76-9c5e-4553-9d94-814ead52c4d1';
+const _jsxFileName = "/@v0/components/numbers-that-speak.tsx";
+/**
+ * Numbers that speak – Financial dashboard with layered charts
+ * Generated from Figma via MCP with exact measurements (482×300px)
+ * Single-file component following the v0-ready pattern used in this repo.
+ */
+const NumbersThatSpeak = ({ width = 482, height = 300, className = "", theme = "dark", }) => {
+    // Design tokens (derived from Figma local variables)
+    const themeVars = theme === "light"
+        ? {
+            "--nts-surface": "#ffffff",
+            "--nts-text-primary": "#2f3037",
+            "--nts-text-secondary": "rgba(47,48,55,0.8)",
+            "--nts-text-muted": "rgba(55,50,47,0.7)",
+            "--nts-border": "rgba(47,48,55,0.12)",
+            "--nts-shadow": "rgba(47,48,55,0.06)",
+        }
+        : {
+            "--nts-surface": "#ffffff",
+            "--nts-text-primary": "#2f3037",
+            "--nts-text-secondary": "rgba(47,48,55,0.8)",
+            "--nts-text-muted": "rgba(55,50,47,0.7)",
+            "--nts-border": "rgba(47,48,55,0.12)",
+            "--nts-shadow": "rgba(47,48,55,0.06)",
+        };
+    // Figma-exported assets
+    const imgSchedule = "/placeholder.svg?height=271&width=431";
+    const imgYAxisLine = "/placeholder.svg?height=17&width=295";
+    const imgYAxisLine1 = "/placeholder.svg?height=13&width=295";
+    const imgYAxisLine2 = "/placeholder.svg?height=13&width=295";
+    return (_jsxDEV("div", { __v0_e: { "start": 1698, "end": 22562, "name": "div", "jsxRoot": true }, className: className, __v0_r: [1, 1719, 1730], style: {
+            width,
+            height,
+            position: "relative",
+            background: "transparent",
+            ...themeVars,
+        }, role: "img", "aria-label": "Financial dashboard showing invoiced revenue charts", "data-name": "Numbers that speak", "data-node-id": "454:5856", children: _jsxDEV("div", { __v0_e: { "start": 2155, "end": 22551, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[69, 11, ""]], style: {
+                position: "absolute",
+                left: "50%",
+                transform: "translateX(-50%)",
+                top: "calc(50% + 23.703px)",
+            }, children: [_jsxDEV("div", { __v0_e: { "start": 2389, "end": 3701, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[78, 13, ""]], style: {
+                        position: "absolute",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        top: "calc(50% - 19.427px)",
+                        width: "270px",
+                        height: "199.565px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }, children: _jsxDEV("div", { __v0_e: { "start": 2756, "end": 3686, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[91, 15, ""]], children: _jsxDEV("div", { __v0_e: { "start": 2774, "end": 3669, "name": "div", "jsxRoot": false }, className: "border border-[rgba(0,0,0,0.08)]", __v0_r: [0, 2803, 2837], __v0_c: [[93, 25, "border border-[rgba(0,0,0,0.08)]"]], style: {
+                                width: "270px",
+                                height: "199.565px",
+                                background: "var(--nts-surface)",
+                                borderRadius: "4.696px",
+                                boxShadow: "0px 0px 0px 0.587px rgba(47,48,55,0.12), 0px 1.174px 2.348px -0.587px rgba(47,48,55,0.06), 0px 1.761px 3.522px -0.88px rgba(47,48,55,0.06)",
+                                maskImage: `url('${imgSchedule}')`,
+                                maskPosition: "-81.766px -1.312px",
+                                maskSize: "430.746px 270.521px",
+                                maskRepeat: "no-repeat",
+                                overflow: "hidden",
+                                position: "relative",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "flex-start",
+                                alignItems: "flex-start",
+                            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 92, columnNumber: 13 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 91, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 78, columnNumber: 9 }, this), _jsxDEV("div", { __v0_e: { "start": 3764, "end": 5077, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[117, 13, ""]], style: {
+                        position: "absolute",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        top: "calc(50% + 12.573px)",
+                        width: "330px",
+                        height: "243.913px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }, children: _jsxDEV("div", { __v0_e: { "start": 4131, "end": 5062, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[130, 15, ""]], children: _jsxDEV("div", { __v0_e: { "start": 4149, "end": 5045, "name": "div", "jsxRoot": false }, className: "border border-[rgba(0,0,0,0.08)]", __v0_r: [0, 4178, 4212], __v0_c: [[132, 25, "border border-[rgba(0,0,0,0.08)]"]], style: {
+                                width: "330px",
+                                height: "243.913px",
+                                background: "var(--nts-surface)",
+                                borderRadius: "5.739px",
+                                boxShadow: "0px 0px 0px 0.717px rgba(47,48,55,0.12), 0px 1.435px 2.87px -0.717px rgba(47,48,55,0.06), 0px 2.152px 4.304px -1.076px rgba(47,48,55,0.06)",
+                                maskImage: `url('${imgSchedule}')`,
+                                maskPosition: "-51.766px -11.138px",
+                                maskSize: "430.746px 270.521px",
+                                maskRepeat: "no-repeat",
+                                overflow: "hidden",
+                                position: "relative",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "flex-start",
+                                alignItems: "flex-start",
+                            } }, void 0, false, { fileName: _jsxFileName, lineNumber: 131, columnNumber: 13 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 130, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 117, columnNumber: 9 }, this), _jsxDEV("div", { __v0_e: { "start": 5156, "end": 22538, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[156, 13, ""]], style: {
+                        position: "absolute",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        top: "calc(50% + 33.573px)",
+                        width: "360px",
+                        height: "266.087px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }, children: _jsxDEV("div", { __v0_e: { "start": 5523, "end": 22523, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[169, 15, ""]], children: _jsxDEV("div", { __v0_e: { "start": 5541, "end": 22506, "name": "div", "jsxRoot": false }, className: "border border-[rgba(0,0,0,0.08)]", __v0_r: [0, 5570, 5604], __v0_c: [[171, 25, "border border-[rgba(0,0,0,0.08)]"]], style: {
+                                width: "360px",
+                                height: "266.087px",
+                                background: "var(--nts-surface)",
+                                borderRadius: "6.261px",
+                                boxShadow: "0px 0px 0px 0.783px rgba(47,48,55,0.12), 0px 1.565px 3.13px -0.783px rgba(47,48,55,0.06), 0px 2.348px 4.696px -1.174px rgba(47,48,55,0.06)",
+                                maskImage: `url('${imgSchedule}')`,
+                                maskPosition: "-36.766px -21.051px",
+                                maskSize: "430.746px 270.521px",
+                                maskRepeat: "no-repeat",
+                                overflow: "hidden",
+                                position: "relative",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "flex-start",
+                                alignItems: "flex-start",
+                                padding: "18.783px",
+                                boxSizing: "border-box",
+                            }, children: _jsxDEV("div", { __v0_e: { "start": 6529, "end": 22487, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[193, 19, ""]], style: {
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: "37.565px",
+                                    width: "100%",
+                                    height: "100%",
+                                    flexGrow: 1,
+                                }, children: _jsxDEV("div", { __v0_e: { "start": 6821, "end": 22466, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[203, 21, ""]], style: {
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        gap: "18.783px",
+                                        width: "100%",
+                                        height: "100%",
+                                        flexGrow: 1,
+                                    }, children: _jsxDEV("div", { __v0_e: { "start": 7133, "end": 22443, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[213, 23, ""]], style: {
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            gap: "18.783px",
+                                            width: "100%",
+                                            height: "100%",
+                                            flexGrow: 1,
+                                        }, children: _jsxDEV("div", { __v0_e: { "start": 7465, "end": 22418, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[223, 25, ""]], style: {
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                justifyContent: "space-between",
+                                                width: "100%",
+                                                height: "100%",
+                                                flexGrow: 1,
+                                            }, children: [_jsxDEV("div", { __v0_e: { "start": 7878, "end": 9811, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[234, 27, ""]], style: {
+                                                        display: "flex",
+                                                        gap: "6.261px",
+                                                        alignItems: "flex-start",
+                                                        justifyContent: "flex-start",
+                                                        width: "100%",
+                                                    }, children: _jsxDEV("div", { __v0_e: { "start": 8225, "end": 9782, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[243, 29, ""]], style: {
+                                                            display: "flex",
+                                                            flexDirection: "column",
+                                                            gap: "6.261px",
+                                                            alignItems: "flex-start",
+                                                            justifyContent: "flex-start",
+                                                        }, children: [_jsxDEV("div", { __v0_e: { "start": 8600, "end": 9109, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[252, 31, ""]], style: {
+                                                                    fontFamily: "Inter, sans-serif",
+                                                                    fontWeight: 600,
+                                                                    fontSize: "10.174px",
+                                                                    lineHeight: "18.783px",
+                                                                    color: "var(--nts-text-secondary)",
+                                                                    whiteSpace: "pre",
+                                                                }, __v0_i: "0:262:29:Invoiced Revenue", children: "Invoiced Revenue" }, void 0, false, { fileName: _jsxFileName, lineNumber: 252, columnNumber: 27 }, this), _jsxDEV("div", { __v0_e: { "start": 9136, "end": 9751, "name": "div", "jsxRoot": false }, className: "tracking-widest", __v0_r: [0, 9179, 9196], __v0_c: [[265, 39, "tracking-widest"]], style: {
+                                                                    fontFamily: "Inter, sans-serif",
+                                                                    fontWeight: 500,
+                                                                    fontSize: "18.783px",
+                                                                    lineHeight: "20.348px",
+                                                                    letterSpacing: "-0.587px",
+                                                                    color: "var(--nts-text-primary)",
+                                                                    whiteSpace: "pre",
+                                                                }, __v0_i: "0:276:29:$317,731.00", children: "$317,731.00" }, void 0, false, { fileName: _jsxFileName, lineNumber: 264, columnNumber: 27 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 243, columnNumber: 25 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 234, columnNumber: 23 }, this), _jsxDEV("div", { __v0_e: { "start": 9881, "end": 22391, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[282, 27, ""]], style: {
+                                                        display: "flex",
+                                                        flexDirection: "column",
+                                                        gap: "18.783px",
+                                                        alignItems: "flex-start",
+                                                        justifyContent: "flex-start",
+                                                        width: "100%",
+                                                    }, children: _jsxDEV("div", { __v0_e: { "start": 10280, "end": 22362, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[292, 29, ""]], style: {
+                                                            height: "156.522px",
+                                                            position: "relative",
+                                                            width: "100%",
+                                                        }, children: [_jsxDEV("div", { __v0_e: { "start": 10588, "end": 19620, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[300, 31, ""]], style: {
+                                                                    position: "absolute",
+                                                                    inset: 0,
+                                                                    display: "flex",
+                                                                    gap: "3.13px",
+                                                                    alignItems: "flex-start",
+                                                                    justifyContent: "flex-start",
+                                                                }, children: _jsxDEV("div", { __v0_e: { "start": 11017, "end": 19587, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[310, 33, ""]], style: {
+                                                                        display: "flex",
+                                                                        flexGrow: 1,
+                                                                        height: "100%",
+                                                                        alignItems: "flex-start",
+                                                                        justifyContent: "flex-start",
+                                                                        position: "relative",
+                                                                    }, children: [_jsxDEV("div", { __v0_e: { "start": 11522, "end": 14500, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[321, 35, ""]], style: {
+                                                                                display: "flex",
+                                                                                flexDirection: "column",
+                                                                                height: "100%",
+                                                                                alignItems: "flex-start",
+                                                                                justifyContent: "center",
+                                                                            }, children: _jsxDEV("div", { __v0_e: { "start": 11947, "end": 14463, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[330, 37, ""]], style: {
+                                                                                    display: "flex",
+                                                                                    flexDirection: "column",
+                                                                                    flexGrow: 1,
+                                                                                    alignItems: "center",
+                                                                                    justifyContent: "space-between",
+                                                                                    paddingLeft: 0,
+                                                                                    paddingRight: "7.826px",
+                                                                                    paddingTop: 0,
+                                                                                    paddingBottom: 0,
+                                                                                    boxSizing: "border-box",
+                                                                                }, children: ["500k", "300k", "200k", "100k", "0"].map((label, index) => (_jsxDEV("div", { __v0_e: { "start": 12768, "end": 14386, "name": "div", "jsxRoot": true }, __v0_m: "1", __v0_c: [[345, 41, ""]], style: {
+                                                                                        display: "flex",
+                                                                                        gap: "6.261px",
+                                                                                        height: "17.217px",
+                                                                                        alignItems: "center",
+                                                                                        justifyContent: "flex-end",
+                                                                                        paddingLeft: 0,
+                                                                                        paddingRight: 0,
+                                                                                        paddingTop: "8.609px",
+                                                                                        paddingBottom: "8.609px",
+                                                                                        width: "100%",
+                                                                                        boxSizing: "border-box",
+                                                                                    }, children: _jsxDEV("div", { __v0_e: { "start": 13652, "end": 14343, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[361, 43, ""]], style: {
+                                                                                            fontFamily: "'Inter', sans-serif",
+                                                                                            fontWeight: 500,
+                                                                                            fontSize: "7.826px",
+                                                                                            lineHeight: "14.087px",
+                                                                                            color: "var(--nts-text-muted)",
+                                                                                            textAlign: "right",
+                                                                                            whiteSpace: "pre",
+                                                                                        }, children: label }, void 0, false, { fileName: _jsxFileName, lineNumber: 361, columnNumber: 39 }, this) }, index, false, { fileName: _jsxFileName, lineNumber: 344, columnNumber: 97 }, this))) }, void 0, false, { fileName: _jsxFileName, lineNumber: 330, columnNumber: 33 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 321, columnNumber: 31 }, this), _jsxDEV("div", { __v0_e: { "start": 14592, "end": 19552, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[380, 35, ""]], style: {
+                                                                                display: "flex",
+                                                                                flexDirection: "column",
+                                                                                flexGrow: 1,
+                                                                                height: "100%",
+                                                                                alignItems: "flex-start",
+                                                                                justifyContent: "flex-start",
+                                                                            }, children: [_jsxDEV("div", { __v0_e: { "start": 15119, "end": 18219, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[391, 37, ""]], style: {
+                                                                                        display: "flex",
+                                                                                        flexDirection: "column",
+                                                                                        flexGrow: 1,
+                                                                                        alignItems: "flex-start",
+                                                                                        justifyContent: "space-between",
+                                                                                        width: "100%",
+                                                                                    }, children: [_jsxDEV("div", { __v0_e: { "start": 15617, "end": 16015, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[401, 39, ""]], style: { height: "17.217px", width: "100%", display: "flex", alignItems: "center" }, children: _jsxDEV("div", { __v0_e: { "start": 15815, "end": 15974, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[404, 41, ""]], style: { width: "100%", height: "1px", backgroundColor: "rgba(0,0,0,0.05)" } }, void 0, false, { fileName: _jsxFileName, lineNumber: 404, columnNumber: 37 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 401, columnNumber: 35 }, this), _jsxDEV("div", { __v0_e: { "start": 16050, "end": 16448, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[408, 39, ""]], style: { height: "13.304px", width: "100%", display: "flex", alignItems: "center" }, children: _jsxDEV("div", { __v0_e: { "start": 16248, "end": 16407, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[411, 41, ""]], style: { width: "100%", height: "1px", backgroundColor: "rgba(0,0,0,0.05)" } }, void 0, false, { fileName: _jsxFileName, lineNumber: 411, columnNumber: 37 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 408, columnNumber: 35 }, this), _jsxDEV("div", { __v0_e: { "start": 16483, "end": 16881, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[415, 39, ""]], style: { height: "13.304px", width: "100%", display: "flex", alignItems: "center" }, children: _jsxDEV("div", { __v0_e: { "start": 16681, "end": 16840, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[418, 41, ""]], style: { width: "100%", height: "1px", backgroundColor: "rgba(0,0,0,0.05)" } }, void 0, false, { fileName: _jsxFileName, lineNumber: 418, columnNumber: 37 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 415, columnNumber: 35 }, this), _jsxDEV("div", { __v0_e: { "start": 16916, "end": 17314, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[422, 39, ""]], style: { height: "13.304px", width: "100%", display: "flex", alignItems: "center" }, children: _jsxDEV("div", { __v0_e: { "start": 17114, "end": 17273, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[425, 41, ""]], style: { width: "100%", height: "1px", backgroundColor: "rgba(0,0,0,0.05)" } }, void 0, false, { fileName: _jsxFileName, lineNumber: 425, columnNumber: 37 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 422, columnNumber: 35 }, this), _jsxDEV("div", { __v0_e: { "start": 17349, "end": 17747, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[429, 39, ""]], style: { height: "13.304px", width: "100%", display: "flex", alignItems: "center" }, children: _jsxDEV("div", { __v0_e: { "start": 17547, "end": 17706, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[432, 41, ""]], style: { width: "100%", height: "1px", backgroundColor: "rgba(0,0,0,0.05)" } }, void 0, false, { fileName: _jsxFileName, lineNumber: 432, columnNumber: 37 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 429, columnNumber: 35 }, this), _jsxDEV("div", { __v0_e: { "start": 17782, "end": 18180, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[436, 39, ""]], style: { height: "13.304px", width: "100%", display: "flex", alignItems: "center" }, children: _jsxDEV("div", { __v0_e: { "start": 17980, "end": 18139, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[439, 41, ""]], style: { width: "100%", height: "1px", backgroundColor: "rgba(0,0,0,0.05)" } }, void 0, false, { fileName: _jsxFileName, lineNumber: 439, columnNumber: 37 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 436, columnNumber: 35 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 391, columnNumber: 33 }, this), _jsxDEV("div", { __v0_e: { "start": 18307, "end": 19515, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[446, 37, ""]], style: {
+                                                                                        display: "flex",
+                                                                                        fontFamily: "'Inter', sans-serif",
+                                                                                        fontWeight: 500,
+                                                                                        alignItems: "center",
+                                                                                        justifyContent: "space-between",
+                                                                                        fontSize: "7.826px",
+                                                                                        lineHeight: "14.087px",
+                                                                                        paddingLeft: "6.261px",
+                                                                                        paddingRight: "6.261px",
+                                                                                        paddingTop: 0,
+                                                                                        paddingBottom: 0,
+                                                                                        boxSizing: "border-box",
+                                                                                        color: "var(--nts-text-muted)",
+                                                                                        textAlign: "right",
+                                                                                        width: "100%",
+                                                                                    }, children: [_jsxDEV("div", { __v0_e: { "start": 19343, "end": 19392, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[465, 39, ""]], style: { whiteSpace: "pre" }, __v0_i: "0:465:70:Aug 2023", children: "Aug 2023" }, void 0, false, { fileName: _jsxFileName, lineNumber: 465, columnNumber: 35 }, this), _jsxDEV("div", { __v0_e: { "start": 19427, "end": 19476, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[466, 39, ""]], style: { whiteSpace: "pre" }, __v0_i: "0:466:70:Aug 2024", children: "Aug 2024" }, void 0, false, { fileName: _jsxFileName, lineNumber: 466, columnNumber: 35 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 446, columnNumber: 33 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 380, columnNumber: 31 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 310, columnNumber: 29 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 300, columnNumber: 27 }, this), _jsxDEV("div", { __v0_e: { "start": 19698, "end": 22331, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[473, 31, ""]], style: {
+                                                                    position: "absolute",
+                                                                    bottom: "23.48px",
+                                                                    right: 0,
+                                                                    top: "12.52px",
+                                                                    width: "295.043px",
+                                                                    overflow: "hidden",
+                                                                }, children: _jsxDEV("div", { __v0_e: { "start": 20114, "end": 22298, "name": "div", "jsxRoot": false }, __v0_m: "1", __v0_c: [[483, 33, ""]], style: {
+                                                                        position: "absolute",
+                                                                        bottom: 0,
+                                                                        left: "-1.56px",
+                                                                        right: 0,
+                                                                        top: 0,
+                                                                        display: "flex",
+                                                                        alignItems: "flex-end",
+                                                                        justifyContent: "space-between",
+                                                                        paddingLeft: "9.391px",
+                                                                        paddingRight: "9.391px",
+                                                                        paddingTop: 0,
+                                                                        paddingBottom: 0,
+                                                                        boxSizing: "border-box",
+                                                                        overflow: "hidden",
+                                                                    }, children: [
+                                                                        { height: "83px", color: "#5D4E37" },
+                                                                        { height: "108px", color: "#5D4E37" },
+                                                                        { height: "58px", color: "#5D4E37" },
+                                                                        { height: "89px", color: "#5D4E37" },
+                                                                        { height: "83px", color: "#5D4E37" },
+                                                                        { height: "89px", color: "#5D4E37" },
+                                                                        { height: "83px", color: "#5D4E37" },
+                                                                        { height: "95px", color: "#5D4E37" },
+                                                                        { height: "108px", color: "#5D4E37" },
+                                                                        { height: "76px", color: "#5D4E37" },
+                                                                        { height: "89px", color: "#5D4E37" },
+                                                                    ].map((item, index) => (_jsxDEV("div", { __v0_e: { "start": 21830, "end": 22229, "name": "div", "jsxRoot": true }, __v0_m: "1", __v0_c: [[514, 37, ""]], style: {
+                                                                            width: "12.522px",
+                                                                            height: item.height,
+                                                                            backgroundColor: item.color,
+                                                                            borderRadius: "2px",
+                                                                        } }, index, false, { fileName: _jsxFileName, lineNumber: 513, columnNumber: 55 }, this))) }, void 0, false, { fileName: _jsxFileName, lineNumber: 483, columnNumber: 29 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 473, columnNumber: 27 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 292, columnNumber: 25 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 282, columnNumber: 23 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 223, columnNumber: 21 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 213, columnNumber: 19 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 203, columnNumber: 17 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 193, columnNumber: 15 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 170, columnNumber: 13 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 169, columnNumber: 11 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 156, columnNumber: 9 }, this)] }, void 0, true, { fileName: _jsxFileName, lineNumber: 69, columnNumber: 7 }, this) }, void 0, false, { fileName: _jsxFileName, lineNumber: 51, columnNumber: 11 }, this));
+};
+_react_refresh_temp_1 = NumbersThatSpeak;
+__v0_$RefreshReg$(_react_refresh_temp_1, "NumbersThatSpeak");
+export default NumbersThatSpeak;
+
+
+self.__v0_$RefreshReg$ = prevRefreshReg
+self.__v0_$RefreshSig$ = prevRefreshSig
+//# sourceURL=blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/6e7354d8-7c6e-4164-b692-a5a312c9655a

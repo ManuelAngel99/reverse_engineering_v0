@@ -1,0 +1,149 @@
+var prevRefreshReg = self.__v0_$RefreshReg$
+var prevRefreshSig = self.__v0_$RefreshSig$
+self.__v0_$RefreshReg$ = (type, id) => {
+    id = "@v0/app/layout" + ' ' + id
+    self.__v0_rscRefreshRegister(type, id)
+    self.__v0_refreshRuntime.register(type, id)
+}
+self.__v0_$RefreshSig$ = typeof __v0_refreshRuntime !== 'undefined' ? __v0_refreshRuntime.createSignatureFunctionForTransform : () => {}
+
+var _react_refresh_temp_1;
+import {jsxDEV as _jsxDEV} from /*"__v0__/jsx-dev-runtime"*/
+'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/2cb0ba76-9c5e-4553-9d94-814ead52c4d1';
+const _jsxFileName = "/@v0/app/layout.tsx";
+import {Inter, Instrument_Serif} from /*"next/font/google"*/
+'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/da31ab9e-cb44-46d8-9209-1c4f81a4d51f';
+import /*"@v0/app/globals.css"*/
+'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/66555f58-08fb-4c7e-a27c-11f5af8be7f3';
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+    display: "swap",
+    preload: true,
+});
+const instrumentSerif = Instrument_Serif({
+    subsets: ["latin"],
+    variable: "--font-instrument-serif",
+    weight: ["400"],
+    display: "swap",
+    preload: true,
+});
+export const metadata = {
+    title: "Brillance - Effortless Custom Contract Billing",
+    description: "Streamline your billing process with seamless automation for every custom contract, tailored by Brillance.",
+};
+export default function RootLayout({children, }) {
+    return (_jsxDEV("html", {
+        __v0_e: {
+            "start": 755,
+            "end": 1378,
+            "name": "html",
+            "jsxRoot": true
+        },
+        lang: "en",
+        className: `${inter.variable} ${instrumentSerif.variable} antialiased`,
+        __v0_r: [1, 781, 842],
+        __v0_c: [[33, 77, " antialiased"]],
+        children: [_jsxDEV("head", {
+            __v0_e: {
+                "start": 850,
+                "end": 1302,
+                "name": "head",
+                "jsxRoot": false
+            },
+            __v0_m: "1",
+            __v0_c: [[34, 12, ""]],
+            children: [_jsxDEV("link", {
+                __v0_e: {
+                    "start": 865,
+                    "end": 926,
+                    "name": "link",
+                    "jsxRoot": false
+                },
+                __v0_m: "1",
+                __v0_c: [[35, 14, ""]],
+                rel: "preconnect",
+                href: "https://fonts.googleapis.com"
+            }, void 0, false, {
+                fileName: _jsxFileName,
+                lineNumber: 35,
+                columnNumber: 9
+            }, this), _jsxDEV("link", {
+                __v0_e: {
+                    "start": 935,
+                    "end": 1017,
+                    "name": "link",
+                    "jsxRoot": false
+                },
+                __v0_m: "1",
+                __v0_c: [[36, 14, ""]],
+                rel: "preconnect",
+                href: "https://fonts.gstatic.com",
+                crossOrigin: "anonymous"
+            }, void 0, false, {
+                fileName: _jsxFileName,
+                lineNumber: 36,
+                columnNumber: 9
+            }, this), _jsxDEV("link", {
+                __v0_e: {
+                    "start": 1026,
+                    "end": 1167,
+                    "name": "link",
+                    "jsxRoot": false
+                },
+                __v0_m: "1",
+                __v0_c: [[37, 14, ""]],
+                rel: "stylesheet",
+                href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            }, void 0, false, {
+                fileName: _jsxFileName,
+                lineNumber: 37,
+                columnNumber: 9
+            }, this), _jsxDEV("link", {
+                __v0_e: {
+                    "start": 1176,
+                    "end": 1288,
+                    "name": "link",
+                    "jsxRoot": false
+                },
+                __v0_m: "1",
+                __v0_c: [[41, 14, ""]],
+                rel: "stylesheet",
+                href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400&display=swap"
+            }, void 0, false, {
+                fileName: _jsxFileName,
+                lineNumber: 41,
+                columnNumber: 9
+            }, this)]
+        }, void 0, true, {
+            fileName: _jsxFileName,
+            lineNumber: 34,
+            columnNumber: 7
+        }, this), _jsxDEV("body", {
+            __v0_e: {
+                "start": 1309,
+                "end": 1366,
+                "name": "body",
+                "jsxRoot": false
+            },
+            className: "font-sans antialiased",
+            __v0_r: [0, 1325, 1348],
+            __v0_c: [[43, 23, "font-sans antialiased"]],
+            children: children
+        }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 43,
+            columnNumber: 7
+        }, this)]
+    }, void 0, true, {
+        fileName: _jsxFileName,
+        lineNumber: 32,
+        columnNumber: 11
+    }, this));
+}
+_react_refresh_temp_1 = RootLayout;
+__v0_$RefreshReg$(_react_refresh_temp_1, "RootLayout");
+
+self.__v0_$RefreshReg$ = prevRefreshReg
+self.__v0_$RefreshSig$ = prevRefreshSig
+//# sourceURL=blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/ff74fedc-a966-4e41-ac0a-ddce8c64686a

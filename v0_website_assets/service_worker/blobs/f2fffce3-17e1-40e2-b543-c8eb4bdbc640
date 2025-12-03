@@ -1,0 +1,1565 @@
+var prevRefreshReg = self.__v0_$RefreshReg$
+var prevRefreshSig = self.__v0_$RefreshSig$
+self.__v0_$RefreshReg$ = (type, id) => {
+    id = "@v0/components/pricing-section" + ' ' + id
+    self.__v0_rscRefreshRegister(type, id)
+    self.__v0_refreshRuntime.register(type, id)
+}
+self.__v0_$RefreshSig$ = typeof __v0_refreshRuntime !== 'undefined' ? __v0_refreshRuntime.createSignatureFunctionForTransform : () => {}
+
+"use client";
+var _react_refresh_temp_1;
+var _react_refresh_temp_2;
+_react_refresh_temp_2 = __v0_$RefreshSig$();
+import {jsxDEV as _jsxDEV} from /*"__v0__/jsx-dev-runtime"*/
+'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/2cb0ba76-9c5e-4553-9d94-814ead52c4d1';
+const _jsxFileName = "/@v0/components/pricing-section.tsx";
+import {useState} from /*"react"*/
+'blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/f6f18b43-2e7c-42b9-957f-a4b47ec4d56c';
+export default function PricingSection() {
+    _react_refresh_temp_2();
+    const [billingPeriod,setBillingPeriod] = useState("annually");
+    const pricing = {
+        starter: {
+            monthly: 0,
+            annually: 0,
+        },
+        professional: {
+            monthly: 20,
+            annually: 16,
+            // 20% discount for annual
+        },
+        enterprise: {
+            monthly: 200,
+            annually: 160,
+            // 20% discount for annual
+        },
+    };
+    return (_jsxDEV("div", {
+        __v0_e: {
+            "start": 466,
+            "end": 21413,
+            "name": "div",
+            "jsxRoot": true
+        },
+        className: "w-full flex flex-col justify-center items-center gap-2",
+        __v0_r: [0, 481, 537],
+        __v0_c: [[24, 20, "w-full flex flex-col justify-center items-center gap-2"]],
+        children: [_jsxDEV("div", {
+            __v0_e: {
+                "start": 574,
+                "end": 2765,
+                "name": "div",
+                "jsxRoot": false
+            },
+            className: "self-stretch px-6 md:px-24 py-12 md:py-16 border-b border-[rgba(55,50,47,0.12)] flex justify-center items-center gap-6",
+            __v0_r: [0, 589, 709],
+            __v0_c: [[26, 22, "self-stretch px-6 md:px-24 py-12 md:py-16 border-b border-[rgba(55,50,47,0.12)] flex justify-center items-center gap-6"]],
+            children: _jsxDEV("div", {
+                __v0_e: {
+                    "start": 719,
+                    "end": 2752,
+                    "name": "div",
+                    "jsxRoot": false
+                },
+                className: "w-full max-w-[586px] px-6 py-5 shadow-[0px_2px_4px_rgba(50,45,43,0.06)] overflow-hidden rounded-lg flex flex-col justify-start items-center gap-4 shadow-none",
+                __v0_r: [0, 734, 893],
+                __v0_c: [[27, 24, "w-full max-w-[586px] px-6 py-5 shadow-[0px_2px_4px_rgba(50,45,43,0.06)] overflow-hidden rounded-lg flex flex-col justify-start items-center gap-4 shadow-none"]],
+                children: [_jsxDEV("div", {
+                    __v0_e: {
+                        "start": 937,
+                        "end": 2141,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "px-[14px] py-[6px] bg-white shadow-[0px_0px_0px_4px_rgba(55,50,47,0.05)] overflow-hidden rounded-[90px] flex justify-start items-center gap-[8px] border border-[rgba(2,6,23,0.08)] shadow-xs",
+                    __v0_r: [0, 952, 1143],
+                    __v0_c: [[29, 26, "px-[14px] py-[6px] bg-white shadow-[0px_0px_0px_4px_rgba(55,50,47,0.05)] overflow-hidden rounded-[90px] flex justify-start items-center gap-[8px] border border-[rgba(2,6,23,0.08)] shadow-xs"]],
+                    children: [_jsxDEV("div", {
+                        __v0_e: {
+                            "start": 1157,
+                            "end": 1949,
+                            "name": "div",
+                            "jsxRoot": false
+                        },
+                        className: "w-[14px] h-[14px] relative overflow-hidden flex items-center justify-center",
+                        __v0_r: [0, 1172, 1249],
+                        __v0_c: [[30, 28, "w-[14px] h-[14px] relative overflow-hidden flex items-center justify-center"]],
+                        children: _jsxDEV("svg", {
+                            __v0_e: {
+                                "start": 1265,
+                                "end": 1930,
+                                "name": "svg",
+                                "jsxRoot": false
+                            },
+                            __v0_m: "1",
+                            __v0_c: [[31, 19, ""]],
+                            width: "12",
+                            height: "12",
+                            viewBox: "0 0 12 12",
+                            fill: "none",
+                            xmlns: "http://www.w3.org/2000/svg",
+                            children: _jsxDEV("path", {
+                                __v0_e: {
+                                    "start": 1377,
+                                    "end": 1909,
+                                    "name": "path",
+                                    "jsxRoot": false
+                                },
+                                __v0_m: "1",
+                                __v0_c: [[32, 22, ""]],
+                                d: "M6 1V11M8.5 3H4.75C4.28587 3 3.84075 3.18437 3.51256 3.51256C3.18437 3.84075 3 4.28587 3 4.75C3 5.21413 3.18437 5.65925 3.51256 5.98744C3.84075 6.31563 4.28587 6.5 4.75 6.5H7.25C7.71413 6.5 8.15925 6.68437 8.48744 7.01256C8.81563 7.34075 9 7.78587 9 8.25C9 8.71413 8.81563 9.15925 8.48744 9.48744C8.15925 9.81563 7.71413 10 7.25 10H3.5",
+                                stroke: "#37322F",
+                                strokeWidth: "1",
+                                strokeLinecap: "round",
+                                strokeLinejoin: "round"
+                            }, void 0, false, {
+                                fileName: _jsxFileName,
+                                lineNumber: 32,
+                                columnNumber: 17
+                            }, this)
+                        }, void 0, false, {
+                            fileName: _jsxFileName,
+                            lineNumber: 31,
+                            columnNumber: 15
+                        }, this)
+                    }, void 0, false, {
+                        fileName: _jsxFileName,
+                        lineNumber: 30,
+                        columnNumber: 13
+                    }, this), _jsxDEV("div", {
+                        __v0_e: {
+                            "start": 1962,
+                            "end": 2124,
+                            "name": "div",
+                            "jsxRoot": false
+                        },
+                        className: "text-center flex justify-center flex-col text-[#37322F] text-xs font-medium leading-3 font-sans",
+                        __v0_r: [0, 1977, 2074],
+                        __v0_c: [[41, 28, "text-center flex justify-center flex-col text-[#37322F] text-xs font-medium leading-3 font-sans"]],
+                        __v0_i: "0:42:15:Plans & Pricing",
+                        children: "Plans & Pricing"
+                    }, void 0, false, {
+                        fileName: _jsxFileName,
+                        lineNumber: 41,
+                        columnNumber: 13
+                    }, this)]
+                }, void 0, true, {
+                    fileName: _jsxFileName,
+                    lineNumber: 29,
+                    columnNumber: 11
+                }, this), _jsxDEV("div", {
+                    __v0_e: {
+                        "start": 2177,
+                        "end": 2426,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight",
+                    __v0_r: [0, 2192, 2354],
+                    __v0_c: [[47, 26, "self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight"]],
+                    __v0_i: "0:48:13:Choose the perfect plan for your business",
+                    children: "Choose the perfect plan for your business"
+                }, void 0, false, {
+                    fileName: _jsxFileName,
+                    lineNumber: 47,
+                    columnNumber: 11
+                }, this), _jsxDEV("div", {
+                    __v0_e: {
+                        "start": 2468,
+                        "end": 2737,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "self-stretch text-center text-[#605A57] text-base font-normal leading-7 font-sans",
+                    __v0_r: [0, 2483, 2566],
+                    __v0_c: [[52, 26, "self-stretch text-center text-[#605A57] text-base font-normal leading-7 font-sans"]],
+                    children: ["Scale your operations with flexible pricing that grows with your team.", _jsxDEV("br", {
+                        __v0_e: {
+                            "start": 2663,
+                            "end": 2669,
+                            "name": "br",
+                            "jsxRoot": false
+                        },
+                        __v0_m: "1",
+                        __v0_c: [[54, 16, ""]]
+                    }, void 0, false, {
+                        fileName: _jsxFileName,
+                        lineNumber: 54,
+                        columnNumber: 13
+                    }, this), "Start free, upgrade when you're ready."]
+                }, void 0, true, {
+                    fileName: _jsxFileName,
+                    lineNumber: 52,
+                    columnNumber: 11
+                }, this)]
+            }, void 0, true, {
+                fileName: _jsxFileName,
+                lineNumber: 27,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 7
+        }, this), _jsxDEV("div", {
+            __v0_e: {
+                "start": 2810,
+                "end": 5790,
+                "name": "div",
+                "jsxRoot": false
+            },
+            className: "self-stretch px-6 md:px-16 py-9 relative flex justify-center items-center gap-4",
+            __v0_r: [0, 2825, 2906],
+            __v0_c: [[61, 22, "self-stretch px-6 md:px-16 py-9 relative flex justify-center items-center gap-4"]],
+            children: [_jsxDEV("div", {
+                __v0_e: {
+                    "start": 2948,
+                    "end": 3095,
+                    "name": "div",
+                    "jsxRoot": false
+                },
+                className: "w-full max-w-[1060px] h-0 absolute left-1/2 transform -translate-x-1/2 top-[63px] border-t border-[rgba(55,50,47,0.12)] z-0",
+                __v0_r: [0, 2963, 3088],
+                __v0_c: [[63, 24, "w-full max-w-[1060px] h-0 absolute left-1/2 transform -translate-x-1/2 top-[63px] border-t border-[rgba(55,50,47,0.12)] z-0"]]
+            }, void 0, false, {
+                fileName: _jsxFileName,
+                lineNumber: 63,
+                columnNumber: 9
+            }, this), _jsxDEV("div", {
+                __v0_e: {
+                    "start": 3138,
+                    "end": 5777,
+                    "name": "div",
+                    "jsxRoot": false
+                },
+                className: "p-3 relative bg-[rgba(55,50,47,0.03)] border border-[rgba(55,50,47,0.02)] backdrop-blur-[44px] backdrop-saturate-150 backdrop-brightness-110 flex justify-center items-center rounded-lg z-20 before:absolute before:inset-0 before:bg-white before:opacity-60 before:rounded-lg before:-z-10",
+                __v0_r: [0, 3153, 3440],
+                __v0_c: [[66, 24, "p-3 relative bg-[rgba(55,50,47,0.03)] border border-[rgba(55,50,47,0.02)] backdrop-blur-[44px] backdrop-saturate-150 backdrop-brightness-110 flex justify-center items-center rounded-lg z-20 before:absolute before:inset-0 before:bg-white before:opacity-60 before:rounded-lg before:-z-10"]],
+                children: [_jsxDEV("div", {
+                    __v0_e: {
+                        "start": 3452,
+                        "end": 5067,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "p-[2px] bg-[rgba(55,50,47,0.10)] shadow-[0px_1px_0px_white] rounded-[99px] border-[0.5px] border-[rgba(55,50,47,0.08)] flex justify-center items-center gap-[2px] relative",
+                    __v0_r: [0, 3467, 3639],
+                    __v0_c: [[67, 26, "p-[2px] bg-[rgba(55,50,47,0.10)] shadow-[0px_1px_0px_white] rounded-[99px] border-[0.5px] border-[rgba(55,50,47,0.08)] flex justify-center items-center gap-[2px] relative"]],
+                    children: [_jsxDEV("div", {
+                        __v0_e: {
+                            "start": 3653,
+                            "end": 3953,
+                            "name": "div",
+                            "jsxRoot": false
+                        },
+                        className: `absolute top-[2px] w-[calc(50%-1px)] h-[calc(100%-4px)] bg-white shadow-[0px_2px_4px_rgba(0,0,0,0.08)] rounded-[99px] transition-all duration-300 ease-in-out ${billingPeriod === "annually" ? "left-[2px]" : "right-[2px]"}`,
+                        __v0_r: [1, 3682, 3938],
+                        __v0_c: [[69, 26, "absolute top-[2px] w-[calc(50%-1px)] h-[calc(100%-4px)] bg-white shadow-[0px_2px_4px_rgba(0,0,0,0.08)] rounded-[99px] transition-all duration-300 ease-in-out "]]
+                    }, void 0, false, {
+                        fileName: _jsxFileName,
+                        lineNumber: 68,
+                        columnNumber: 13
+                    }, this), _jsxDEV("button", {
+                        __v0_e: {
+                            "start": 3967,
+                            "end": 4503,
+                            "name": "button",
+                            "jsxRoot": false
+                        },
+                        onClick: () => setBillingPeriod("annually"),
+                        className: "px-4 py-1 rounded-[99px] flex justify-center items-center gap-2 transition-colors duration-300 relative z-10 flex-1",
+                        __v0_r: [0, 4058, 4175],
+                        __v0_c: [[76, 25, "px-4 py-1 rounded-[99px] flex justify-center items-center gap-2 transition-colors duration-300 relative z-10 flex-1"]],
+                        children: _jsxDEV("div", {
+                            __v0_e: {
+                                "start": 4204,
+                                "end": 4481,
+                                "name": "div",
+                                "jsxRoot": false
+                            },
+                            className: `text-[13px] font-medium leading-5 font-sans transition-colors duration-300 ${billingPeriod === "annually" ? "text-[#37322F]" : "text-[#6B7280]"}`,
+                            __v0_r: [1, 4235, 4419],
+                            __v0_c: [[79, 28, "text-[13px] font-medium leading-5 font-sans transition-colors duration-300 "]],
+                            __v0_i: "0:83:17:Annually",
+                            children: "Annually"
+                        }, void 0, false, {
+                            fileName: _jsxFileName,
+                            lineNumber: 78,
+                            columnNumber: 15
+                        }, this)
+                    }, void 0, false, {
+                        fileName: _jsxFileName,
+                        lineNumber: 74,
+                        columnNumber: 13
+                    }, this), _jsxDEV("button", {
+                        __v0_e: {
+                            "start": 4517,
+                            "end": 5050,
+                            "name": "button",
+                            "jsxRoot": false
+                        },
+                        onClick: () => setBillingPeriod("monthly"),
+                        className: "px-4 py-1 rounded-[99px] flex justify-center items-center gap-2 transition-colors duration-300 relative z-10 flex-1",
+                        __v0_r: [0, 4607, 4724],
+                        __v0_c: [[89, 25, "px-4 py-1 rounded-[99px] flex justify-center items-center gap-2 transition-colors duration-300 relative z-10 flex-1"]],
+                        children: _jsxDEV("div", {
+                            __v0_e: {
+                                "start": 4753,
+                                "end": 5028,
+                                "name": "div",
+                                "jsxRoot": false
+                            },
+                            className: `text-[13px] font-medium leading-5 font-sans transition-colors duration-300 ${billingPeriod === "monthly" ? "text-[#37322F]" : "text-[#6B7280]"}`,
+                            __v0_r: [1, 4784, 4967],
+                            __v0_c: [[92, 28, "text-[13px] font-medium leading-5 font-sans transition-colors duration-300 "]],
+                            __v0_i: "0:96:17:Monthly",
+                            children: "Monthly"
+                        }, void 0, false, {
+                            fileName: _jsxFileName,
+                            lineNumber: 91,
+                            columnNumber: 15
+                        }, this)
+                    }, void 0, false, {
+                        fileName: _jsxFileName,
+                        lineNumber: 87,
+                        columnNumber: 13
+                    }, this)]
+                }, void 0, true, {
+                    fileName: _jsxFileName,
+                    lineNumber: 67,
+                    columnNumber: 11
+                }, this), _jsxDEV("div", {
+                    __v0_e: {
+                        "start": 5113,
+                        "end": 5265,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "w-[3px] h-[3px] absolute left-[5px] top-[5.25px] bg-[rgba(55,50,47,0.10)] shadow-[0px_0px_0.5px_rgba(0,0,0,0.12)] rounded-[99px]",
+                    __v0_r: [0, 5128, 5258],
+                    __v0_c: [[102, 26, "w-[3px] h-[3px] absolute left-[5px] top-[5.25px] bg-[rgba(55,50,47,0.10)] shadow-[0px_0px_0.5px_rgba(0,0,0,0.12)] rounded-[99px]"]]
+                }, void 0, false, {
+                    fileName: _jsxFileName,
+                    lineNumber: 102,
+                    columnNumber: 11
+                }, this), _jsxDEV("div", {
+                    __v0_e: {
+                        "start": 5276,
+                        "end": 5429,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "w-[3px] h-[3px] absolute right-[5px] top-[5.25px] bg-[rgba(55,50,47,0.10)] shadow-[0px_0px_0.5px_rgba(0,0,0,0.12)] rounded-[99px]",
+                    __v0_r: [0, 5291, 5422],
+                    __v0_c: [[103, 26, "w-[3px] h-[3px] absolute right-[5px] top-[5.25px] bg-[rgba(55,50,47,0.10)] shadow-[0px_0px_0.5px_rgba(0,0,0,0.12)] rounded-[99px]"]]
+                }, void 0, false, {
+                    fileName: _jsxFileName,
+                    lineNumber: 103,
+                    columnNumber: 11
+                }, this), _jsxDEV("div", {
+                    __v0_e: {
+                        "start": 5440,
+                        "end": 5595,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "w-[3px] h-[3px] absolute left-[5px] bottom-[5.25px] bg-[rgba(55,50,47,0.10)] shadow-[0px_0px_0.5px_rgba(0,0,0,0.12)] rounded-[99px]",
+                    __v0_r: [0, 5455, 5588],
+                    __v0_c: [[104, 26, "w-[3px] h-[3px] absolute left-[5px] bottom-[5.25px] bg-[rgba(55,50,47,0.10)] shadow-[0px_0px_0.5px_rgba(0,0,0,0.12)] rounded-[99px]"]]
+                }, void 0, false, {
+                    fileName: _jsxFileName,
+                    lineNumber: 104,
+                    columnNumber: 11
+                }, this), _jsxDEV("div", {
+                    __v0_e: {
+                        "start": 5606,
+                        "end": 5762,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "w-[3px] h-[3px] absolute right-[5px] bottom-[5.25px] bg-[rgba(55,50,47,0.10)] shadow-[0px_0px_0.5px_rgba(0,0,0,0.12)] rounded-[99px]",
+                    __v0_r: [0, 5621, 5755],
+                    __v0_c: [[105, 26, "w-[3px] h-[3px] absolute right-[5px] bottom-[5.25px] bg-[rgba(55,50,47,0.10)] shadow-[0px_0px_0.5px_rgba(0,0,0,0.12)] rounded-[99px]"]]
+                }, void 0, false, {
+                    fileName: _jsxFileName,
+                    lineNumber: 105,
+                    columnNumber: 11
+                }, this)]
+            }, void 0, true, {
+                fileName: _jsxFileName,
+                lineNumber: 66,
+                columnNumber: 9
+            }, this)]
+        }, void 0, true, {
+            fileName: _jsxFileName,
+            lineNumber: 61,
+            columnNumber: 7
+        }, this), _jsxDEV("div", {
+            __v0_e: {
+                "start": 5834,
+                "end": 21402,
+                "name": "div",
+                "jsxRoot": false
+            },
+            className: "self-stretch border-b border-t border-[rgba(55,50,47,0.12)] flex justify-center items-center",
+            __v0_r: [0, 5849, 5943],
+            __v0_c: [[110, 22, "self-stretch border-b border-t border-[rgba(55,50,47,0.12)] flex justify-center items-center"]],
+            children: _jsxDEV("div", {
+                __v0_e: {
+                    "start": 5953,
+                    "end": 21389,
+                    "name": "div",
+                    "jsxRoot": false
+                },
+                className: "flex justify-center items-start w-full",
+                __v0_r: [0, 5968, 6008],
+                __v0_c: [[111, 24, "flex justify-center items-start w-full"]],
+                children: [_jsxDEV("div", {
+                    __v0_e: {
+                        "start": 6062,
+                        "end": 6593,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "w-12 self-stretch relative overflow-hidden hidden md:block",
+                    __v0_r: [0, 6077, 6137],
+                    __v0_c: [[113, 26, "w-12 self-stretch relative overflow-hidden hidden md:block"]],
+                    children: _jsxDEV("div", {
+                        __v0_e: {
+                            "start": 6151,
+                            "end": 6576,
+                            "name": "div",
+                            "jsxRoot": false
+                        },
+                        className: "w-[162px] left-[-58px] top-[-120px] absolute flex flex-col justify-start items-start",
+                        __v0_r: [0, 6166, 6252],
+                        __v0_c: [[114, 28, "w-[162px] left-[-58px] top-[-120px] absolute flex flex-col justify-start items-start"]],
+                        children: Array.from({
+                            length: 200
+                        }).map( (_, i) => (_jsxDEV("div", {
+                            __v0_e: {
+                                "start": 6329,
+                                "end": 6539,
+                                "name": "div",
+                                "jsxRoot": true
+                            },
+                            className: "self-stretch h-4 rotate-[-45deg] origin-top-left outline outline-[0.5px] outline-[rgba(3,7,18,0.08)] outline-offset-[-0.25px]",
+                            __v0_r: [0, 6388, 6515],
+                            __v0_c: [[118, 29, "self-stretch h-4 rotate-[-45deg] origin-top-left outline outline-[0.5px] outline-[rgba(3,7,18,0.08)] outline-offset-[-0.25px]"]]
+                        }, i, false, {
+                            fileName: _jsxFileName,
+                            lineNumber: 115,
+                            columnNumber: 59
+                        }, this)))
+                    }, void 0, false, {
+                        fileName: _jsxFileName,
+                        lineNumber: 114,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: _jsxFileName,
+                    lineNumber: 113,
+                    columnNumber: 11
+                }, this), _jsxDEV("div", {
+                    __v0_e: {
+                        "start": 6647,
+                        "end": 20788,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "flex-1 flex flex-col md:flex-row justify-center items-center gap-6 py-12 md:py-0",
+                    __v0_r: [0, 6662, 6744],
+                    __v0_c: [[125, 26, "flex-1 flex flex-col md:flex-row justify-center items-center gap-6 py-12 md:py-0"]],
+                    children: [_jsxDEV("div", {
+                        __v0_e: {
+                            "start": 6791,
+                            "end": 11351,
+                            "name": "div",
+                            "jsxRoot": false
+                        },
+                        className: "flex-1 max-w-full md:max-w-none self-stretch px-6 py-5 border border-[rgba(50,45,43,0.12)] border-[#E0DEDB] overflow-hidden flex flex-col justify-start items-start gap-12 bg-[rgba(255,255,255,0)]",
+                        __v0_r: [0, 6806, 7003],
+                        __v0_c: [[127, 28, "flex-1 max-w-full md:max-w-none self-stretch px-6 py-5 border border-[rgba(50,45,43,0.12)] border-[#E0DEDB] overflow-hidden flex flex-col justify-start items-start gap-12 bg-[rgba(255,255,255,0)]"]],
+                        children: [_jsxDEV("div", {
+                            __v0_e: {
+                                "start": 7053,
+                                "end": 10078,
+                                "name": "div",
+                                "jsxRoot": false
+                            },
+                            className: "self-stretch flex flex-col justify-start items-center gap-9",
+                            __v0_r: [0, 7068, 7129],
+                            __v0_c: [[129, 30, "self-stretch flex flex-col justify-start items-center gap-9"]],
+                            children: [_jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 7147,
+                                    "end": 7588,
+                                    "name": "div",
+                                    "jsxRoot": false
+                                },
+                                className: "self-stretch flex flex-col justify-start items-start gap-2",
+                                __v0_r: [0, 7162, 7222],
+                                __v0_c: [[130, 32, "self-stretch flex flex-col justify-start items-start gap-2"]],
+                                children: [_jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 7242,
+                                        "end": 7339,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "text-[rgba(55,50,47,0.90)] text-lg font-medium leading-7 font-sans",
+                                    __v0_r: [0, 7257, 7325],
+                                    __v0_c: [[131, 34, "text-[rgba(55,50,47,0.90)] text-lg font-medium leading-7 font-sans"]],
+                                    __v0_i: "0:131:103:Starter",
+                                    children: "Starter"
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 131,
+                                    columnNumber: 19
+                                }, this), _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 7358,
+                                        "end": 7565,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "w-full max-w-[242px] text-[rgba(41,37,35,0.70)] text-sm font-normal leading-5 font-sans",
+                                    __v0_r: [0, 7373, 7462],
+                                    __v0_c: [[132, 34, "w-full max-w-[242px] text-[rgba(41,37,35,0.70)] text-sm font-normal leading-5 font-sans"]],
+                                    __v0_i: "0:133:21:Perfect for individuals and small teams getting started.",
+                                    children: "Perfect for individuals and small teams getting started."
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 132,
+                                    columnNumber: 19
+                                }, this)]
+                            }, void 0, true, {
+                                fileName: _jsxFileName,
+                                lineNumber: 130,
+                                columnNumber: 17
+                            }, this), _jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 7606,
+                                    "end": 9471,
+                                    "name": "div",
+                                    "jsxRoot": false
+                                },
+                                className: "self-stretch flex flex-col justify-start items-start gap-2",
+                                __v0_r: [0, 7621, 7681],
+                                __v0_c: [[137, 32, "self-stretch flex flex-col justify-start items-start gap-2"]],
+                                children: _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 7701,
+                                        "end": 9448,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "flex flex-col justify-start items-start gap-1",
+                                    __v0_r: [0, 7716, 7763],
+                                    __v0_c: [[138, 34, "flex flex-col justify-start items-start gap-1"]],
+                                    children: [_jsxDEV("div", {
+                                        __v0_e: {
+                                            "start": 7785,
+                                            "end": 9227,
+                                            "name": "div",
+                                            "jsxRoot": false
+                                        },
+                                        className: "relative h-[60px] flex items-center text-[#37322F] text-5xl font-medium leading-[60px] font-serif",
+                                        __v0_r: [0, 7800, 7899],
+                                        __v0_c: [[139, 36, "relative h-[60px] flex items-center text-[#37322F] text-5xl font-medium leading-[60px] font-serif"]],
+                                        children: [_jsxDEV("span", {
+                                            __v0_e: {
+                                                "start": 7923,
+                                                "end": 7991,
+                                                "name": "span",
+                                                "jsxRoot": false
+                                            },
+                                            className: "invisible",
+                                            __v0_r: [0, 7939, 7950],
+                                            __v0_c: [[140, 39, "invisible"]],
+                                            __v0_i: "0:140:51:$",
+                                            children: ["$", pricing.starter[billingPeriod]]
+                                        }, void 0, true, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 140,
+                                            columnNumber: 23
+                                        }, this), _jsxDEV("span", {
+                                            __v0_e: {
+                                                "start": 8014,
+                                                "end": 8598,
+                                                "name": "span",
+                                                "jsxRoot": false
+                                            },
+                                            className: "absolute inset-0 flex items-center transition-all duration-500",
+                                            __v0_r: [0, 8054, 8118],
+                                            __v0_c: [[142, 35, "absolute inset-0 flex items-center transition-all duration-500"]],
+                                            style: {
+                                                opacity: billingPeriod === "annually" ? 1 : 0,
+                                                transform: `scale(${billingPeriod === "annually" ? 1 : 0.8})`,
+                                                filter: `blur(${billingPeriod === "annually" ? 0 : 4}px)`,
+                                            },
+                                            "aria-hidden": billingPeriod !== "annually",
+                                            __v0_i: "0:150:25:$",
+                                            children: ["$", pricing.starter.annually]
+                                        }, void 0, true, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 141,
+                                            columnNumber: 23
+                                        }, this), _jsxDEV("span", {
+                                            __v0_e: {
+                                                "start": 8621,
+                                                "end": 9200,
+                                                "name": "span",
+                                                "jsxRoot": false
+                                            },
+                                            className: "absolute inset-0 flex items-center transition-all duration-500",
+                                            __v0_r: [0, 8661, 8725],
+                                            __v0_c: [[153, 35, "absolute inset-0 flex items-center transition-all duration-500"]],
+                                            style: {
+                                                opacity: billingPeriod === "monthly" ? 1 : 0,
+                                                transform: `scale(${billingPeriod === "monthly" ? 1 : 0.8})`,
+                                                filter: `blur(${billingPeriod === "monthly" ? 0 : 4}px)`,
+                                            },
+                                            "aria-hidden": billingPeriod !== "monthly",
+                                            __v0_i: "0:161:25:$",
+                                            children: ["$", pricing.starter.monthly]
+                                        }, void 0, true, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 152,
+                                            columnNumber: 23
+                                        }, this)]
+                                    }, void 0, true, {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 139,
+                                        columnNumber: 21
+                                    }, this), _jsxDEV("div", {
+                                        __v0_e: {
+                                            "start": 9248,
+                                            "end": 9423,
+                                            "name": "div",
+                                            "jsxRoot": false
+                                        },
+                                        className: "text-[#847971] text-sm font-medium font-sans",
+                                        __v0_r: [0, 9263, 9309],
+                                        __v0_c: [[164, 36, "text-[#847971] text-sm font-medium font-sans"]],
+                                        children: ["per ", billingPeriod === "monthly" ? "month" : "year", ", per user."]
+                                    }, void 0, true, {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 164,
+                                        columnNumber: 21
+                                    }, this)]
+                                }, void 0, true, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 138,
+                                    columnNumber: 19
+                                }, this)
+                            }, void 0, false, {
+                                fileName: _jsxFileName,
+                                lineNumber: 137,
+                                columnNumber: 17
+                            }, this), _jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 9489,
+                                    "end": 10057,
+                                    "name": "div",
+                                    "jsxRoot": false
+                                },
+                                className: "self-stretch px-4 py-[10px] relative bg-[#37322F] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center",
+                                __v0_r: [0, 9504, 9660],
+                                __v0_c: [[170, 32, "self-stretch px-4 py-[10px] relative bg-[#37322F] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center"]],
+                                children: [_jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 9680,
+                                        "end": 9836,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply",
+                                    __v0_r: [0, 9695, 9829],
+                                    __v0_c: [[171, 34, "w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"]]
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 171,
+                                    columnNumber: 19
+                                }, this), _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 9855,
+                                        "end": 10034,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "max-w-[108px] flex justify-center flex-col text-[#FBFAF9] text-[13px] font-medium leading-5 font-sans",
+                                    __v0_r: [0, 9870, 9973],
+                                    __v0_c: [[172, 34, "max-w-[108px] flex justify-center flex-col text-[#FBFAF9] text-[13px] font-medium leading-5 font-sans"]],
+                                    __v0_i: "0:173:21:Start for free",
+                                    children: "Start for free"
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 172,
+                                    columnNumber: 19
+                                }, this)]
+                            }, void 0, true, {
+                                fileName: _jsxFileName,
+                                lineNumber: 170,
+                                columnNumber: 17
+                            }, this)]
+                        }, void 0, true, {
+                            fileName: _jsxFileName,
+                            lineNumber: 129,
+                            columnNumber: 15
+                        }, this), _jsxDEV("div", {
+                            __v0_e: {
+                                "start": 10094,
+                                "end": 11332,
+                                "name": "div",
+                                "jsxRoot": false
+                            },
+                            className: "self-stretch flex flex-col justify-start items-start gap-2",
+                            __v0_r: [0, 10109, 10169],
+                            __v0_c: [[178, 30, "self-stretch flex flex-col justify-start items-start gap-2"]],
+                            children: ["Up to 3 projects", "Basic documentation tools", "Community support", "Standard templates", "Basic analytics", ].map( (feature, index) => (_jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 10453,
+                                    "end": 11291,
+                                    "name": "div",
+                                    "jsxRoot": true
+                                },
+                                className: "self-stretch flex justify-start items-center gap-[13px]",
+                                __v0_r: [0, 10480, 10537],
+                                __v0_c: [[186, 46, "self-stretch flex justify-start items-center gap-[13px]"]],
+                                children: [_jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 10559,
+                                        "end": 11089,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "w-4 h-4 relative flex items-center justify-center",
+                                    __v0_r: [0, 10574, 10625],
+                                    __v0_c: [[187, 36, "w-4 h-4 relative flex items-center justify-center"]],
+                                    children: _jsxDEV("svg", {
+                                        __v0_e: {
+                                            "start": 10649,
+                                            "end": 11062,
+                                            "name": "svg",
+                                            "jsxRoot": false
+                                        },
+                                        __v0_m: "1",
+                                        __v0_c: [[188, 27, ""]],
+                                        width: "12",
+                                        height: "12",
+                                        viewBox: "0 0 12 12",
+                                        fill: "none",
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        children: _jsxDEV("path", {
+                                            __v0_e: {
+                                                "start": 10769,
+                                                "end": 11033,
+                                                "name": "path",
+                                                "jsxRoot": false
+                                            },
+                                            __v0_m: "1",
+                                            __v0_c: [[189, 30, ""]],
+                                            d: "M10 3L4.5 8.5L2 6",
+                                            stroke: "#9CA3AF",
+                                            strokeWidth: "1.5",
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round"
+                                        }, void 0, false, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 189,
+                                            columnNumber: 25
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 188,
+                                        columnNumber: 23
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 187,
+                                    columnNumber: 21
+                                }, this), _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 11110,
+                                        "end": 11266,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "flex-1 text-[rgba(55,50,47,0.80)] text-[12.5px] font-normal leading-5 font-sans",
+                                    __v0_r: [0, 11125, 11206],
+                                    __v0_c: [[198, 36, "flex-1 text-[rgba(55,50,47,0.80)] text-[12.5px] font-normal leading-5 font-sans"]],
+                                    children: feature
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 198,
+                                    columnNumber: 21
+                                }, this)]
+                            }, index, true, {
+                                fileName: _jsxFileName,
+                                lineNumber: 185,
+                                columnNumber: 44
+                            }, this)))
+                        }, void 0, false, {
+                            fileName: _jsxFileName,
+                            lineNumber: 178,
+                            columnNumber: 15
+                        }, this)]
+                    }, void 0, true, {
+                        fileName: _jsxFileName,
+                        lineNumber: 127,
+                        columnNumber: 13
+                    }, this), _jsxDEV("div", {
+                        __v0_e: {
+                            "start": 11414,
+                            "end": 16056,
+                            "name": "div",
+                            "jsxRoot": false
+                        },
+                        className: "flex-1 max-w-full md:max-w-none self-stretch px-6 py-5 bg-[#37322F] border border-[rgba(50,45,43,0.12)] border-[rgba(55,50,47,0.12)] overflow-hidden flex flex-col justify-start items-start gap-12",
+                        __v0_r: [0, 11429, 11626],
+                        __v0_c: [[207, 28, "flex-1 max-w-full md:max-w-none self-stretch px-6 py-5 bg-[#37322F] border border-[rgba(50,45,43,0.12)] border-[rgba(55,50,47,0.12)] overflow-hidden flex flex-col justify-start items-start gap-12"]],
+                        children: [_jsxDEV("div", {
+                            __v0_e: {
+                                "start": 11676,
+                                "end": 14721,
+                                "name": "div",
+                                "jsxRoot": false
+                            },
+                            className: "self-stretch flex flex-col justify-start items-center gap-9",
+                            __v0_r: [0, 11691, 11752],
+                            __v0_c: [[209, 30, "self-stretch flex flex-col justify-start items-center gap-9"]],
+                            children: [_jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 11770,
+                                    "end": 12187,
+                                    "name": "div",
+                                    "jsxRoot": false
+                                },
+                                className: "self-stretch flex flex-col justify-start items-start gap-2",
+                                __v0_r: [0, 11785, 11845],
+                                __v0_c: [[210, 32, "self-stretch flex flex-col justify-start items-start gap-2"]],
+                                children: [_jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 11865,
+                                        "end": 11955,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "text-[#FBFAF9] text-lg font-medium leading-7 font-sans",
+                                    __v0_r: [0, 11880, 11936],
+                                    __v0_c: [[211, 34, "text-[#FBFAF9] text-lg font-medium leading-7 font-sans"]],
+                                    __v0_i: "0:211:91:Professional",
+                                    children: "Professional"
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 211,
+                                    columnNumber: 19
+                                }, this), _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 11974,
+                                        "end": 12164,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "w-full max-w-[242px] text-[#B2AEA9] text-sm font-normal leading-5 font-sans",
+                                    __v0_r: [0, 11989, 12066],
+                                    __v0_c: [[212, 34, "w-full max-w-[242px] text-[#B2AEA9] text-sm font-normal leading-5 font-sans"]],
+                                    __v0_i: "0:213:21:Advanced features for growing teams and businesses.",
+                                    children: "Advanced features for growing teams and businesses."
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 212,
+                                    columnNumber: 19
+                                }, this)]
+                            }, void 0, true, {
+                                fileName: _jsxFileName,
+                                lineNumber: 210,
+                                columnNumber: 17
+                            }, this), _jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 12205,
+                                    "end": 14085,
+                                    "name": "div",
+                                    "jsxRoot": false
+                                },
+                                className: "self-stretch flex flex-col justify-start items-start gap-2",
+                                __v0_r: [0, 12220, 12280],
+                                __v0_c: [[217, 32, "self-stretch flex flex-col justify-start items-start gap-2"]],
+                                children: _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 12300,
+                                        "end": 14062,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "flex flex-col justify-start items-start gap-1",
+                                    __v0_r: [0, 12315, 12362],
+                                    __v0_c: [[218, 34, "flex flex-col justify-start items-start gap-1"]],
+                                    children: [_jsxDEV("div", {
+                                        __v0_e: {
+                                            "start": 12384,
+                                            "end": 13841,
+                                            "name": "div",
+                                            "jsxRoot": false
+                                        },
+                                        className: "relative h-[60px] flex items-center text-[#F0EFEE] text-5xl font-medium leading-[60px] font-serif",
+                                        __v0_r: [0, 12399, 12498],
+                                        __v0_c: [[219, 36, "relative h-[60px] flex items-center text-[#F0EFEE] text-5xl font-medium leading-[60px] font-serif"]],
+                                        children: [_jsxDEV("span", {
+                                            __v0_e: {
+                                                "start": 12522,
+                                                "end": 12595,
+                                                "name": "span",
+                                                "jsxRoot": false
+                                            },
+                                            className: "invisible",
+                                            __v0_r: [0, 12538, 12549],
+                                            __v0_c: [[220, 39, "invisible"]],
+                                            __v0_i: "0:220:51:$",
+                                            children: ["$", pricing.professional[billingPeriod]]
+                                        }, void 0, true, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 220,
+                                            columnNumber: 23
+                                        }, this), _jsxDEV("span", {
+                                            __v0_e: {
+                                                "start": 12618,
+                                                "end": 13207,
+                                                "name": "span",
+                                                "jsxRoot": false
+                                            },
+                                            className: "absolute inset-0 flex items-center transition-all duration-500",
+                                            __v0_r: [0, 12658, 12722],
+                                            __v0_c: [[222, 35, "absolute inset-0 flex items-center transition-all duration-500"]],
+                                            style: {
+                                                opacity: billingPeriod === "annually" ? 1 : 0,
+                                                transform: `scale(${billingPeriod === "annually" ? 1 : 0.8})`,
+                                                filter: `blur(${billingPeriod === "annually" ? 0 : 4}px)`,
+                                            },
+                                            "aria-hidden": billingPeriod !== "annually",
+                                            __v0_i: "0:230:25:$",
+                                            children: ["$", pricing.professional.annually]
+                                        }, void 0, true, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 221,
+                                            columnNumber: 23
+                                        }, this), _jsxDEV("span", {
+                                            __v0_e: {
+                                                "start": 13230,
+                                                "end": 13814,
+                                                "name": "span",
+                                                "jsxRoot": false
+                                            },
+                                            className: "absolute inset-0 flex items-center transition-all duration-500",
+                                            __v0_r: [0, 13270, 13334],
+                                            __v0_c: [[233, 35, "absolute inset-0 flex items-center transition-all duration-500"]],
+                                            style: {
+                                                opacity: billingPeriod === "monthly" ? 1 : 0,
+                                                transform: `scale(${billingPeriod === "monthly" ? 1 : 0.8})`,
+                                                filter: `blur(${billingPeriod === "monthly" ? 0 : 4}px)`,
+                                            },
+                                            "aria-hidden": billingPeriod !== "monthly",
+                                            __v0_i: "0:241:25:$",
+                                            children: ["$", pricing.professional.monthly]
+                                        }, void 0, true, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 232,
+                                            columnNumber: 23
+                                        }, this)]
+                                    }, void 0, true, {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 219,
+                                        columnNumber: 21
+                                    }, this), _jsxDEV("div", {
+                                        __v0_e: {
+                                            "start": 13862,
+                                            "end": 14037,
+                                            "name": "div",
+                                            "jsxRoot": false
+                                        },
+                                        className: "text-[#D2C6BF] text-sm font-medium font-sans",
+                                        __v0_r: [0, 13877, 13923],
+                                        __v0_c: [[244, 36, "text-[#D2C6BF] text-sm font-medium font-sans"]],
+                                        children: ["per ", billingPeriod === "monthly" ? "month" : "year", ", per user."]
+                                    }, void 0, true, {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 244,
+                                        columnNumber: 21
+                                    }, this)]
+                                }, void 0, true, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 218,
+                                    columnNumber: 19
+                                }, this)
+                            }, void 0, false, {
+                                fileName: _jsxFileName,
+                                lineNumber: 217,
+                                columnNumber: 17
+                            }, this), _jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 14138,
+                                    "end": 14700,
+                                    "name": "div",
+                                    "jsxRoot": false
+                                },
+                                className: "self-stretch px-4 py-[10px] relative bg-[#FBFAF9] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center",
+                                __v0_r: [0, 14153, 14309],
+                                __v0_c: [[251, 32, "self-stretch px-4 py-[10px] relative bg-[#FBFAF9] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center"]],
+                                children: [_jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 14329,
+                                        "end": 14482,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply",
+                                    __v0_r: [0, 14344, 14475],
+                                    __v0_c: [[252, 34, "w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"]]
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 252,
+                                    columnNumber: 19
+                                }, this), _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 14501,
+                                        "end": 14677,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "max-w-[108px] flex justify-center flex-col text-[#37322F] text-[13px] font-medium leading-5 font-sans",
+                                    __v0_r: [0, 14516, 14619],
+                                    __v0_c: [[253, 34, "max-w-[108px] flex justify-center flex-col text-[#37322F] text-[13px] font-medium leading-5 font-sans"]],
+                                    __v0_i: "0:254:21:Get started",
+                                    children: "Get started"
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 253,
+                                    columnNumber: 19
+                                }, this)]
+                            }, void 0, true, {
+                                fileName: _jsxFileName,
+                                lineNumber: 251,
+                                columnNumber: 17
+                            }, this)]
+                        }, void 0, true, {
+                            fileName: _jsxFileName,
+                            lineNumber: 209,
+                            columnNumber: 15
+                        }, this), _jsxDEV("div", {
+                            __v0_e: {
+                                "start": 14737,
+                                "end": 16037,
+                                "name": "div",
+                                "jsxRoot": false
+                            },
+                            className: "self-stretch flex flex-col justify-start items-start gap-2",
+                            __v0_r: [0, 14752, 14812],
+                            __v0_c: [[259, 30, "self-stretch flex flex-col justify-start items-start gap-2"]],
+                            children: ["Unlimited projects", "Advanced documentation tools", "Priority support", "Custom templates", "Advanced analytics", "Team collaboration", "API access", "Custom integrations", ].map( (feature, index) => (_jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 15214,
+                                    "end": 15996,
+                                    "name": "div",
+                                    "jsxRoot": true
+                                },
+                                className: "self-stretch flex justify-start items-center gap-[13px]",
+                                __v0_r: [0, 15241, 15298],
+                                __v0_c: [[270, 46, "self-stretch flex justify-start items-center gap-[13px]"]],
+                                children: [_jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 15320,
+                                        "end": 15850,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "w-4 h-4 relative flex items-center justify-center",
+                                    __v0_r: [0, 15335, 15386],
+                                    __v0_c: [[271, 36, "w-4 h-4 relative flex items-center justify-center"]],
+                                    children: _jsxDEV("svg", {
+                                        __v0_e: {
+                                            "start": 15410,
+                                            "end": 15823,
+                                            "name": "svg",
+                                            "jsxRoot": false
+                                        },
+                                        __v0_m: "1",
+                                        __v0_c: [[272, 27, ""]],
+                                        width: "12",
+                                        height: "12",
+                                        viewBox: "0 0 12 12",
+                                        fill: "none",
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        children: _jsxDEV("path", {
+                                            __v0_e: {
+                                                "start": 15530,
+                                                "end": 15794,
+                                                "name": "path",
+                                                "jsxRoot": false
+                                            },
+                                            __v0_m: "1",
+                                            __v0_c: [[273, 30, ""]],
+                                            d: "M10 3L4.5 8.5L2 6",
+                                            stroke: "#FF8000",
+                                            strokeWidth: "1.5",
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round"
+                                        }, void 0, false, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 273,
+                                            columnNumber: 25
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 272,
+                                        columnNumber: 23
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 271,
+                                    columnNumber: 21
+                                }, this), _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 15871,
+                                        "end": 15971,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "flex-1 text-[#F0EFEE] text-[12.5px] font-normal leading-5 font-sans",
+                                    __v0_r: [0, 15886, 15955],
+                                    __v0_c: [[282, 36, "flex-1 text-[#F0EFEE] text-[12.5px] font-normal leading-5 font-sans"]],
+                                    children: feature
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 282,
+                                    columnNumber: 21
+                                }, this)]
+                            }, index, true, {
+                                fileName: _jsxFileName,
+                                lineNumber: 269,
+                                columnNumber: 44
+                            }, this)))
+                        }, void 0, false, {
+                            fileName: _jsxFileName,
+                            lineNumber: 259,
+                            columnNumber: 15
+                        }, this)]
+                    }, void 0, true, {
+                        fileName: _jsxFileName,
+                        lineNumber: 207,
+                        columnNumber: 13
+                    }, this), _jsxDEV("div", {
+                        __v0_e: {
+                            "start": 16106,
+                            "end": 20771,
+                            "name": "div",
+                            "jsxRoot": false
+                        },
+                        className: "flex-1 max-w-full md:max-w-none self-stretch px-6 py-5 bg-white border border-[#E0DEDB] overflow-hidden flex flex-col justify-start items-start gap-12",
+                        __v0_r: [0, 16121, 16273],
+                        __v0_c: [[289, 28, "flex-1 max-w-full md:max-w-none self-stretch px-6 py-5 bg-white border border-[#E0DEDB] overflow-hidden flex flex-col justify-start items-start gap-12"]],
+                        children: [_jsxDEV("div", {
+                            __v0_e: {
+                                "start": 16323,
+                                "end": 19361,
+                                "name": "div",
+                                "jsxRoot": false
+                            },
+                            className: "self-stretch flex flex-col justify-start items-center gap-9",
+                            __v0_r: [0, 16338, 16399],
+                            __v0_c: [[291, 30, "self-stretch flex flex-col justify-start items-center gap-9"]],
+                            children: [_jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 16417,
+                                    "end": 16863,
+                                    "name": "div",
+                                    "jsxRoot": false
+                                },
+                                className: "self-stretch flex flex-col justify-start items-start gap-2",
+                                __v0_r: [0, 16432, 16492],
+                                __v0_c: [[292, 32, "self-stretch flex flex-col justify-start items-start gap-2"]],
+                                children: [_jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 16512,
+                                        "end": 16612,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "text-[rgba(55,50,47,0.90)] text-lg font-medium leading-7 font-sans",
+                                    __v0_r: [0, 16527, 16595],
+                                    __v0_c: [[293, 34, "text-[rgba(55,50,47,0.90)] text-lg font-medium leading-7 font-sans"]],
+                                    __v0_i: "0:293:103:Enterprise",
+                                    children: "Enterprise"
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 293,
+                                    columnNumber: 19
+                                }, this), _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 16631,
+                                        "end": 16840,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "w-full max-w-[242px] text-[rgba(41,37,35,0.70)] text-sm font-normal leading-5 font-sans",
+                                    __v0_r: [0, 16646, 16735],
+                                    __v0_c: [[294, 34, "w-full max-w-[242px] text-[rgba(41,37,35,0.70)] text-sm font-normal leading-5 font-sans"]],
+                                    __v0_i: "0:295:21:Complete solution for large organizations and enterprises.",
+                                    children: "Complete solution for large organizations and enterprises."
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 294,
+                                    columnNumber: 19
+                                }, this)]
+                            }, void 0, true, {
+                                fileName: _jsxFileName,
+                                lineNumber: 292,
+                                columnNumber: 17
+                            }, this), _jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 16881,
+                                    "end": 18755,
+                                    "name": "div",
+                                    "jsxRoot": false
+                                },
+                                className: "self-stretch flex flex-col justify-start items-start gap-2",
+                                __v0_r: [0, 16896, 16956],
+                                __v0_c: [[299, 32, "self-stretch flex flex-col justify-start items-start gap-2"]],
+                                children: _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 16976,
+                                        "end": 18732,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "flex flex-col justify-start items-start gap-1",
+                                    __v0_r: [0, 16991, 17038],
+                                    __v0_c: [[300, 34, "flex flex-col justify-start items-start gap-1"]],
+                                    children: [_jsxDEV("div", {
+                                        __v0_e: {
+                                            "start": 17060,
+                                            "end": 18511,
+                                            "name": "div",
+                                            "jsxRoot": false
+                                        },
+                                        className: "relative h-[60px] flex items-center text-[#37322F] text-5xl font-medium leading-[60px] font-serif",
+                                        __v0_r: [0, 17075, 17174],
+                                        __v0_c: [[301, 36, "relative h-[60px] flex items-center text-[#37322F] text-5xl font-medium leading-[60px] font-serif"]],
+                                        children: [_jsxDEV("span", {
+                                            __v0_e: {
+                                                "start": 17198,
+                                                "end": 17269,
+                                                "name": "span",
+                                                "jsxRoot": false
+                                            },
+                                            className: "invisible",
+                                            __v0_r: [0, 17214, 17225],
+                                            __v0_c: [[302, 39, "invisible"]],
+                                            __v0_i: "0:302:51:$",
+                                            children: ["$", pricing.enterprise[billingPeriod]]
+                                        }, void 0, true, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 302,
+                                            columnNumber: 23
+                                        }, this), _jsxDEV("span", {
+                                            __v0_e: {
+                                                "start": 17292,
+                                                "end": 17879,
+                                                "name": "span",
+                                                "jsxRoot": false
+                                            },
+                                            className: "absolute inset-0 flex items-center transition-all duration-500",
+                                            __v0_r: [0, 17332, 17396],
+                                            __v0_c: [[304, 35, "absolute inset-0 flex items-center transition-all duration-500"]],
+                                            style: {
+                                                opacity: billingPeriod === "annually" ? 1 : 0,
+                                                transform: `scale(${billingPeriod === "annually" ? 1 : 0.8})`,
+                                                filter: `blur(${billingPeriod === "annually" ? 0 : 4}px)`,
+                                            },
+                                            "aria-hidden": billingPeriod !== "annually",
+                                            __v0_i: "0:312:25:$",
+                                            children: ["$", pricing.enterprise.annually]
+                                        }, void 0, true, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 303,
+                                            columnNumber: 23
+                                        }, this), _jsxDEV("span", {
+                                            __v0_e: {
+                                                "start": 17902,
+                                                "end": 18484,
+                                                "name": "span",
+                                                "jsxRoot": false
+                                            },
+                                            className: "absolute inset-0 flex items-center transition-all duration-500",
+                                            __v0_r: [0, 17942, 18006],
+                                            __v0_c: [[315, 35, "absolute inset-0 flex items-center transition-all duration-500"]],
+                                            style: {
+                                                opacity: billingPeriod === "monthly" ? 1 : 0,
+                                                transform: `scale(${billingPeriod === "monthly" ? 1 : 0.8})`,
+                                                filter: `blur(${billingPeriod === "monthly" ? 0 : 4}px)`,
+                                            },
+                                            "aria-hidden": billingPeriod !== "monthly",
+                                            __v0_i: "0:323:25:$",
+                                            children: ["$", pricing.enterprise.monthly]
+                                        }, void 0, true, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 314,
+                                            columnNumber: 23
+                                        }, this)]
+                                    }, void 0, true, {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 301,
+                                        columnNumber: 21
+                                    }, this), _jsxDEV("div", {
+                                        __v0_e: {
+                                            "start": 18532,
+                                            "end": 18707,
+                                            "name": "div",
+                                            "jsxRoot": false
+                                        },
+                                        className: "text-[#847971] text-sm font-medium font-sans",
+                                        __v0_r: [0, 18547, 18593],
+                                        __v0_c: [[326, 36, "text-[#847971] text-sm font-medium font-sans"]],
+                                        children: ["per ", billingPeriod === "monthly" ? "month" : "year", ", per user."]
+                                    }, void 0, true, {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 326,
+                                        columnNumber: 21
+                                    }, this)]
+                                }, void 0, true, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 300,
+                                    columnNumber: 19
+                                }, this)
+                            }, void 0, false, {
+                                fileName: _jsxFileName,
+                                lineNumber: 299,
+                                columnNumber: 17
+                            }, this), _jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 18773,
+                                    "end": 19340,
+                                    "name": "div",
+                                    "jsxRoot": false
+                                },
+                                className: "self-stretch px-4 py-[10px] relative bg-[#37322F] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center",
+                                __v0_r: [0, 18788, 18944],
+                                __v0_c: [[332, 32, "self-stretch px-4 py-[10px] relative bg-[#37322F] shadow-[0px_2px_4px_rgba(55,50,47,0.12)] overflow-hidden rounded-[99px] flex justify-center items-center"]],
+                                children: [_jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 18964,
+                                        "end": 19120,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply",
+                                    __v0_r: [0, 18979, 19113],
+                                    __v0_c: [[333, 34, "w-full h-[41px] absolute left-0 top-[-0.5px] bg-gradient-to-b from-[rgba(255,255,255,0.20)] to-[rgba(0,0,0,0.10)] mix-blend-multiply"]]
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 333,
+                                    columnNumber: 19
+                                }, this), _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 19139,
+                                        "end": 19317,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "max-w-[108px] flex justify-center flex-col text-[#FBFAF9] text-[13px] font-medium leading-5 font-sans",
+                                    __v0_r: [0, 19154, 19257],
+                                    __v0_c: [[334, 34, "max-w-[108px] flex justify-center flex-col text-[#FBFAF9] text-[13px] font-medium leading-5 font-sans"]],
+                                    __v0_i: "0:335:21:Contact sales",
+                                    children: "Contact sales"
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 334,
+                                    columnNumber: 19
+                                }, this)]
+                            }, void 0, true, {
+                                fileName: _jsxFileName,
+                                lineNumber: 332,
+                                columnNumber: 17
+                            }, this)]
+                        }, void 0, true, {
+                            fileName: _jsxFileName,
+                            lineNumber: 291,
+                            columnNumber: 15
+                        }, this), _jsxDEV("div", {
+                            __v0_e: {
+                                "start": 19377,
+                                "end": 20752,
+                                "name": "div",
+                                "jsxRoot": false
+                            },
+                            className: "self-stretch flex flex-col justify-start items-start gap-2",
+                            __v0_r: [0, 19392, 19452],
+                            __v0_c: [[340, 30, "self-stretch flex flex-col justify-start items-start gap-2"]],
+                            children: ["Everything in Professional", "Dedicated account manager", "24/7 phone support", "Custom onboarding", "Advanced security features", "SSO integration", "Custom contracts", "White-label options", ].map( (feature, index) => (_jsxDEV("div", {
+                                __v0_e: {
+                                    "start": 19873,
+                                    "end": 20711,
+                                    "name": "div",
+                                    "jsxRoot": true
+                                },
+                                className: "self-stretch flex justify-start items-center gap-[13px]",
+                                __v0_r: [0, 19900, 19957],
+                                __v0_c: [[351, 46, "self-stretch flex justify-start items-center gap-[13px]"]],
+                                children: [_jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 19979,
+                                        "end": 20509,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "w-4 h-4 relative flex items-center justify-center",
+                                    __v0_r: [0, 19994, 20045],
+                                    __v0_c: [[352, 36, "w-4 h-4 relative flex items-center justify-center"]],
+                                    children: _jsxDEV("svg", {
+                                        __v0_e: {
+                                            "start": 20069,
+                                            "end": 20482,
+                                            "name": "svg",
+                                            "jsxRoot": false
+                                        },
+                                        __v0_m: "1",
+                                        __v0_c: [[353, 27, ""]],
+                                        width: "12",
+                                        height: "12",
+                                        viewBox: "0 0 12 12",
+                                        fill: "none",
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        children: _jsxDEV("path", {
+                                            __v0_e: {
+                                                "start": 20189,
+                                                "end": 20453,
+                                                "name": "path",
+                                                "jsxRoot": false
+                                            },
+                                            __v0_m: "1",
+                                            __v0_c: [[354, 30, ""]],
+                                            d: "M10 3L4.5 8.5L2 6",
+                                            stroke: "#9CA3AF",
+                                            strokeWidth: "1.5",
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round"
+                                        }, void 0, false, {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 354,
+                                            columnNumber: 25
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 353,
+                                        columnNumber: 23
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 352,
+                                    columnNumber: 21
+                                }, this), _jsxDEV("div", {
+                                    __v0_e: {
+                                        "start": 20530,
+                                        "end": 20686,
+                                        "name": "div",
+                                        "jsxRoot": false
+                                    },
+                                    className: "flex-1 text-[rgba(55,50,47,0.80)] text-[12.5px] font-normal leading-5 font-sans",
+                                    __v0_r: [0, 20545, 20626],
+                                    __v0_c: [[363, 36, "flex-1 text-[rgba(55,50,47,0.80)] text-[12.5px] font-normal leading-5 font-sans"]],
+                                    children: feature
+                                }, void 0, false, {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 363,
+                                    columnNumber: 21
+                                }, this)]
+                            }, index, true, {
+                                fileName: _jsxFileName,
+                                lineNumber: 350,
+                                columnNumber: 44
+                            }, this)))
+                        }, void 0, false, {
+                            fileName: _jsxFileName,
+                            lineNumber: 340,
+                            columnNumber: 15
+                        }, this)]
+                    }, void 0, true, {
+                        fileName: _jsxFileName,
+                        lineNumber: 289,
+                        columnNumber: 13
+                    }, this)]
+                }, void 0, true, {
+                    fileName: _jsxFileName,
+                    lineNumber: 125,
+                    columnNumber: 11
+                }, this), _jsxDEV("div", {
+                    __v0_e: {
+                        "start": 20843,
+                        "end": 21374,
+                        "name": "div",
+                        "jsxRoot": false
+                    },
+                    className: "w-12 self-stretch relative overflow-hidden hidden md:block",
+                    __v0_r: [0, 20858, 20918],
+                    __v0_c: [[373, 26, "w-12 self-stretch relative overflow-hidden hidden md:block"]],
+                    children: _jsxDEV("div", {
+                        __v0_e: {
+                            "start": 20932,
+                            "end": 21357,
+                            "name": "div",
+                            "jsxRoot": false
+                        },
+                        className: "w-[162px] left-[-58px] top-[-120px] absolute flex flex-col justify-start items-start",
+                        __v0_r: [0, 20947, 21033],
+                        __v0_c: [[374, 28, "w-[162px] left-[-58px] top-[-120px] absolute flex flex-col justify-start items-start"]],
+                        children: Array.from({
+                            length: 200
+                        }).map( (_, i) => (_jsxDEV("div", {
+                            __v0_e: {
+                                "start": 21110,
+                                "end": 21320,
+                                "name": "div",
+                                "jsxRoot": true
+                            },
+                            className: "self-stretch h-4 rotate-[-45deg] origin-top-left outline outline-[0.5px] outline-[rgba(3,7,18,0.08)] outline-offset-[-0.25px]",
+                            __v0_r: [0, 21169, 21296],
+                            __v0_c: [[378, 29, "self-stretch h-4 rotate-[-45deg] origin-top-left outline outline-[0.5px] outline-[rgba(3,7,18,0.08)] outline-offset-[-0.25px]"]]
+                        }, i, false, {
+                            fileName: _jsxFileName,
+                            lineNumber: 375,
+                            columnNumber: 59
+                        }, this)))
+                    }, void 0, false, {
+                        fileName: _jsxFileName,
+                        lineNumber: 374,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: _jsxFileName,
+                    lineNumber: 373,
+                    columnNumber: 11
+                }, this)]
+            }, void 0, true, {
+                fileName: _jsxFileName,
+                lineNumber: 111,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: _jsxFileName,
+            lineNumber: 110,
+            columnNumber: 7
+        }, this)]
+    }, void 0, true, {
+        fileName: _jsxFileName,
+        lineNumber: 23,
+        columnNumber: 11
+    }, this));
+}
+_react_refresh_temp_1 = PricingSection;
+__v0_$RefreshReg$(_react_refresh_temp_1, "PricingSection");
+_react_refresh_temp_2(PricingSection, "pNmdrAc8c1sAbA5pTaMfScqm90k=");
+
+self.__v0_$RefreshReg$ = prevRefreshReg
+self.__v0_$RefreshSig$ = prevRefreshSig
+//# sourceURL=blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/f2fffce3-17e1-40e2-b543-c8eb4bdbc640

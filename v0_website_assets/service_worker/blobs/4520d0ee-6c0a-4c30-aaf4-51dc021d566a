@@ -1,0 +1,57 @@
+const mod = window.__v0_modules__["React"];
+export default mod.default;
+const __v0_0 = mod["Activity"]; export { __v0_0 as "Activity" };
+const __v0_1 = mod["Children"]; export { __v0_1 as "Children" };
+const __v0_2 = mod["Component"]; export { __v0_2 as "Component" };
+const __v0_3 = mod["Fragment"]; export { __v0_3 as "Fragment" };
+const __v0_4 = mod["Profiler"]; export { __v0_4 as "Profiler" };
+const __v0_5 = mod["PureComponent"]; export { __v0_5 as "PureComponent" };
+const __v0_6 = mod["StrictMode"]; export { __v0_6 as "StrictMode" };
+const __v0_7 = mod["Suspense"]; export { __v0_7 as "Suspense" };
+const __v0_8 = mod["ViewTransition"]; export { __v0_8 as "ViewTransition" };
+const __v0_9 = mod["__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE"]; export { __v0_9 as "__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE" };
+const __v0_10 = mod["__COMPILER_RUNTIME"]; export { __v0_10 as "__COMPILER_RUNTIME" };
+const __v0_11 = mod["act"]; export { __v0_11 as "act" };
+const __v0_12 = mod["addTransitionType"]; export { __v0_12 as "addTransitionType" };
+const __v0_13 = mod["cache"]; export { __v0_13 as "cache" };
+const __v0_14 = mod["cacheSignal"]; export { __v0_14 as "cacheSignal" };
+const __v0_15 = mod["captureOwnerStack"]; export { __v0_15 as "captureOwnerStack" };
+const __v0_16 = mod["cloneElement"]; export { __v0_16 as "cloneElement" };
+const __v0_17 = mod["createContext"]; export { __v0_17 as "createContext" };
+const __v0_18 = mod["createElement"]; export { __v0_18 as "createElement" };
+const __v0_19 = mod["createRef"]; export { __v0_19 as "createRef" };
+const __v0_20 = mod["experimental_useOptimistic"]; export { __v0_20 as "experimental_useOptimistic" };
+const __v0_21 = mod["forwardRef"]; export { __v0_21 as "forwardRef" };
+const __v0_22 = mod["isValidElement"]; export { __v0_22 as "isValidElement" };
+const __v0_23 = mod["lazy"]; export { __v0_23 as "lazy" };
+const __v0_24 = mod["memo"]; export { __v0_24 as "memo" };
+const __v0_25 = mod["startTransition"]; export { __v0_25 as "startTransition" };
+const __v0_26 = mod["unstable_SuspenseList"]; export { __v0_26 as "unstable_SuspenseList" };
+const __v0_27 = mod["unstable_getCacheForType"]; export { __v0_27 as "unstable_getCacheForType" };
+const __v0_28 = mod["unstable_startGestureTransition"]; export { __v0_28 as "unstable_startGestureTransition" };
+const __v0_29 = mod["unstable_useCacheRefresh"]; export { __v0_29 as "unstable_useCacheRefresh" };
+const __v0_30 = mod["use"]; export { __v0_30 as "use" };
+const __v0_31 = mod["useActionState"]; export { __v0_31 as "useActionState" };
+const __v0_32 = mod["useCallback"]; export { __v0_32 as "useCallback" };
+const __v0_33 = mod["useContext"]; export { __v0_33 as "useContext" };
+const __v0_34 = mod["useDebugValue"]; export { __v0_34 as "useDebugValue" };
+const __v0_35 = mod["useDeferredValue"]; export { __v0_35 as "useDeferredValue" };
+const __v0_36 = mod["useEffect"]; export { __v0_36 as "useEffect" };
+const __v0_37 = mod["useEffectEvent"]; export { __v0_37 as "useEffectEvent" };
+const __v0_38 = mod["useId"]; export { __v0_38 as "useId" };
+const __v0_39 = mod["useImperativeHandle"]; export { __v0_39 as "useImperativeHandle" };
+const __v0_40 = mod["useInsertionEffect"]; export { __v0_40 as "useInsertionEffect" };
+const __v0_41 = mod["useLayoutEffect"]; export { __v0_41 as "useLayoutEffect" };
+const __v0_42 = mod["useMemo"]; export { __v0_42 as "useMemo" };
+const __v0_43 = mod["useOptimistic"]; export { __v0_43 as "useOptimistic" };
+const __v0_44 = mod["useReducer"]; export { __v0_44 as "useReducer" };
+const __v0_45 = mod["useRef"]; export { __v0_45 as "useRef" };
+const __v0_46 = mod["useState"]; export { __v0_46 as "useState" };
+const __v0_47 = mod["useSyncExternalStore"]; export { __v0_47 as "useSyncExternalStore" };
+const __v0_48 = mod["useTransition"]; export { __v0_48 as "useTransition" };
+const __v0_49 = mod["version"]; export { __v0_49 as "version" };
+
+
+//# sourceFileName=React
+
+//# sourceURL=blob:https://preview-brillance-saas-landing-page-hnk6u9we05p488fv7.vusercontent.net/4520d0ee-6c0a-4c30-aaf4-51dc021d566a
