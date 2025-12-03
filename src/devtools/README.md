@@ -32,4 +32,3 @@ The DevTools system runs inside the preview iframe and communicates with the mai
 
 This package is fully decompiled from bundle `3a384aa7a60f1de8.js`.
 See `MIGRATION_VERIFICATION.md` for a detailed line-by-line mapping.
-
