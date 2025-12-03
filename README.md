@@ -48,22 +48,22 @@ v0's architecture emulates a complete Next.js development environment through th
 ## How It Works
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                        User's Browser                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │         Main Window (v0.dev)                         │   │
-│  │  • Monaco Editor with TypeScript IntelliSense        │   │
-│  │  • Chat interface for AI interactions                │   │
-│  │  • Visual editing controls                           │   │
-│  └───────────────────┬─────────────────────────────────┘   │
-│                      │                                       │
-│                      │ PostMessage API                       │
-│                      │ (code updates, navigation, events)    │
-│                      ▼                                       │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │         Preview Iframe (iframe.html)                 │   │
+┌───────────────────────────────────────────────────────────┐
+│                       User's Browser                      │
+├───────────────────────────────────────────────────────────┤
+│                                                           │
+│  ┌────────────────────────────────────────────────────┐   │
+│  │         Main Window (v0.dev)                       │   │
+│  │  • Monaco Editor with TypeScript IntelliSense      │   │
+│  │  • Chat interface for AI interactions              │   │
+│  │  • Visual editing controls                         │   │
+│  └──────────────────┬─────────────────────────────────┘   │
+│                     │                                     │
+│                     │ PostMessage API                     │
+│                     │ (code updates, navigation, events)  │
+│                     ▼                                     │
+│  ┌────────────────────────────────────────────────────┐   │
+│  │         Preview Iframe (iframe.html)               │   │
 │  │  ┌─────────────────────────────────────────────┐   │   │
 │  │  │  Next.js App Router (16.0.2-canary.24)      │   │   │
 │  │  │  • React 19 + RSC Runtime                   │   │   │
