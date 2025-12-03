@@ -17,7 +17,7 @@ async function main() {
   const outputDir =
     outputIdx !== -1 && args[outputIdx + 1]
       ? args[outputIdx + 1]
-      : path.join(path.dirname(inputFile), "decompiled_modules");
+      : path.join(path.dirname(inputFile), "src_modules");
 
   if (!fs.existsSync(inputFile)) {
     console.error(`File not found: ${inputFile}`);

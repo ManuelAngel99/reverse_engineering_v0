@@ -552,13 +552,54 @@ let Dv = (e, t) =>
 Dv(flagName, timestamp); // Returns true if flag is enabled
 ```
 
-### Layer 4: Module System (Lines 37,217-37,270)
+### Layer 4: Module System (Lines 1622-1696)
 
 **Global Registry:**
 
 ```javascript
-window.__v0_modules__ = {}; // Module storage
-window.React = s; // Global React reference
+window.__v0_modules__ = {}; // Module storage (Line 1622)
+window.React = s; // Global React reference (Line 1623)
+let Nc = {}; // Blob URL cache (Line 1624)
+let Nu = new Map(); // Source code cache for HMR comparison (Line 1658)
+```
+
+**Lazy Module Registries:**
+
+```javascript
+// Dp - Heavy 3rd-party libraries (Lines 180-244)
+let Dp = {
+  "framer-motion": () => module.A(821945),
+  "motion/react": () => module.A(917282),
+  recharts: () => module.A(559075).then(markAsNonSlottable),
+  zod: () => module.A(929131),
+  "@react-three/fiber": () => module.A(985518),
+  "@react-three/drei": () => module.A(244535),
+  "@stripe/react-stripe-js": () => module.A(791421),
+  axios: () => module.A(992104),
+  "react-hook-form": () => module.A(613765),
+  satori: () => module.A(44956),
+  ai: Dt, // Async AI SDK loader
+  "@playwright/test": () => ({ test: Dc, expect: Dd, ... }), // Stub
+  // ... 27 total
+};
+Object.values(Dp).forEach(e => { e.__lazy = true; });
+
+// DI - Core runtime shims (Lines 557-592)
+let DI = {
+  "react-dom/server": () => module.A(655657),
+  "react-dom/client": () => module.A(645021),
+  "react/jsx-runtime": () => module.A(443319),
+  fs: DN, // memfs virtual file system
+  "fs/promises": () => DN().then(e => e.promises),
+  memfs: DN,
+  path: () => module.A(523587),
+  "geist/font/sans": () => ({ GeistSans: nextFontLocalShim(...) }),
+  "geist/font/mono": () => ({ GeistMono: nextFontLocalShim(...) }),
+};
+Object.values(DI).forEach(e => { e.__lazy = true; });
+
+// Combined at runtime (Line 1445)
+Ni = { ...oa(files, metadata), ...Dp, ...DI, ...os.default };
 ```
 
 **Module Creation Functions:**
@@ -581,13 +622,13 @@ window.React = s; // Global React reference
 
 ```javascript
 const mod = window.__v0_modules__["${moduleId}"];
-if (mod) {
-  // Module already loaded
-  export default mod;
-} else {
-  // Module initialization code
-  ${sourceCode}
-}
+${"default" in mod ? "export default mod.default;" : "export { mod as default };"}
+${Object.keys(mod).map((key, idx) =>
+  key === "default" ? "" :
+  `const __v0_${idx} = mod[${JSON.stringify(key)}]; export { __v0_${idx} as ${JSON.stringify(key)} };`
+).join("\n")}
+
+//# sourceFileName=${moduleId.replace(/^@v0\//, "")}
 ```
 
 ### Layer 5: Fake Node.js Environment (Lines 37,326-37,400)
@@ -648,7 +689,11 @@ window.Deno = {
 
 ### Layer 6: TypeScript Compilation (Lines 37,400-38,800)
 
-**Compilation Pipeline:**
+**The `IV()` Function - Core Compilation Engine**
+
+This is the **heart of v0's code transformation system**, taking raw user files and producing executable modules.
+
+**High-Level Flow:**
 
 1. **Parse TypeScript** using tsserver (module_185161)
 2. **Transform with react-refresh-typescript** (module_972453)
@@ -656,23 +701,131 @@ window.Deno = {
 4. **Create module blobs** with Blob URLs
 5. **Register in module system** (`window.__v0_modules__`)
 
-**Compiler Configuration:**
+**Detailed Compilation Steps:**
 
 ```javascript
-{
-  target: "ES2020",
-  module: "ESNext",
-  moduleResolution: "bundler",
-  jsx: "react-jsx",
-  jsxImportSource: "react",
-  esModuleInterop: true,
-  skipLibCheck: true,
-  allowSyntheticDefaultImports: true,
-  strict: true,
-  forceConsistentCasingInFileNames: true,
-  resolveJsonModule: true,
-  isolatedModules: true,
-  verbatimModuleSyntax: false,
+async function IV(files, defaultPath, createdAt, existingProject) {
+  // 1. Create ts-morph Project
+  let project = new ND.Project({
+    compilerOptions: {
+      target: ND.ScriptTarget.ESNext,
+      jsx: ND.ts.JsxEmit.ReactJSXDev,
+      jsxImportSource: "__v0__",
+      paths: tsconfig.compilerOptions?.paths || { "@/*": ["./*"] },
+      isolatedModules: true,
+    },
+    useInMemoryFileSystem: true,
+  });
+
+  // 2. Add React type shims
+  project.createSourceFile(
+    "__v0.d.ts",
+    `
+    type __V0TaintedString<T> = string & {__v0tag:T}
+    declare module 'react' {
+      export function use<T>(p: Promise<T>): T
+      export function useState<T>(initial: T | (() => T)): [T, (v: T) => void]
+      // ... more React hooks
+    }
+  `
+  );
+
+  // 3. Process each file
+  for (let [path, content] of files) {
+    let sourceFile = project.createSourceFile(path, content.data);
+    let magicString = new ID(sourceFile.getFullText());
+
+    // a) Replace document.cookie → __v0_cookie_doc.cookie
+    sourceFile
+      .getDescendantsOfKind(PropertyAccessExpression)
+      .forEach((expr) => {
+        if (expr.getText() === "document.cookie") {
+          magicString.overwrite(start, end, "__v0_cookie_doc.cookie");
+        }
+      });
+
+    // b) Rewrite import paths
+    sourceFile.getImportDeclarations().forEach((importDecl) => {
+      let specifier = importDecl.getModuleSpecifierValue();
+      let resolved = resolveImportPath(specifier, path, tsconfigPaths);
+      magicString.overwrite(
+        specifier.start,
+        specifier.end,
+        JSON.stringify(resolved)
+      );
+    });
+
+    // c) Handle "use server" directives
+    if (hasUseServerDirective(sourceFile)) {
+      // Wrap server functions with __v0_createServerRef
+      for (let fn of sourceFile.getDescendantsOfKind(FunctionDeclaration)) {
+        if (hasUseServerInBody(fn)) {
+          magicString.appendRight(
+            fn.getEnd(),
+            `function ${name}(...args) { return __v0_createServerRef(${internalName})(...args) }`
+          );
+        }
+      }
+    }
+
+    // d) Add JSX tracking props (__v0_e, __v0_c, __v0_m, __v0_i, __v0_r)
+    sourceFile.forEachDescendant((node) => {
+      if (node.isKind(JsxElement)) {
+        let metadata = extractElementMetadata(node);
+        magicString.appendRight(
+          tagEnd,
+          ` __v0_e={${JSON.stringify(metadata)}}`
+        );
+      }
+    });
+
+    // e) Handle CommonJS exports (module.exports → export default)
+    if (hasCommonJS(sourceFile)) {
+      convertModuleExportsToESM(magicString, sourceFile);
+    }
+
+    // f) Convert top-level require() to imports
+    convertTopLevelRequireToImport(magicString, sourceFile);
+
+    sourceFile.replaceWithText(magicString.toString());
+  }
+
+  // 4. Emit with React Refresh transformer
+  project
+    .emitToMemory({
+      customTransformers: {
+        before: [
+          NN({
+            // react-refresh-typescript
+            refreshReg: "__v0_$RefreshReg$",
+            refreshSig: "__v0_$RefreshSig$",
+            ts: ND.ts,
+          }),
+        ],
+      },
+    })
+    .getFiles()
+    .forEach((file) => {
+      modules[file.path].runtime = `
+      var prevRefreshReg = self.__v0_$RefreshReg$
+      var prevRefreshSig = self.__v0_$RefreshSig$
+      self.__v0_$RefreshReg$ = (type, id) => {
+        id = ${JSON.stringify(file.path)} + ' ' + id
+        self.__v0_rscRefreshRegister(type, id)
+        self.__v0_refreshRuntime.register(type, id)
+      }
+      self.__v0_$RefreshSig$ = typeof __v0_refreshRuntime !== 'undefined' 
+        ? __v0_refreshRuntime.createSignatureFunctionForTransform 
+        : () => {}
+      
+      ${file.text}
+      
+      self.__v0_$RefreshReg$ = prevRefreshReg
+      self.__v0_$RefreshSig$ = prevRefreshSig
+    `;
+    });
+
+  return { entryModules, modules, staticFiles, envs };
 }
 ```
 
@@ -751,7 +904,31 @@ navigator.serviceWorker.register("/__v0_sw.js", { scope: "/" });
 - Enable virtual file system
 - Support custom routing
 
-### Layer 9: Sandboxed localStorage (Lines 43,384-43,493)
+### Layer 8a: CSS Value Serialization (Lines 3629-3906)
+
+**Sophisticated CSS stringification** supporting modern CSS features:
+
+**Color Spaces Supported (Function `N5`):**
+
+- `rgb()`, `rgba()` - Standard RGB
+- `lab()`, `lch()` - CIE LAB color spaces
+- `oklab()`, `oklch()` - Perceptually uniform colors
+- `hsl()`, `hwb()` - Hue-based models
+- `color(srgb ...)`, `color(display-p3 ...)`, `color(rec2020 ...)` - Wide gamut
+- `light-dark()` - Automatic theme switching
+
+**Number Formatting (Function `N7`):**
+Precision optimization with repeating digit detection:
+
+```javascript
+N7(0.333333333); // "0.33" (detects repeating 3s)
+N7(0.999999999); // "1" (rounds up repeating 9s)
+N7(1.5); // "1.5" (strips trailing zeros)
+```
+
+**Used For:** Converting LightningCSS parsed values back to CSS strings.
+
+### Layer 9: Sandboxed localStorage (Lines 7789-7898)
 
 **Proxy-based localStorage replacement**
 
@@ -789,7 +966,7 @@ All localStorage methods are intercepted:
 - `length` - Returns map size
 - `key(index)` - Returns key at index
 
-**Storage Event Simulation:**
+**Storage Event Simulation (Function `IY` - Lines 7644-7653):**
 
 ```javascript
 function IY(key, newValue, oldValue) {
@@ -798,7 +975,7 @@ function IY(key, newValue, oldValue) {
       key,
       newValue,
       oldValue,
-      storageArea: window.localStorage,
+      storageArea: null, // Sandboxed, not real localStorage
       url: window.location.href,
     })
   );
@@ -899,24 +1076,58 @@ if (cookieHeader) {
 **React Fast Refresh Integration:**
 
 ```javascript
-// After code update:
+// After code update (Lines 8165-8189):
 startHMR();
-compileAndLoad(files).then(async () => {
-  globalThis.IS_REACT_ACT_ENVIRONMENT = true;
-  act(() => {
-    window.__v0_refreshRuntime.performReactRefresh();
+I6(changedFiles, existingProject).then((compiled) => {
+  A.current = compiled[1]; // Save project for incremental compilation
+  
+  return w(compiled[0], C.current, true).then(async () => {
+    globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+    
+    act(() => {
+      window.__v0_refreshRuntime.performReactRefresh();
+    });
+    
+    globalThis.IS_REACT_ACT_ENVIRONMENT = false;
+    await stopHMR();
+    setS(I5(compiled[0])); // Update file mapping
+    
+    if (data.version) {
+      setT(data.version); // External version
+    } else {
+      setT(v => v + 1); // Increment local version
+    }
   });
-  globalThis.IS_REACT_ACT_ENVIRONMENT = false;
-  await stopHMR();
 });
 ```
 
-**V0 Custom Refresh Runtime:**
-
-Injected into every user module:
+**HMR Cleanup Component `Ng()` (Lines 1859-1880):**
 
 ```javascript
-// Module preamble
+function Ng() {
+  useEffect(() => {
+    let cleanup;
+    let hmrRegistry = { ...globalThis.__v0_hmr };
+    
+    setTimeout(() => {
+      cleanup = () => {
+        // Call all registered HMR cleanup functions
+        for (let cleanupFn of Object.values(hmrRegistry)) {
+          try { cleanupFn(); } catch {}
+        }
+      };
+    }, 0);
+    
+    return () => { cleanup?.(); }; // Cleanup on unmount
+  }, []);
+  return null;
+}
+```
+
+**V0 Custom Refresh Runtime (Injected at Lines 7365-7378):**
+
+```javascript
+// Module preamble injected into every user module:
 self.__v0_$RefreshReg$ = (type, id) => {
   id = "${moduleId}" + " " + id;
   self.__v0_rscRefreshRegister(type, id); // RSC component tracking
@@ -934,56 +1145,80 @@ self.__v0_$RefreshSig$ =
 - `window.__v0_refreshRuntime.performReactRefresh()` - Trigger refresh
 - `window.__v0_rscRefreshRegister(type, id)` - Register RSC component
 - `window.__v0_replaceRscRefreshComponent(name, element)` - Replace RSC
+- `globalThis.__v0_hmr[moduleId]` - Per-module cleanup registry
 
 **HMR Flow:**
 
 ```
 1. User edits file in v0 editor
-2. Parent sends "preview_code_delta" message
-3. Recompile changed file with TypeScript
-4. Generate new module blob URL
-5. Invalidate old module
+2. Parent sends "preview_code_delta" message (Lines 8139-8164)
+3. Recompile changed file with TypeScript (via IV())
+4. Generate new module blob URL (via Np())
+5. Invalidate old module in importShim
 6. Call performReactRefresh()
 7. React remounts affected components
 8. State is preserved where possible
 ```
 
-### Layer 14: Client Preloading (Lines 43,834-43,904)
+### Layer 14: Client Preloading (Lines 7991-8012, 8239-8312)
 
 **LRU Cache:**
 
 ```javascript
-let preloadCache = new LRUCache({ max: 50 });
+let I7 = new IZ.LRUCache({ max: 50 }); // Cache 50 generations
+let I9 = new Map(); // In-flight compilation tracking
 ```
 
-**Preload Flow:**
+**Preload Flow (Lines 8239-8284):**
 
 ```
 1. Receive "preload_client" message with generation ID
-2. Fetch files for that generation
-3. Compile all files using TypeScript
-4. Store in cache: preloadCache.set(id, { files, compiled })
-5. Render in hidden <Activity mode="hidden">
-6. On "switch_client", swap from hidden to visible
+2. Check if already compiling: Pe(id, loadClientFiles)
+3. Fetch files for that generation
+4. Compile with IV(files, defaultPath, createdAt)
+5. Store in cache: I7.set(id, { files, compiled })
+6. Render in hidden <Activity mode="hidden">
+7. Collect generation logs → send to parent
+8. Wait 500ms for warmup
+9. On "switch_client", swap from hidden to visible
 ```
 
-**Activity Switching:**
+**Cache Utilization (Lines 8065-8073):**
 
 ```javascript
-<Pt
-  currentId={currentGenerationId}
-  preloadedId={preloadedGenerationId}
-  currentRuntime={currentRuntime}
-  preloadedRuntime={preloadedRuntime}
-/>
+if (I7.has(currentId)) {
+  let cached = I7.get(currentId);
+  compiled = cached.compiled;
+  files = cached.files; // Reuse cached compilation
+} else {
+  compiled = IV(files, defaultPath, createdAt); // Compile fresh
+  I7.set(currentId, { files, compiled });
+}
+```
+
+**Activity Switching (Function `Pt` - Lines 8003-8013):**
+
+```javascript
+function Pt({ currentId, preloadedId, currentRuntime, preloadedRuntime }) {
+  let isSame = currentId === preloadedId;
+  return [
+    <s.Activity key={isSame ? "_" : currentId} mode={isSame ? "hidden" : "visible"}>
+      {<s.Suspense>{currentRuntime}</s.Suspense>}
+    </s.Activity>,
+    <s.Activity key={preloadedId} mode={isSame ? "visible" : "hidden"}>
+      {<s.Suspense>{preloadedRuntime}</s.Suspense>}
+    </s.Activity>,
+  ];
+}
 ```
 
 **Benefits:**
 
-- Instant generation switching
-- Smooth transitions
+- Instant generation switching (no flash)
+- Smooth transitions via React 19 Activity component
 - Background compilation
 - Reduced perceived latency
+- Compilation deduplication via `I9` Map
 
 ---
 
@@ -1152,6 +1387,39 @@ self.__v0_$RefreshSig$ =
     ? __v0_refreshRuntime.createSignatureFunctionForTransform
     : () => {};
 `;
+```
+
+**TypeScript Diagnostic Error Recovery (Lines 6349-6380):**
+
+```javascript
+let IR = new Set([1381, 1382, 1179]); // Fatal syntax error codes
+
+// Check for syntax errors
+let diagnostics = project.getProgram().getSyntacticDiagnostics(sourceFile);
+for (let diagnostic of diagnostics) {
+  if (IR.has(diagnostic.getCode())) {
+    let message = diagnostic.getMessageText();
+    let position = diagnostic.getStart();
+    let { line, column } = sourceFile.getLineAndColumnAtPos(position);
+    
+    // Show error context
+    let errorContext = `> ${lines[line - 1]}
+> ${" ".repeat(column - 1)}${"^".repeat(diagnostic.getLength() || 1)}`;
+    
+    // Replace entire file with error throw + default exports
+    // This prevents cascade failures in dependent modules
+    sourceFile.replaceWithText(`
+      throw new Error(${JSON.stringify(message)}, { 
+        cause: ${JSON.stringify(errorContext)} 
+      })
+      
+      export * from "__v0__/internal";
+      export default from "__v0__/internal"
+    `);
+    
+    return; // Stop processing this file
+  }
+}
 ```
 
 **Example Transformation:**
@@ -1901,52 +2169,97 @@ function formatDiagnostic(diagnostic) {
 
 ### Module Storage
 
-**Global Registry:**
+**Global Registry (Line 1622):**
 
 ```javascript
+window.__v0_modules__ = {}; // Initialized empty
+window.React = s; // Global React reference
+
+// Populated during compilation:
 window.__v0_modules__ = {
   "app/page.tsx": {
-    url: "blob:https://v0.dev/abc123",
-    exports: { default: PageComponent },
-    hot: HMRInterface,
+    default: PageComponent,
+    // ... other exports
   },
   "components/Button.tsx": {
-    url: "blob:https://v0.dev/def456",
-    exports: { Button },
-    hot: HMRInterface,
+    Button,
+    // ... other exports
   },
   // ... all user modules
 };
 ```
 
-### Module Creation
-
-**`Nd(moduleId, exports, shouldTrack)`** - Direct exports:
+**Module Cache (Line 1624):**
 
 ```javascript
-function Nd(moduleId, exports, shouldTrack) {
-  // Store exports directly
-  window.__v0_modules__[moduleId] = exports;
+let Nc = {}; // Blob URL cache (moduleId → blobURL)
+let Nu = new Map(); // Runtime source code cache (moduleId → sourceCode)
+```
 
-  // Create blob URL for dynamic imports
+### Module Creation
+
+**`Nd(moduleId, exports, shouldTrack)`** - Direct exports (Lines 1625-1657):
+
+```javascript
+function Nd(e, t, n = false) {
+  // Check cache & revoke if updating
+  if (Nc[e]) {
+    if (!n) return Nc[e]; // Return cached
+    URL.revokeObjectURL(Nc[e]); // Revoke for update
+  }
+  
+  // Store exports directly
+  window.__v0_modules__[e] = t;
+
+  // Create blob URL wrapper that exports from registry
   let code = `
-    const mod = window.__v0_modules__[${JSON.stringify(moduleId)}];
-    export default mod;
-    export const __esModule = true;
+const mod = window.__v0_modules__[${JSON.stringify(e)}];
+${"default" in t ? "export default mod.default;" : "export { mod as default };"}
+${Object.keys(t).map((key, idx) =>
+  key === "default" ? "" : 
+  `const __v0_${idx} = mod[${JSON.stringify(key)}]; export { __v0_${idx} as ${JSON.stringify(key)} };`
+).join("\n")}
+
+//# sourceFileName=${e.replace(/^@v0\//, "")}
   `;
 
   let blob = new Blob([code], { type: "application/javascript" });
-  let url = URL.createObjectURL(blob);
-
-  if (shouldTrack) {
-    Dm.blobToModuleName.set(url, moduleId);
-  }
-
-  return url;
+  Nc[e] = URL.createObjectURL(blob);
+  Dm.blobToModuleName[Nc[e]] = e; // Track for source mapping
+  return Nc[e];
 }
 ```
 
-**`Np(name, sourceCode, isRuntime, hmrCallback)`** - Source code modules:
+**`Np(name, sourceCode, isRuntime, hmrCallback)`** - Runtime modules (Lines 1659-1675):
+
+```javascript
+function Np(e, t, n = false, r) {
+  // Security: track runtime module creation for secret detection
+  trackRuntimeModuleCreation(e, t);
+
+  // Check cache - return if same source code
+  if (Nc[e]) {
+    if (n && Nu.get(e) === t) return Nc[e];
+    r?.(e); // Trigger HMR callback
+    URL.revokeObjectURL(Nc[e]); // Revoke old URL
+  }
+
+  // Create blob with raw source code
+  let blob = new Blob([t], { type: "application/javascript" });
+  Nc[e] = URL.createObjectURL(blob);
+  Nu.set(e, t); // Cache source for comparison
+  Dm.blobToModuleName[Nc[e]] = e;
+  return Nc[e];
+}
+```
+
+**Key Differences:**
+- `Nd`: Stores exports in `__v0_modules__`, blob is just a wrapper
+- `Np`: Blob contains actual source code, used for runtime-generated modules
+
+### Dynamic Import Implementation
+
+**ES Module Shims Configuration (Lines 1920-2167):**
 
 ```javascript
 function Np(name, sourceCode, isRuntime, hmrCallback) {
@@ -1998,6 +2311,8 @@ function getModuleUrl(modulePath) {
   return compiled.url;
 }
 ```
+
+**NPM Token Security:** When fetching private packages, v0 encrypts the NPM token via `/api/encrypt-npm-token` and appends it as `?nt=<encrypted>` to avoid exposing credentials.
 
 ---
 
@@ -2672,21 +2987,20 @@ function scheduleCompilation(filename, content) {
 
 ## Global Objects & APIs
 
-### window.**v0_modules**
+### window.__v0_modules__ (Line 1622)
 
 **Module Registry:**
 
 ```javascript
 window.__v0_modules__ = {
-  [moduleId: string]: {
-    url: string,           // Blob URL
-    exports: any,          // Module exports
-    hot: ModuleHot,        // HMR interface
-  }
+  [moduleId: string]: any, // Direct exports object
+  // Example:
+  "react": { useState, useEffect, ... },
+  "app/page.tsx": { default: PageComponent },
 }
 ```
 
-### window.\_\_v0_refreshRuntime
+### window.__v0_refreshRuntime
 
 **React Fast Refresh API:**
 
@@ -2699,7 +3013,7 @@ window.__v0_refreshRuntime = {
 };
 ```
 
-### window.\_\_v0_rscRefreshRegister
+### window.__v0_rscRefreshRegister
 
 **RSC Component Registration:**
 
@@ -2709,7 +3023,7 @@ window.__v0_rscRefreshRegister = (type, id) => {
 };
 ```
 
-### window.\_\_v0_replaceRscRefreshComponent
+### window.__v0_replaceRscRefreshComponent (Line 1325)
 
 **RSC Component Hot Replacement:**
 
@@ -2722,7 +3036,7 @@ window.__v0_replaceRscRefreshComponent = (name, element) => {
 };
 ```
 
-### window.\_\_v0_ts
+### window.__v0_ts
 
 **Creation Timestamp:**
 
@@ -2730,9 +3044,9 @@ window.__v0_replaceRscRefreshComponent = (name, element) => {
 window.__v0_ts = Date.now(); // Set on iframe initialization
 ```
 
-Used for feature flag checks.
+Used for feature flag checks via `Dv()`.
 
-### window.\_\_v0_cookie_doc
+### window.__v0_cookie_doc (Lines 726-732)
 
 **Sandboxed Cookie API:**
 
@@ -2743,40 +3057,72 @@ window.__v0_cookie_doc = {
 };
 ```
 
-### window.\_\_v0_updateProcessEnv
+All `document.cookie` access is rewritten to use this during compilation.
+
+### window.__v0_updateProcessEnv (Lines 1882-1891)
 
 **Update Environment Variables:**
 
 ```javascript
 window.__v0_updateProcessEnv = (envVars) => {
-  Object.assign(window.process.env, envVars);
+  if (!window.process?.env) return;
+  let updates = envVars.reduce((acc, { key, value }) => {
+    acc[key] = value;
+    return acc;
+  }, {});
+  Object.assign(window.process.env, updates);
 };
 ```
 
-### window.React
+### window.__v0_hmr (Lines 1862, 7240-7252)
+
+**HMR Cleanup Registry:**
+
+```javascript
+globalThis.__v0_hmr = globalThis.__v0_hmr || {};
+globalThis.__v0_hmr[moduleId] = cleanupFunction;
+
+// Called on module hot reload:
+let cleanup = globalThis.__v0_hmr[moduleId];
+if (cleanup) cleanup();
+```
+
+### window.__v0_dst (Lines 7231-7232)
+
+**Design System Tokens Registry:**
+
+```javascript
+globalThis.__v0_dst = globalThis.__v0_dst || [];
+globalThis.__v0_dst.push({
+  default: { "--color-primary": "...", ... },
+  dark: { "--color-primary": "...", ... },
+  theme: { "--radius": "...", ... }
+});
+```
+
+### window.React (Line 1623)
 
 **Global React Reference:**
 
 ```javascript
-window.React = React; // React 19 library
+window.React = s; // React 19 library from require(789783)
 ```
 
-### window.process
+### window.process (Lines 1755-1791)
 
 **Fake Node.js Process:**
 
 ```javascript
 window.process = {
-  env: Proxy<Record<string, string>>,
+  env: Proxy<Record<string, string>>, // Warns on non-NEXT_PUBLIC_ client access
   cwd(): string,
   chdir(dir: string): void,
   exit(code: number): never,
+  on: () => {},
   version: "v20.0.0",
+  versions: { node: "20.0.0" },
   platform: "linux",
-  arch: "x64",
-  argv: string[],
-  execPath: string,
-  pid: number,
+  ppid: 0,
 };
 ```
 
@@ -2786,9 +3132,11 @@ window.process = {
 
 ```javascript
 window.Deno = {
+  ...window.process,
   env: {
     get(key: string): string | undefined,
     set(key: string, value: string): void,
+    toObject: () => window.process.env,
   },
   cwd(): string,
   version: { deno: "1.40.0" },
@@ -2845,6 +3193,28 @@ It's essentially **v0's secret sauce** - the technology that powers the instant,
 | React Version       | 19+              |
 
 ---
+
+## Code Location Reference (module_448763_wo_first_layer.js)
+
+**Key Function Locations:**
+
+| Function/Section | Lines | Purpose |
+|------------------|-------|---------|
+| `Dw.jsxDEV` | 374-516 | Custom JSX runtime with tracking |
+| `Dy` (Feature Flags) | 303-314 | Time-gated feature definitions |
+| `Dv` (Flag Check) | 316-317 | Feature flag evaluation |
+| `IV` (Compilation) | 6175-7547 | Main TypeScript compilation pipeline |
+| `No` (Module Setup) | 1444-1578 | Import map configuration |
+| `Nh` (Render) | 1698-1858 | Main render function with env setup |
+| `Nd` (Module Blob) | 1625-1657 | Create module from exports |
+| `Np` (Runtime Blob) | 1659-1675 | Create module from source code |
+| NAPI Bridge (`N1`) | 2587-3474 | WebAssembly N-API implementation |
+| Magic-String (`ID`) | 5219-6054 | Source transformation with source maps |
+| BIDC (`If`) | 4577-4841 | Bidirectional communication setup |
+| `Pn` (ClientEntry) | 8014-8470 | Main React component export |
+| Console Filters | 7654-7708 | Error/warning suppression |
+| localStorage Proxy | 7789-7898 | Sandboxed storage |
+| Service Worker Init | 7899-7971 | SW registration and messaging |
 
 ## ANALYSIS OF EACH MODULE
 

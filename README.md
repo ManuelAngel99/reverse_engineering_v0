@@ -1,4 +1,4 @@
-# Reverse Engineering Vercel v0
+# V0 Clone - Reverse Engineering Vercel v0
 
 > **A deep dive into how Vercel v0 creates a complete Next.js development environment entirely in the browser**
 
@@ -48,65 +48,65 @@ v0's architecture emulates a complete Next.js development environment through th
 ## How It Works
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                         User's Browser                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │              Main Window (v0.dev)                         │  │
-│  │  • Monaco Editor with TypeScript IntelliSense             │  │
-│  │  • Chat interface for AI interactions                     │  │
-│  │  • Visual editing controls                                │  │
-│  └────────────────────────┬──────────────────────────────────┘  │
-│                           │                                     │
-│                           │ PostMessage API                     │
-│                           │ (code updates, navigation, events)  │
-│                           ▼                                     │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │            Preview Iframe (iframe.html)                   │  │
-│  │  ┌─────────────────────────────────────────────────────┐  │  │
-│  │  │     Next.js App Router (16.0.2-canary.24)           │  │  │
-│  │  │  • React 19 + RSC Runtime                           │  │  │
-│  │  │  • Turbopack Module System                          │  │  │
-│  │  │  • Tailwind CSS v3/v4                               │  │  │
-│  │  │  • 50+ shadcn/ui Components                         │  │  │
-│  │  └─────────────────────────────────────────────────────┘  │  │
-│  │                                                           │  │
-│  │  ┌─────────────────────────────────────────────────────┐  │  │
-│  │  │     TypeScript 5.7.3 Compiler (In-Browser)          │  │  │
-│  │  │  • Full type checking                               │  │  │
-│  │  │  • Source map generation                            │  │  │
-│  │  │  • React Fast Refresh transformation                │  │  │
-│  │  └─────────────────────────────────────────────────────┘  │  │
-│  │                                                           │  │
-│  │  ┌─────────────────────────────────────────────────────┐  │  │
-│  │  │            Custom JSX Runtime                       │  │  │
-│  │  │  • Injects tracking props (__v0_i, __v0_s)          │  │  │
-│  │  │  • Enables click-to-code mapping                    │  │  │
-│  │  │  • Transforms asset URLs                            │  │  │
-│  │  └─────────────────────────────────────────────────────┘  │  │
-│  │                                                           │  │
-│  │  ┌─────────────────────────────────────────────────────┐  │  │
-│  │  │          Visual Editing System                      │  │  │
-│  │  │  • React Fiber traversal                            │  │  │
-│  │  │  • Element selection overlay                        │  │  │
-│  │  │  • Inline content editing                           │  │  │
-│  │  │  • Optimistic visual changes                        │  │  │
-│  │  └─────────────────────────────────────────────────────┘  │  │
-│  │                                                           │  │
-│  └────────────────────────┬──────────────────────────────────┘  │
-│                           │                                     │
-│                           │ Fetch API                           │
-│                           ▼                                     │
-│  ┌───────────────────────────────────────────────────────────┐  │
-│  │          Service Worker (__v0_sw.js)                      │  │
-│  │  • Virtual file system in IndexedDB                       │  │
-│  │  • Intercepts all fetch requests                          │  │
-│  │  • Serves compiled blob URLs                              │  │
-│  │  • Proxies external API calls                             │  │
-│  └───────────────────────────────────────────────────────────┘  │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                        User's Browser                        │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │         Main Window (v0.dev)                         │   │
+│  │  • Monaco Editor with TypeScript IntelliSense        │   │
+│  │  • Chat interface for AI interactions                │   │
+│  │  • Visual editing controls                           │   │
+│  └───────────────────┬─────────────────────────────────┘   │
+│                      │                                       │
+│                      │ PostMessage API                       │
+│                      │ (code updates, navigation, events)    │
+│                      ▼                                       │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │         Preview Iframe (iframe.html)                 │   │
+│  │  ┌─────────────────────────────────────────────┐   │   │
+│  │  │  Next.js App Router (16.0.2-canary.24)      │   │   │
+│  │  │  • React 19 + RSC Runtime                   │   │   │
+│  │  │  • Turbopack Module System                  │   │   │
+│  │  │  • Tailwind CSS v3/v4                       │   │   │
+│  │  │  • 50+ shadcn/ui Components                 │   │   │
+│  │  └─────────────────────────────────────────────┘   │   │
+│  │                                                       │   │
+│  │  ┌─────────────────────────────────────────────┐   │   │
+│  │  │  TypeScript 5.7.3 Compiler (In-Browser)     │   │   │
+│  │  │  • Full type checking                       │   │   │
+│  │  │  • Source map generation                    │   │   │
+│  │  │  • React Fast Refresh transformation        │   │   │
+│  │  └─────────────────────────────────────────────┘   │   │
+│  │                                                       │   │
+│  │  ┌─────────────────────────────────────────────┐   │   │
+│  │  │  Custom JSX Runtime                          │   │   │
+│  │  │  • Injects tracking props (__v0_i, __v0_s)  │   │   │
+│  │  │  • Enables click-to-code mapping            │   │   │
+│  │  │  • Transforms asset URLs                    │   │   │
+│  │  └─────────────────────────────────────────────┘   │   │
+│  │                                                       │   │
+│  │  ┌─────────────────────────────────────────────┐   │   │
+│  │  │  Visual Editing System                       │   │   │
+│  │  │  • React Fiber traversal                    │   │   │
+│  │  │  • Element selection overlay                │   │   │
+│  │  │  • Inline content editing                   │   │   │
+│  │  │  • Optimistic visual changes                │   │   │
+│  │  └─────────────────────────────────────────────┘   │   │
+│  │                                                       │   │
+│  └───────────────────┬─────────────────────────────────┘   │
+│                      │                                       │
+│                      │ Fetch API                             │
+│                      ▼                                       │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │      Service Worker (__v0_sw.js)                     │   │
+│  │  • Virtual file system in IndexedDB                  │   │
+│  │  • Intercepts all fetch requests                     │   │
+│  │  • Serves compiled blob URLs                         │   │
+│  │  • Proxies external API calls                        │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                               │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ---

@@ -1,0 +1,7 @@
+[install]
+# Automatically install peer dependencies
+auto = true
+
+[workspaces]
+# Define workspace packages
+packages = ["packages/*"]
