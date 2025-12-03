@@ -6,6 +6,7 @@
  * Changes can be applied and reverted without modifying the actual code.
  */
 
+import React from "react";
 import type { VisualChange, OptimisticVisualChange } from "@/shared/types/runtime";
 
 // ============================================================================
