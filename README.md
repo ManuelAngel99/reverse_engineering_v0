@@ -1,4 +1,4 @@
-# V0 Clone - Reverse Engineering Vercel v0
+# Reverse Engineering Vercel v0
 
 > **A deep dive into how Vercel v0 creates a complete Next.js development environment entirely in the browser**
 
