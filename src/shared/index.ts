@@ -1,17 +1,16 @@
 /**
  * Shared Resources
  *
- * Cross-cutting concerns used across all bundles (compiler, runtime, devtools).
- * Includes types, utilities, constants, and font configurations.
+ * Common utilities, types, and configurations used across all bundles
  */
 
-// All type definitions
-export * from "./types";
-
-// Font configurations (from both module_448763 and module_ui_devtools)
+// Font configurations
 export * from "./fonts";
 export * from "./font-configuration";
 
-// Shared utilities
+// Utilities
 export * from "./utils/module-exports";
 
+// Type exports
+export * from "./types/runtime";
+export * from "./types/css";

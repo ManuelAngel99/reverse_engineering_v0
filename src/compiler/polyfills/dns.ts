@@ -11,19 +11,7 @@
  */
 
 import type { DNSLookupOptions, DNSResolveOptions, DNSResult } from "./types";
-
-// ============================================================================
-// Context Detection
-// ============================================================================
-
-/**
- * Gets the current execution context (server or client)
- * This is a placeholder - actual implementation would check the runtime context
- */
-function getCurrentExecutionContext(): "server" | "client" {
-  // In the actual v0 implementation, this checks if code is running in RSC context
-  return typeof window === "undefined" ? "server" : "client";
-}
+import { getCurrentExecutionContext } from "../../runtime/context/execution-context";
 
 // ============================================================================
 // Async DNS Operations
